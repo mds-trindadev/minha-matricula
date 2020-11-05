@@ -1,23 +1,19 @@
-# import firebase_admin
-# import pyrebase
-# import json
 from app import app
-# from firebase_admin import credentials, auth
 from flask import Flask, request, render_template
 
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+
+cred = credentials.Certificate(r"./app/controllers/serviceAccountKey.json")
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://minha-matricula.firebaseio.com/'
+})
+
+ref = db.reference('/')
+
 @app.route("/")
-@app.route("/login")
-def login():
-    return render_template('login.html')
-
-@app.route("/cadastro")
-def cadastro():
-    return render_template('cadastro.html')
-
-@app.route("/esqueceu")
-def esqueceu():
-    return render_template('esqueceu.html')
-
-@app.route("/perfil")
-def perfil():
-    return render_template('perfil.html')
+def home():
+	ref = db.reference('FGA')
+	data = ref.get()
+	return render_template('home.html', data=data)
