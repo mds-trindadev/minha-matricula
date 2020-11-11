@@ -1,6 +1,7 @@
 # Minha Matrícula
 Buscador que auxilia estudantes da Universidade de Brasília a encontrarem disciplinas.
 
+<<<<<<< HEAD
 ## Ambiente de desenvolvimento
 
 Clone o repositório.
