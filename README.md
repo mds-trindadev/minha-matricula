@@ -50,7 +50,7 @@ pip3 install virtualenv
 Crie um ambiente virtual.
 
 ```
-cd backend
+cd backend/
 ```
 ```
 virtualenv env
