@@ -1,9 +1,7 @@
 # Minha Matrícula
 Buscador que auxilia estudantes da Universidade de Brasília a encontrarem disciplinas.
 
-## Configuração do ambiente de desenvolvimento
-
-### Repositório
+## Ambiente de desenvolvimento
 
 Clone o repositório.
 
@@ -70,13 +68,7 @@ Instale os requisitos.
 pip3 install -r requirements.txt
 ```
 
-### Frontend
-
-Em breve.
-
-## Execução do ambiente
-
-### Backend
+#### Execução
 
 ```
 python3 run.py
