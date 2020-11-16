@@ -1,12 +1,87 @@
 # Minha Matrícula
 Buscador que auxilia estudantes da Universidade de Brasília a encontrarem disciplinas.
 
-## Instalação
-	- Clone o repositório.
-	- Vá até a pasta onde você clonou o repositório em seu computador.
-	- Certifique-se que o pip esteja atualizado com o comando "sudo pip3 install --upgrade pip"
-	- Instale a Virtualenv pelo comando "sudo pip3 install virtualenv"
-	- Crie uma Virtualenv pelo comando "virtualenv env"
-	- Ative a Virtualenv pelo comando "source env/bin/activate"
-	- Instale as bibliotecas pelo comando "pip3 install -r requirements.txt".
-	- Rode o arquivo "run.py" com o comando "python3 run.py".
+## Configuração do ambiente de desenvolvimento
+
+### Repositório
+
+Clone o repositório.
+
+```
+git clone https://github.com/mds-trindadev/minha-matricula.git
+```
+
+```
+cd minha-matricula
+```
+
+### Backend
+
+#### pip
+
+Atualize a lista das versões dos pacotes disponíveis.
+
+```
+sudo apt update
+```
+
+Instale o pip.
+```
+sudo apt install python3-pip
+```
+
+Atualize o pip.
+```
+pip3 install --upgrade pip
+```
+
+#### Virtualenv
+
+Atualize a lista das versões dos pacotes disponíveis.
+
+```
+sudo apt update
+```
+
+Instale o Virtualenv.
+
+```
+pip3 install virtualenv
+```
+
+Crie um ambiente virtual.
+
+```
+cd backend
+```
+```
+virtualenv env
+```
+
+Ative o ambiente.
+```
+source env/bin/activate
+```
+
+#### Requisitos
+
+Instale os requisitos.
+```
+pip3 install -r requirements.txt
+```
+
+### Frontend
+
+Em breve.
+
+## Execução do ambiente
+
+### Backend
+
+```
+python3 run.py
+```
+
+### Frontend
+
+Em breve.
