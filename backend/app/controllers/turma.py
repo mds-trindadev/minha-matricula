@@ -2,7 +2,7 @@ class Departamento:
 	""" Classe Departamento """
 
 	def __init__(self, codigo):
-		"""Construtor"""
+		"""Inicializador"""
 
 		self.codigo = codigo
 
@@ -15,7 +15,7 @@ class Disciplina(Departamento):
 	""" Classe Disciplina """
 
 	def __init__(self, codigo, nome, ementa, preRequisitos, cargaHoraria):
-		"""Construtor"""
+		"""Inicializador"""
 
 		Departamento.__init__(self, codigo)
 		self.nome = nome
@@ -38,7 +38,7 @@ class Turma(Disciplina):
 	""" Classe Turma """
 
 	def __init__(self, codigo=None, nome=None, ementa=None, preRequisitos=None, cargaHoraria=None, sigla=None, horario=None, professor=None, periodo=None):
-		"""Construtor"""
+		"""Inicializador"""
 
 		Disciplina.__init__(self, codigo, nome, ementa, preRequisitos, cargaHoraria)
 		self.sigla = sigla
