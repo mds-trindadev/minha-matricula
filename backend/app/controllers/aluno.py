@@ -5,7 +5,7 @@ class Aluno:
 	gradeHoraria = []
 
 	def __init__(self, curso, turmasCursadas=None, gradeHoraria=None):
-		"""Construtor"""
+		"""Inicializador"""
 
 		self.curso = curso
 		self.turmasCursadas.append(turmasCursadas)

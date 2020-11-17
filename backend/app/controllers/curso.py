@@ -4,7 +4,7 @@ class Curso:
 	curso = []
 
 	def __init__(self, duracao, semestre):
-		"""Construtor"""
+		"""Inicializador"""
 
 		self.duracao = duracao
 		self.curso.append(semestre)
