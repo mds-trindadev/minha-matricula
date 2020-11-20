@@ -4,7 +4,7 @@ class Semestre:
 	codigoDisciplinas = []
 
 	def __init__(self, periodo, codigoDisciplina):
-		"""Construtor"""
+		"""Inicializador"""
 
 		self.periodo = periodo
 		self.codigoDisciplinas.append(codigoDisciplina)
