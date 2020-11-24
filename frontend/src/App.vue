@@ -1,23 +1,26 @@
 <template>
-  <v-app>
-    <v-main>
-      <SearchPage />
-    </v-main>
-  </v-app>
+<div id="app">
+<div id="nav">
+<router-link to="/disciplina">Disciplina</router-link>
+<router-link to="/gradeHoraria">Grade Horaria</router-link>
+<router-link to="/pesquisa">Pesquisa</router-link>
+<router-link to="/">Home</router-link>
+<router-view/>
+</div>
+</div>
 </template>
 
 <script>
-import SearchPage from "./components/SearchPage";
 
 export default {
-  name: "App",
+name: "App",
 
-  components: {
-    SearchPage,
-  },
+components: {
 
-  data: () => ({
-    //
-  }),
+},
+
+data: () => ({
+
+}),
 };
 </script>
