@@ -34,14 +34,21 @@ nomeDepartamento = 'FGA'
 @cross_origin(supports_credentials=True)
 def pesquisa():
 	getData = request.get_json()
+	
+	# Lista que armazena dados
+	data = {}
 
 	if getData:
-		# Referencia a no do banco de dados
-		ref = db.reference('/disciplina/' + getData["campus"])
-		cont = 0
+		#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+		#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+		# ARRUMAR AQUI
+		campus = getData.get("campus")
+		if getData.get("campus") == "unb":
+			campus = "FAC"
 
-		# Lista que armazena dados
-		data = []
+		# Referencia a no do banco de dados
+		ref = db.reference('/disciplina/' + campus)
+		cont = 0
 
 		# Pega os dados do banco
 		disciplinas = ref.get()
@@ -58,6 +65,10 @@ def pesquisa():
 			turma.codigo = codigo
 			info = ref.child(codigo).get()
 			
+			# verifica se o nome da materia corresponde a pesquisa
+			if(info['nome'] != getData.get("nome")):
+				continue
+
 			# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
 			turma.nome = info['nome']
 			turma.cargaHoraria = info['cargaHoraria']
@@ -65,27 +76,90 @@ def pesquisa():
 			# verifica se a disciplina tem ementa disponivel e a adiciona na lista
 			if 'ementa' in info:
 				turma.ementa = info['ementa']
+			else:
+				turma.ementa = info['Indisponivel']
+
+			if 'preRequisitos' in info:
+				turma.preRequisitos = info['preRequisitos']
+			else:
+				turma.preRequisitos = info['Indisponivel']
 
 			# percorre as turmas disponiveis na disciplina
 			if 'turmas' in info:
 				for i in info['turmas']:
 					# adiciona as informacoes referentes a turma na lista
-					turma.sigla = info['turmas'][i]
+					turma.sigla = info['turmas']
 					turma.periodo = info['turmas'][i]['periodo']
 					turma.professor = info['turmas'][i]['professor']
 					if 'horario' in info['turmas'][i]:
 						turma.horario = info['turmas'][i]['horario']
+					else:
+						turma.horario = 'Indisponivel'
+			else:
+				turma.ementa = 'Indisponivel'
+				turma.sigla = 'Indisponivel'
+				turma.periodo = 'Indisponivel'
+				turma.professor = 'Indisponivel'
+				turma.horario = 'Indisponivel'
 
-					data.append(turma)
+			temp = turma.getTurma()
+			if(temp['creditos'] == getData.get("creditos")):
+				data[turma.codigo] = temp
 
-	# # chama a View e passa a lista "data" como parametro
-	# return jsonify({ "data" : data })
-	return jsonify({ "data" : "Pesquisa" })
+	return data
 
 @app.route("/disciplina", methods=["GET", "POST"])
 @cross_origin(supports_credentials=True)
 def disciplina():
-	return jsonify({ "data" : "Disciplinas" })
+	getData = request.get_json()
+
+	data = ''
+	if getData:
+		campus = getData.get("codigo")[:3]
+
+		# Referencia a no do banco de dados
+		ref = db.reference('/disciplina/' + campus + '/' + getData.get("codigo"))
+		disciplinas = ref.get()
+
+		turma = Turma()
+		turma.codigo = disciplinas
+
+		# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
+		turma.nome = disciplinas['nome']
+		turma.cargaHoraria = disciplinas['cargaHoraria']
+
+		# verifica se a disciplina tem ementa disponivel e a adiciona na lista
+		if 'ementa' in disciplinas:
+			turma.ementa = disciplinas['ementa']
+		else:
+			turma.ementa = disciplinas['Indisponivel']
+
+		if 'preRequisitos' in disciplinas:
+			turma.preRequisitos = disciplinas['preRequisitos']
+		else:
+			turma.preRequisitos = disciplinas['Indisponivel']
+
+		# percorre as turmas disponiveis na disciplina
+		if 'turmas' in disciplinas:
+			for i in disciplinas['turmas']:
+				# adiciona as informacoes referentes a turma na lista
+				turma.sigla = disciplinas['turmas']
+				turma.periodo = disciplinas['turmas'][i]['periodo']
+				turma.professor = disciplinas['turmas'][i]['professor']
+				if 'horario' in disciplinas['turmas'][i]:
+					turma.horario = disciplinas['turmas'][i]['horario']
+				else:
+					turma.horario = 'Indisponivel'
+		else:
+			turma.ementa = 'Indisponivel'
+			turma.sigla = 'Indisponivel'
+			turma.periodo = 'Indisponivel'
+			turma.professor = 'Indisponivel'
+			turma.horario = 'Indisponivel'
+
+		data = turma.getTurma()
+				
+	return data
 
 @app.route("/gradeHoraria", methods=["GET", "POST"])
 @cross_origin(supports_credentials=True)
