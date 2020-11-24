@@ -1,2 +1,4 @@
 firebase-admin==4.4.0
 Flask==1.1.2
+Flask-Cors==3.0.9
+flask-jwt-extended==3.25.0

@@ -1,5 +1,6 @@
 from app import app
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
+from flask_jwt_extended import JWTManager
 
 import firebase_admin
 from firebase_admin import credentials
@@ -10,6 +11,11 @@ from app.controllers.turma import Disciplina
 from app.controllers.aluno import Aluno
 from app.controllers.semestre import Semestre
 from app.controllers.curso import Curso
+
+from flask_cors import CORS, cross_origin
+
+CORS(app, support_credentials=True)
+JWTManager(app)
 
 cred = credentials.Certificate(r"./app/controllers/serviceAccountKey.json")
 firebase_admin.initialize_app(cred, {
@@ -24,49 +30,64 @@ firebase_admin.initialize_app(cred, {
 
 nomeDepartamento = 'FGA'
 
-@app.route("/")
-def home():
-	# Referencia a no do banco de dados
-	ref = db.reference('/disciplina/' + nomeDepartamento)
-	cont = 0
+@app.route("/pesquisa", methods=["GET", "POST"])
+@cross_origin(supports_credentials=True)
+def pesquisa():
+	getData = request.get_json()
 
-	# Lista que armazena dados
-	data = []
+	if getData:
+		# Referencia a no do banco de dados
+		ref = db.reference('/disciplina/' + getData["campus"])
+		cont = 0
 
-	# Pega os dados do banco
-	disciplinas = ref.get()
+		# Lista que armazena dados
+		data = []
 
-	# Percorre dicionario
-	for codigo in disciplinas:
-		# contador de parada para nao percorrer todas as disciplinas
-		cont += 1
-		if cont > 3:
-			break
+		# Pega os dados do banco
+		disciplinas = ref.get()
 
-		turma = Turma()
-		# adiciona o codigo da disciplina na lista
-		turma.codigo = codigo
-		info = ref.child(codigo).get()
-		
-		# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
-		turma.nome = info['nome']
-		turma.cargaHoraria = info['cargaHoraria']
+		# Percorre dicionario
+		for codigo in disciplinas:
+			# contador de parada para nao percorrer todas as disciplinas
+			cont += 1
+			if cont > 3:
+				break
 
-		# verifica se a disciplina tem ementa disponivel e a adiciona na lista
-		if 'ementa' in info:
-			turma.ementa = info['ementa']
+			turma = Turma()
+			# adiciona o codigo da disciplina na lista
+			turma.codigo = codigo
+			info = ref.child(codigo).get()
+			
+			# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
+			turma.nome = info['nome']
+			turma.cargaHoraria = info['cargaHoraria']
 
-		# percorre as turmas disponiveis na disciplina
-		if 'turmas' in info:
-			for i in info['turmas']:
-				# adiciona as informacoes referentes a turma na lista
-				turma.sigla = info['turmas'][i]
-				turma.periodo = info['turmas'][i]['periodo']
-				turma.professor = info['turmas'][i]['professor']
-				if 'horario' in info['turmas'][i]:
-					turma.horario = info['turmas'][i]['horario']
+			# verifica se a disciplina tem ementa disponivel e a adiciona na lista
+			if 'ementa' in info:
+				turma.ementa = info['ementa']
 
-				data.append(turma)
+			# percorre as turmas disponiveis na disciplina
+			if 'turmas' in info:
+				for i in info['turmas']:
+					# adiciona as informacoes referentes a turma na lista
+					turma.sigla = info['turmas'][i]
+					turma.periodo = info['turmas'][i]['periodo']
+					turma.professor = info['turmas'][i]['professor']
+					if 'horario' in info['turmas'][i]:
+						turma.horario = info['turmas'][i]['horario']
 
-	# chama a View e passa a lista "data" como parametro
-	return render_template('home.html', data=data)
+					data.append(turma)
+
+	# # chama a View e passa a lista "data" como parametro
+	# return jsonify({ "data" : data })
+	return jsonify({ "data" : "Pesquisa" })
+
+@app.route("/disciplina", methods=["GET", "POST"])
+@cross_origin(supports_credentials=True)
+def disciplina():
+	return jsonify({ "data" : "Disciplinas" })
+
+@app.route("/gradeHoraria", methods=["GET", "POST"])
+@cross_origin(supports_credentials=True)
+def gradeHoraria():
+	return jsonify({ "data" : "GradeHoraria" })
