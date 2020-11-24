@@ -1,3 +1,5 @@
+import re
+
 class Departamento:
 	""" Classe Departamento """
 
@@ -22,16 +24,19 @@ class Disciplina(Departamento):
 		self.ementa = ementa
 		self.preRequisitos = preRequisitos
 		self.cargaHoraria = cargaHoraria
+		self.creditos = 0
 
 	def getDisciplina(self):
 		"""Retorna um dicionario com as informacoes referentes a disciplina"""
 
+		self.creditos = int(re.findall(r'\d+', str(self.cargaHoraria))[0])/15
 		return {
 				'codigo': self.codigo,
 				'nome': self.nome, 
 				'ementa': self.ementa, 
-				'preRequisitos': self.preRequisitos, 
-				'cargaHoraria': self.cargaHoraria 
+				'preRequisitos': self.preRequisitos,
+				'cargaHoraria': self.cargaHoraria,
+				'creditos': self.creditos 
 				}
 
 class Turma(Disciplina):
@@ -48,12 +53,14 @@ class Turma(Disciplina):
 	def getTurma(self):
 		"""Retorna um dicionario com as informacoes referentes a turma"""
 
+		self.creditos = int(re.findall(r'\d+', str(self.cargaHoraria))[0])/15
 		return {
 				'codigo': self.codigo,
 				'nome': self.nome, 
 				'ementa': self.ementa, 
 				'preRequisitos': self.preRequisitos, 
 				'cargaHoraria': self.cargaHoraria,
+				'creditos': self.creditos,
 				'sigla': self.sigla,
 				'horario': self.horario,
 				'professor': self.professor,

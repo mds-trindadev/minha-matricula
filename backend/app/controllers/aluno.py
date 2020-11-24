@@ -34,5 +34,9 @@ class Aluno:
 	def sugerirGradeHoraria(self):
 		"""Algoritmo para sugestao de grade horaria"""
 
+		############## FALTA IMPLEMENTAR
+
 	def extrairDadosPDF(self):
 		"""Algoritmo para extracao dos dados do arquivo PDF"""
+
+		############## FALTA IMPLEMENTAR

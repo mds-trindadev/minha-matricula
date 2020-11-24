@@ -9,14 +9,32 @@ const store = new Vuex.Store({
 		token: null,
 	},
 	mutations: {
-		getSearch(state, token){
+		getBusca(state, token){
+			state.token = token
+		},
+
+		getDisciplina(state, token){
+			state.token = token
+		},
+
+		getGradeHoraria(state, token){
 			state.token = token
 		}
 	},
 	actions: {
-		async getSearch(context) {
-			const response = await http.post("/pesquisa")
+		async getBusca(context, data) {
+			const response = await http.post("/pesquisa", data )
 			context.commit("getSearch", response.data)
+		},
+
+		async getDisciplina(context, data) {
+			const response = await http.post("/disciplina", data )
+			context.commit("getDisciplina", response.data)
+		},
+
+		async getGradeHoraria(context, data) {
+			const response = await http.post("/gradeHoraria", data )
+			context.commit("getGradeHoraria", response.data)
 		}
 	},
 	modules: {

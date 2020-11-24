@@ -7,5 +7,9 @@
 <script>
 export default {
 	name: 'disciplina',
+
+	methods: {
+		
+	}
 }
 </script>
