@@ -43,10 +43,15 @@
     </v-app-bar>
   </section>
 </template>
-
 <script>
 export default {
-  name: "SearchBar",
+  name: "AppToolbar",
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+  },
   data: () => ({
     filters: [
       { name: "credits", options: [2, 4, 6] },
@@ -57,6 +62,5 @@ export default {
       campi: [],
     },
   }),
-  methods: {},
 };
 </script>
