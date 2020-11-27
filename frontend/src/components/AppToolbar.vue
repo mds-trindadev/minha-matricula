@@ -1,7 +1,7 @@
 <template>
   <section>
-    <v-app-bar app flat color="#07005A">
-      <v-icon color="yellow">mdi-triangle-outline</v-icon>
+    <v-app-bar app flat outlined>
+      <!-- <v-icon color="yellow">mdi-triangle-outline</v-icon>
       <v-toolbar-title class="white--text">Minha Matrícula</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
@@ -39,7 +39,7 @@
         </template>
       </v-select>
 
-      <v-spacer></v-spacer>
+      <v-spacer></v-spacer> -->
     </v-app-bar>
   </section>
 </template>
@@ -64,3 +64,9 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+.theme--light.v-app-bar.v-toolbar.v-sheet {
+  background-color: white;
+}
+</style>
