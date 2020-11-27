@@ -1,30 +1,34 @@
 <template>
   <section>
-    <v-card class="rounded-xl" outlined>
+    <v-card class="header rounded-xl" outlined>
       <v-app-bar color="transparent" dense flat>
-        <v-toolbar-title class="header">{{ course.campus }}</v-toolbar-title>
+        <v-toolbar-title :class="getCampusColor(course.campus)">{{
+          course.campus
+        }}</v-toolbar-title>
 
         <v-spacer />
 
-        <v-toolbar-title class="header">
-          {{ course.credits }} créditos
-        </v-toolbar-title>
+        <v-toolbar-title> {{ course.credits }} créditos </v-toolbar-title>
       </v-app-bar>
 
       <v-card-title class="text-h5 pt-1">{{
-        capitalizeTitle(course.title)
+        capitalize(course.title)
       }}</v-card-title>
 
-      <v-card-text class="department">{{ course.department }}</v-card-text>
+      <v-card-text class="department">{{
+        capitalize(course.department)
+      }}</v-card-text>
 
       <v-card-text>
-        <v-chip
+        <div
           v-for="(class_, index) in course.classes"
           :key="index"
           class="mr-1 my-1"
         >
-          {{ class_ }}
-        </v-chip>
+          <v-chip>
+            {{ class_ }}
+          </v-chip>
+        </div>
       </v-card-text>
     </v-card>
   </section>
@@ -40,13 +44,27 @@ export default {
     },
   },
   methods: {
-    capitalizeTitle(title) {
+    getCampusColor(campus) {
+      switch (campus) {
+        case "Darcy Ribeiro":
+          return "blue-grey lighten-5";
+        case "FCE":
+          return "light-blue lighten-4";
+        case "FGA":
+          return "light-green lighten-4";
+        case "FUP":
+          return "amber lighten-4";
+        default:
+          return "";
+      }
+    },
+    capitalize(title) {
       var newTitle = [];
 
       title.split(" ").forEach((string) => {
         var newString = string.toLowerCase();
 
-        if (string.length > 4) {
+        if (string.length > 3) {
           newString = string.charAt(0).toUpperCase();
           newString += string.slice(1).toLowerCase();
         }
@@ -61,9 +79,9 @@ export default {
 </script>
 
 <style scoped>
-.header {
+.header * {
   font-weight: 300;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .department {
