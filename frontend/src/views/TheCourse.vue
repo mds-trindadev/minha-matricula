@@ -24,7 +24,6 @@
           transition="slide-x-transition"
           height="56"
           multiple
-          counter
           clearable
           outlined
           rounded
@@ -47,6 +46,7 @@
 
 <script>
 import CourseCard from "@/components/CourseCard";
+import Services from "@/services";
 
 export default {
   name: "TheCourse",
@@ -61,82 +61,38 @@ export default {
       credits: [],
     },
     filters: {
-      campus: {
-        label: "Campus",
-        options: ["Darcy Ribeiro", "FCE", "FGA", "FUP"],
+      campi: {
+        label: "Campi",
+        options: [],
       },
-      department: {
-        label: "Departamento",
-        options: [
-          "Departamento de Matemática",
-          "Departamento de Estudos Latino Americanos Departamento de Estudos Latino Americanos",
-          "Faculdade do Gama",
-          "Departamento de Farmácia",
-        ],
-      },
-      credit: {
+      credits: {
         label: "Créditos",
-        options: [1, 2, 4, 6, 8],
+        options: [],
+      },
+      departments: {
+        label: "Departamentos",
+        options: [],
       },
     },
-    courses: [
-      {
-        cod: "MAT0010",
-        campus: "Darcy Ribeiro",
-        credits: 6,
-        title: "GEOMETRIA ANALÍTICA PARA MATEMÁTICA",
-        department: "Departamento de Matemática",
-        classes: ["A | ter 10h, qui 16h", "B | sex 14h"],
-      },
-      {
-        cod: "FGA001",
-        campus: "FGA",
-        credits: 4,
-        title: "Métodos de Desenvolvimento de Software",
-        department: "Faculdade do Gama",
-        classes: ["A | ter 10h, qui 16h", "B | sex 14h"],
-      },
-      {
-        cod: "DIN0001",
-        campus: "Darcy Ribeiro",
-        credits: 4,
-        title: "FUNDAMENTOS DA LÍNGUAGEM APLICADOS AO DESIGN",
-        department: "DEPARTAMENTO DE DESIGN",
-        classes: ["B | sex 14h", "A | ter 10h, qui 16h"],
-      },
-      {
-        cod: "FGA001",
-        campus: "FGA",
-        credits: 4,
-        title: "Métodos de Desenvolvimento de Software",
-        department: "Faculdade do Gama",
-        classes: ["A | ter 10h, qui 16h", "B | sex 14h"],
-      },
-      {
-        cod: "FGA001",
-        campus: "FGA",
-        credits: 4,
-        title: "Métodos de Desenvolvimento de Software",
-        department: "Faculdade do Gama",
-        classes: ["B | sex 14h", "A | ter 10h, qui 16h"],
-      },
-      {
-        cod: "FGA001",
-        campus: "FGA",
-        credits: 4,
-        title: "Métodos de Desenvolvimento de Software",
-        department: "Faculdade do Gama",
-        classes: ["A | ter 10h, qui 16h", "B | sex 14h"],
-      },
-      {
-        cod: "FGA001",
-        campus: "FGA",
-        credits: 4,
-        title: "Métodos de Desenvolvimento de Software",
-        department: "Faculdade do Gama",
-        classes: ["B | sex 14h", "A | ter 10h, qui 16h"],
-      },
-    ],
+    courses: [],
   }),
+
+  created() {
+    Services.getFilters()
+      .then((response) => {
+        this.filters = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    Services.getCourses()
+      .then((response) => {
+        this.courses = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 };
 </script>
