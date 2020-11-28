@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: "CourseCard",
+  name: "SearchListCard",
   props: {
     course: {
       type: Object,

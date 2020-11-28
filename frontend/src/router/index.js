@@ -1,33 +1,27 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import TheHome from "@/views/TheHome";
+import TheSearch from "@/views/TheSearch";
+import TheCourse from "@/views/TheCourse";
 import TheSchedule from "@/views/TheSchedule";
-// import pesquisa from '../views/pesquisa'
-// import disciplina from '../views/disciplina'
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: TheHome,
+    name: "search",
+    component: TheSearch,
+  },
+  {
+    path: "/disciplina",
+    name: "course",
+    component: TheCourse,
   },
   {
     path: "/grade",
-    name: "grade",
+    name: "schedule",
     component: TheSchedule,
   },
-  // {
-  // 	path: '/pesquisa',
-  // 	name: 'pesquisa',
-  // 	component: pesquisa
-  // },
-  // {
-  // 	path: '/disciplina',
-  // 	name: 'disciplina',
-  // 	component: disciplina
-  // },
 ];
 
 const router = new VueRouter({

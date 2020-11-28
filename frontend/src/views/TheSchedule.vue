@@ -1,6 +1,7 @@
 <template>
   <section id="schedule">
-    <AppToolbar :title="title"/>
+    <AppToolbar :title="title" />
+    <v-main>Schedule</v-main>
   </section>
 </template>
 
@@ -8,7 +9,7 @@
 import AppToolbar from "@/components/AppToolbar";
 
 export default {
-  name: "TheHome",
+  name: "TheSchedule",
   components: {
     AppToolbar,
   },
