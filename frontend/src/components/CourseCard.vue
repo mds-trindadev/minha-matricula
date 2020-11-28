@@ -1,7 +1,7 @@
 <template>
   <section>
-    <v-card class="header rounded-xl" outlined>
-      <v-app-bar color="transparent" dense flat>
+    <v-card class="rounded-xl" outlined>
+      <v-app-bar color="toolbar transparent" dense flat>
         <v-toolbar-title :class="getCampusColor(course.campus)">{{
           course.campus
         }}</v-toolbar-title>
@@ -11,7 +11,7 @@
         <v-toolbar-title> {{ course.credits }} créditos </v-toolbar-title>
       </v-app-bar>
 
-      <v-card-title class="text-h5 pt-1">{{
+      <v-card-title class="title pt-0">{{
         capitalize(course.title)
       }}</v-card-title>
 
@@ -25,7 +25,7 @@
           :key="index"
           class="mr-1 my-1"
         >
-          <v-chip>
+          <v-chip small>
             {{ class_ }}
           </v-chip>
         </div>
@@ -79,14 +79,21 @@ export default {
 </script>
 
 <style scoped>
-.header * {
-  font-weight: 300;
-  font-size: 15px;
+.toolbar * {
+  font-weight: 300 !important;
+  font-size: 12px !important;
+}
+
+.title {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
 }
 
 .department {
-  font-weight: 300;
-  font-size: 20px;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  line-height: 1.1 !important;
 }
 
 .v-card__text,
