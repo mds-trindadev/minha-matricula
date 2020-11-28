@@ -29,6 +29,7 @@ firebase_admin.initialize_app(cred, {
 # PAD, PCL, PRO, SER, SOL, TAU, TEC, TEL, VIS, ZOO
 
 nomeDepartamento = 'FGA'
+aluno = Aluno()
 
 @app.route("/pesquisa", methods=["GET", "POST"])
 @cross_origin(supports_credentials=True)
@@ -165,3 +166,71 @@ def disciplina():
 @cross_origin(supports_credentials=True)
 def gradeHoraria():
 	return jsonify({ "data" : "GradeHoraria" })
+
+		data = turma.getTurma()
+				
+	return data
+
+@app.route("/gradeHoraria", methods=["GET", "POST"])
+@cross_origin(supports_credentials=True)
+def gradeHoraria():
+	getData = request.get_json()
+
+	if getData:
+		if getData.get("op") == 'setCurso':
+			aluno.curso = getData.get("curso")
+			return { 'status': 'Success'}
+
+		elif getData.get("op") == 'addDisciplina':
+			turma = Turma()
+
+			turma.codigo = getData.get("codigoDisciplina")
+			turma.nome = getData.get("nomeDisciplina")
+			turma.cargaHoraria = getData.get("cargaHorariaDisciplina")
+			turma.ementa = getData.get("ementaDisciplina")
+			turma.preRequisitos = getData.get("preRequisitosDisciplina")
+			turma.concluida = True
+			if getData.get("siglaDisciplina"):
+				turma.sigla = getData.get("siglaDisciplina")
+				turma.periodo = getData.get("periodoDisciplina")
+				turma.professor = getData.get("professorDisciplina")
+				turma.horario = getData.get("horarioDisciplina")
+			
+			aluno.adicionarTurma(turma)
+			return { 'status': 'Success'}
+
+		elif getData.get("op") == 'rmDisciplina':
+			aluno.removerTurma(getData.get("codigoDisciplina"))
+			return { 'status': 'Success'}
+
+		elif getData.get("op") == 'getTurmas':
+			data = {}
+			for i in aluno.consultarTurmas():
+				if i:
+					data[i.codigo] = i.getTurma()
+
+			return data
+
+		elif getData.get("op") == 'getGradeHoraria':
+			data = {}
+			for i in aluno.consultarGradeHoraria():
+				if i:
+					data[i.codigo] = i.getTurma()
+
+			return data
+
+		elif getData.get("op") == 'sugerirGradeHoraria':
+			data = {}
+
+			ref = db.reference('/curso/' + aluno.curso)
+			fluxo = ref.get()
+
+
+			for i in aluno.consultarGradeHoraria(fluxo):
+				if i:
+					data[i.codigo] = i.getTurma()
+
+			return data
+
+		else:
+			return { 'status': 'Fail'}

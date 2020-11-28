@@ -25,6 +25,8 @@ class Disciplina(Departamento):
 		self.preRequisitos = preRequisitos
 		self.cargaHoraria = cargaHoraria
 		self.creditos = 0
+		self.prioridade = 0
+		self.concluida = False
 
 	def getDisciplina(self):
 		"""Retorna um dicionario com as informacoes referentes a disciplina"""
@@ -37,6 +39,9 @@ class Disciplina(Departamento):
 				'preRequisitos': self.preRequisitos,
 				'cargaHoraria': self.cargaHoraria,
 				'creditos': self.creditos 
+				'creditos': self.creditos,
+				'prioridade': self.prioridade,
+				'concluida': self.concluida
 				}
 
 class Turma(Disciplina):
@@ -64,5 +69,7 @@ class Turma(Disciplina):
 				'sigla': self.sigla,
 				'horario': self.horario,
 				'professor': self.professor,
-				'periodo': self.periodo
+				'periodo': self.periodo,
+				'prioridade': self.prioridade,
+				'concluida': self.concluida
 				}
