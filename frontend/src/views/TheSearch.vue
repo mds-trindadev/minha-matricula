@@ -6,7 +6,8 @@
       <v-container fluid>
         <v-row justify="center">
           <v-col cols="8">
-            <TheCourse></TheCourse>
+            <SearchToolbar></SearchToolbar>
+            <SearchList></SearchList>
           </v-col>
         </v-row>
       </v-container>
@@ -16,13 +17,15 @@
 
 <script>
 import AppToolbar from "@/components/AppToolbar";
-import TheCourse from "@/views/TheCourse";
+import SearchToolbar from "@/components/SearchToolbar";
+import SearchList from "@/components/SearchList";
 
 export default {
-  name: "TheHome",
+  name: "TheSearch",
   components: {
     AppToolbar,
-    TheCourse,
+    SearchToolbar,
+    SearchList,
   },
   data: () => ({
     title: "Home",
