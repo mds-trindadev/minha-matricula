@@ -1,6 +1,11 @@
 <template>
   <section>
-    <v-card class="rounded-xl" outlined>
+    <v-card
+      class="rounded-lg"
+      outlined
+      @click="saveCourse(course)"
+      width="100%"
+    >
       <v-app-bar color="toolbar transparent" dense flat>
         <v-toolbar-title :class="getCampusColor(course.campus)">{{
           course.campus
@@ -11,13 +16,9 @@
         <v-toolbar-title> {{ course.credits }} créditos </v-toolbar-title>
       </v-app-bar>
 
-      <v-card-title class="title pt-0">{{
-        capitalize(course.title)
-      }}</v-card-title>
+      <v-card-title class="title pt-0">{{ course.title }}</v-card-title>
 
-      <v-card-text class="department">{{
-        capitalize(course.department)
-      }}</v-card-text>
+      <v-card-text class="department">{{ course.department }}</v-card-text>
 
       <v-card-text>
         <div
@@ -58,21 +59,9 @@ export default {
           return "";
       }
     },
-    capitalize(title) {
-      var newTitle = [];
 
-      title.split(" ").forEach((string) => {
-        var newString = string.toLowerCase();
-
-        if (string.length > 3) {
-          newString = string.charAt(0).toUpperCase();
-          newString += string.slice(1).toLowerCase();
-        }
-
-        newTitle.push(newString);
-      });
-
-      return newTitle.join(" ");
+    saveCourse(course) {
+      this.$store.dispatch("saveCourse", course);
     },
   },
 };

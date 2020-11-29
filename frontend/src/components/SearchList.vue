@@ -1,7 +1,14 @@
 <template>
   <section>
     <v-row>
-      <v-col v-for="(course, index) in courses" :key="index" :cols="columns">
+      <v-col
+        v-for="(course, index) in courses.all"
+        :key="index"
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
         <SearchListCard :course="course"> </SearchListCard>
       </v-col>
     </v-row>
@@ -10,25 +17,24 @@
 
 <script>
 import SearchListCard from "@/components/SearchListCard";
-import Services from "@/services";
+import { mapState } from "vuex";
 
 export default {
   name: "SearchList",
   components: {
     SearchListCard,
   },
-  data: () => ({
-    columns: 3,
-    courses: [],
-  }),
+  computed: {
+    ...mapState(["courses"]),
+  },
   created() {
-    Services.getCourses()
-      .then((response) => {
-        this.courses = response.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    this.getCourses();
+  },
+
+  methods: {
+    getCourses() {
+      this.$store.dispatch("getAllCourses");
+    },
   },
 };
 </script>
