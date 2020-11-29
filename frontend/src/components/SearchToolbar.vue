@@ -1,43 +1,30 @@
 <template>
   <section>
     <v-row>
-      <v-col cols="4">
+      <v-col cols="12">
         <v-text-field
           outlined
           rounded
           label="Busque por uma disciplina"
+          hide-details
         ></v-text-field>
       </v-col>
 
-      <v-col v-for="(filter, index) of filters" :key="filter.label">
-        <v-select
-          v-model="selections[index]"
-          :items="filter.options"
-          :label="filter.label"
-          :menu-props="{
-            bottom: true,
-            offsetY: true,
-            rounded: 'xl',
-            allowOverflow: false,
-          }"
-          transition="slide-x-transition"
-          height="56"
-          multiple
-          clearable
-          outlined
-          rounded
-        >
-          <template v-slot:selection="{ index }">
-            <span>{{ index }} </span>
-          </template>
-        </v-select>
+      <v-col>
+        <v-slide-group show-arrows>
+          <v-slide-item v-for="filter of filters" :key="filter.label">
+            <v-btn class="mx-2" outlined rounded small>
+              {{ filter.label }}
+            </v-btn>
+          </v-slide-item>
+        </v-slide-group>
       </v-col>
     </v-row>
   </section>
 </template>
 
 <script>
-import Services from "@/services";
+import { mapState } from "vuex";
 
 export default {
   name: "SearchToolbar",
@@ -48,30 +35,19 @@ export default {
       department: [],
       credits: [],
     },
-    filters: {
-      campi: {
-        label: "Campi",
-        options: [],
-      },
-      credits: {
-        label: "Créditos",
-        options: [],
-      },
-      departments: {
-        label: "Departamentos",
-        options: [],
-      },
-    },
   }),
+  computed: {
+    ...mapState(["filters"]),
+  },
 
   created() {
-    Services.getFilters()
-      .then((response) => {
-        this.filters = response.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    this.getFilters();
+  },
+
+  methods: {
+    getFilters() {
+      this.$store.dispatch("getFilters");
+    },
   },
 };
 </script>

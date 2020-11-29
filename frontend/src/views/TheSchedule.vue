@@ -1,7 +1,7 @@
 <template>
   <section id="schedule">
     <AppToolbar :title="title" />
-    <v-main>Schedule</v-main>
+    <h1>Schedule</h1>
   </section>
 </template>
 
