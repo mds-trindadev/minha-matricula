@@ -2,11 +2,6 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 
-cred = credentials.Certificate(r"./app/controllers/serviceAccountKey.json")
-firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://minha-matricula.firebaseio.com/'
-})
-
 class Aluno:
 	""" Classe Aluno """
 

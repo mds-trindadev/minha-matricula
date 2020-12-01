@@ -14,6 +14,22 @@ from app.controllers.curso import Curso
 
 from flask_cors import CORS, cross_origin
 
+from pdfminer.pdfpage import PDFPage
+from pdfminer.pdfinterp import PDFResourceManager
+from pdfminer.pdfinterp import PDFPageInterpreter
+from pdfminer.converter import TextConverter
+import io
+import camelot
+import re
+import sys
+import json
+import os
+
+import pikepdf
+from random import randint
+
+if not os.path.exists('./uploads'): os.makedirs('./uploads')\
+
 CORS(app, support_credentials=True)
 JWTManager(app)
 
@@ -40,9 +56,6 @@ def pesquisa():
 	data = {}
 
 	if getData:
-		#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-		#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-		# ARRUMAR AQUI
 		campus = getData.get("campus")
 		if getData.get("campus") == "unb":
 			campus = "FAC"
@@ -109,21 +122,16 @@ def pesquisa():
 
 	return data
 
-@app.route("/disciplina", methods=["GET", "POST"])
-@cross_origin(supports_credentials=True)
-def disciplina():
-	getData = request.get_json()
+def buscarDisciplina(codigo):
+	campus = codigo[:3]
 
-	data = ''
-	if getData:
-		campus = getData.get("codigo")[:3]
+	# Referencia a no do banco de dados
+	ref = db.reference('/disciplina/' + campus + '/' + codigo)
+	disciplinas = ref.get()
 
-		# Referencia a no do banco de dados
-		ref = db.reference('/disciplina/' + campus + '/' + getData.get("codigo"))
-		disciplinas = ref.get()
-
+	if disciplinas:
 		turma = Turma()
-		turma.codigo = disciplinas
+		turma.codigo = codigo
 
 		# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
 		turma.nome = disciplinas['nome']
@@ -133,12 +141,12 @@ def disciplina():
 		if 'ementa' in disciplinas:
 			turma.ementa = disciplinas['ementa']
 		else:
-			turma.ementa = disciplinas['Indisponivel']
+			turma.ementa = 'Indisponivel'
 
 		if 'preRequisitos' in disciplinas:
 			turma.preRequisitos = disciplinas['preRequisitos']
 		else:
-			turma.preRequisitos = disciplinas['Indisponivel']
+			turma.preRequisitos = 'Indisponivel'
 
 		# percorre as turmas disponiveis na disciplina
 		if 'turmas' in disciplinas:
@@ -158,9 +166,16 @@ def disciplina():
 			turma.professor = 'Indisponivel'
 			turma.horario = 'Indisponivel'
 
-		data = turma.getTurma()
-				
-	return data
+		return turma
+
+@app.route("/disciplina", methods=["GET", "POST"])
+@cross_origin(supports_credentials=True)
+def disciplina():
+	getData = request.get_json()
+	turma = Turma()
+	if getData:
+		turma = buscarDisciplina(getData)
+	return turma.getTurma()
 
 @app.route("/gradeHoraria", methods=["GET", "POST"])
 @cross_origin(supports_credentials=True)
@@ -234,3 +249,75 @@ def gradeHoraria():
 
 		else:
 			return { 'status': 'Fail'}
+
+def acceptable_file(file_name):
+	if re.findall("[.]", file_name):
+		return True
+	else:
+		return False
+
+def extract_text(pdf_path):
+	resource_manager = PDFResourceManager()
+	fake_file_handle = io.StringIO()
+	converter = TextConverter(resource_manager, fake_file_handle)
+	page_interpreter = PDFPageInterpreter(resource_manager, converter)
+
+	with open(pdf_path, 'rb') as fh:
+		for page in PDFPage.get_pages(fh, caching=True, check_extractable=True):
+			page_interpreter.process_page(page)
+
+	text = fake_file_handle.getvalue()
+
+	converter.close()
+	fake_file_handle.close()
+
+	if text:
+		return text
+
+def get_info(text):
+	return {
+		"curso": re.search(r"(?<=Dados do Vínculo do Discente)(.*)(?=[0-9]{4}\.[0-9]\s/)", text).group()
+	}
+
+
+def get_table(file_name):
+	return camelot.read_pdf(file_name)[0].df
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+	if request.method == 'POST':
+		nomeAleatorio = str(randint(0,100000))
+
+		request_data = request.get_data()
+		with open('./uploads/file'+nomeAleatorio+'.pdf', 'wb') as wf:
+			wf.write(request_data)
+
+		with pikepdf.open('./uploads/file'+nomeAleatorio+'.pdf') as pdf:
+			pdf.save('./uploads/temp_file'+nomeAleatorio+'.pdf')
+
+		os.remove('./uploads/file'+nomeAleatorio+'.pdf')
+		file_path = './uploads/temp_file'+nomeAleatorio+'.pdf'
+		pdf_text = extract_text(file_path)
+		user_data = get_info(pdf_text)
+		pdf_table = get_table(file_path)
+		data = user_data
+		data["componentes"] = []
+
+		for row in pdf_table.drop(0).itertuples():
+			componente = {
+				"codigo": row[3],
+				"situacao": row[9],
+			}
+			data["componentes"].append(componente)
+		os.remove('./uploads/temp_file'+nomeAleatorio+'.pdf')
+
+		for componente in data["componentes"]:
+			if len(componente["codigo"]) == 7 and componente["situacao"] == "APR":
+				turma = buscarDisciplina(componente["codigo"])
+				if turma:
+					turma.concluida = True
+					aluno.adicionarTurma(turma)
+		
+		return { 'status': 'Success'}
+
+	return { 'status': 'Fail'}
