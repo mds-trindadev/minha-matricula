@@ -1,3 +1,28 @@
+from app.controllers.turma import Disciplina
+from app.controllers.turma import Departamento
+
+
+# campus = codigo[:3]
+# ref = db.reference('/disciplina/' + campus + '/' + codigo)
+# disciplinas = ref.get()
+# preRequisitos = re.findall(r'[A-Z]{3}[0-9]{4}', disciplinas['preRequisitos'])
+
+# ref = db.reference('/curso/' + nomeDoCurso)
+# fluxo = ref.get()
+# fluxo
+# {
+#     1:{
+#     FGA0004: OB,
+#     FGA0005: OB
+#     }
+#     2:{
+
+#     }
+# }
+# vetor = []
+# for i in fluxo:
+#     vetor.append(i)
+
 class Graph:
 
     def __init__(self, v):
@@ -50,93 +75,3 @@ class Graph:
                     aux += 1
 
             self.listaVertices[i].grauTrancamento = aux
-
-
-class Departamento:
-    """ Classe Departamento """
-
-    def __init__(self, codigo):
-        """Inicializador"""
-
-        self.codigo = codigo
-
-    def getDepartamento(self):
-        """Retorna o codigo do departamento"""
-
-        return self.codigo
-
-
-class Disciplina(Departamento):
-    """ Classe Disciplina """
-
-    def __init__(self, codigo, nome, ementa, preRequisitos, cargaHoraria):
-        """Inicializador"""
-
-        Departamento.__init__(self, codigo)
-        self.nome = nome
-        self.ementa = ementa
-        self.preRequisitos = preRequisitos
-        self.cargaHoraria = cargaHoraria
-        self.grauTrancamento = 0
-
-    
-
-    def getDisciplina(self):
-        """Retorna um dicionario com as informacoes referentes a disciplina"""
-
-        return {
-            'codigo': self.codigo,
-            'nome': self.nome,
-            'ementa': self.ementa,
-            'preRequisitos': self.preRequisitos,
-            'cargaHoraria': self.cargaHoraria
-        }
-
-
-d = []
-d.append(Disciplina(0, '0', 'sem', '', 0))
-d.append(Disciplina(0, '1', 'sem', '0', 0))
-d.append(Disciplina(0, '2', 'sem', '0', 0))
-d.append(Disciplina(0, '3', 'sem', '1', 0))
-d.append(Disciplina(0, '4', 'sem', '1', 0))
-d.append(Disciplina(0, '5', 'sem', '3', 0))
-d.append(Disciplina(0, '6', 'sem', '3', 0))
-d.append(Disciplina(0, '7', 'sem', '6', 0))
-d.append(Disciplina(0, '8', 'sem', '6', 0))
-d.append(Disciplina(0, '9', 'sem', '2', 0))
-d.append(Disciplina(0, '10', 'sem', '2', 0))
-d.append(Disciplina(0, '11', 'sem', '', 0))
-d.append(Disciplina(0, '12', 'sem', '11', 0))
-d.append(Disciplina(0, '13', 'sem', '11', 0))
-d.append(Disciplina(0, '14', 'sem', '13', 0))
-
-T = Graph(15)
-
-for i in range(15):
-    T.adicionaVertice(d[i])
-
-for i in range(15):
-    print(T.getindex(T.listaVertices[i].preRequisitos))
-
-for i in range(15):
-    if T.getindex(T.listaVertices[i].preRequisitos) != -1:
-        x = T.getindex(T.listaVertices[i].preRequisitos)
-        y = T.getindex(T.listaVertices[i].nome)
-        T.adicionaAresta(x, y)
-
-
-T.Gerartc()
-
-
-for linha in T.tc:
-    for coluna in linha:
-        print(coluna, end=" ")
-    print()
-
-print()
-print()
-T.geradorGrauTrancamento()
-
-for i in range(T.numV):
-    print(T.listaVertices[i].nome, end="  ")
-    print(T.listaVertices[i].grauTrancamento)

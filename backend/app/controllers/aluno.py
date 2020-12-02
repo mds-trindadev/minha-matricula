@@ -49,8 +49,3 @@ class Aluno:
 
 		############## FALTA IMPLEMENTAR
 		return self.gradeHoraria
-
-	def extrairDadosPDF(self):
-		"""Algoritmo para extracao dos dados do arquivo PDF"""
-
-		############## FALTA IMPLEMENTAR
