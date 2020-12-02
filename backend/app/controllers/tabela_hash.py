@@ -1,6 +1,6 @@
 class hash_table:
     def __init__(self):
-        self.MAX = 100
+        self.MAX = 100000
         self.arr = [[] for i in range (self.MAX)]
 
 
@@ -42,7 +42,49 @@ class hash_table:
             if element[0] == key:
                 del self.arr[h][index]
 
+class Departamento:
+	""" Classe Departamento """
+
+	def __init__(self, codigo):
+		"""Inicializador"""
+
+		self.codigo = codigo
+
+	def getDepartamento(self):
+		"""Retorna o codigo do departamento"""
+
+		return self.codigo
+
+class Disciplina(Departamento):
+	""" Classe Disciplina """
+
+	def __init__(self, codigo, nome, ementa, preRequisitos, cargaHoraria):
+		"""Inicializador"""
+
+		Departamento.__init__(self, codigo)
+		self.nome = nome
+		self.ementa = ementa
+		self.preRequisitos = preRequisitos
+		self.cargaHoraria = cargaHoraria
+
+	def getDisciplina(self):
+		"""Retorna um dicionario com as informacoes referentes a disciplina"""
+
+		return {
+				'codigo': self.codigo,
+				'nome': self.nome, 
+				'ementa': self.ementa, 
+				'preRequisitos': self.preRequisitos, 
+				'cargaHoraria': self.cargaHoraria 
+				}
+
+t = hash_table()
+d=Disciplina('FGA', 'MDS', 'nada por enquanto', 'OO', 6)
+t.setitem(d.nome, d)
 
 
+x = t.getitem(d.nome)
+print(t.get_hash(d.nome))
+print(d.nome)
 
 
