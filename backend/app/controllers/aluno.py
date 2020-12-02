@@ -1,10 +1,14 @@
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+
 class Aluno:
 	""" Classe Aluno """
 
 	turmasCursadas = []
 	gradeHoraria = []
 
-	def __init__(self, curso, turmasCursadas=None, gradeHoraria=None):
+	def __init__(self, curso=None, turmasCursadas=None, gradeHoraria=None):
 		"""Inicializador"""
 
 		self.curso = curso
@@ -16,10 +20,19 @@ class Aluno:
 
 		self.turmasCursadas.append(turma)
 
-	def removerTurma(self, indice):
+	def removerTurma(self, codigo):
 		"""Remove uma turma da lista com turmas do aluno"""
+		x = None
+		cont = 0
+		for i in self.turmasCursadas:
+			if i:
+				if i.codigo == codigo:
+					x = cont
+					break
+				cont += 1
 
-		del self.turmasCursadas[indice]
+		if x:
+			del self.turmasCursadas[x]
 
 	def consultarTurmas(self):
 		"""Retorna uma lista com as turmas cursadas pelo aluno"""
@@ -31,8 +44,13 @@ class Aluno:
 
 		return self.gradeHoraria
 
-	def sugerirGradeHoraria(self):
+	def sugerirGradeHoraria(self, fluxo):
 		"""Algoritmo para sugestao de grade horaria"""
+
+		############## FALTA IMPLEMENTAR
+		return self.gradeHoraria
 
 	def extrairDadosPDF(self):
 		"""Algoritmo para extracao dos dados do arquivo PDF"""
+
+		############## FALTA IMPLEMENTAR
