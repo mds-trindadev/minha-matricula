@@ -2,7 +2,7 @@
   <section>
     <v-app-bar app flat outlined>
       <v-spacer />
-      <v-btn icon>
+      <v-btn icon @click="toggleDrawer">
         <v-icon>mdi-format-list-bulleted-square</v-icon>
       </v-btn>
     </v-app-bar>
@@ -11,6 +11,11 @@
 <script>
 export default {
   name: "AppToolbar",
+  methods: {
+    toggleDrawer() {
+      this.$emit("toggle-drawer");
+    },
+  },
 };
 </script>
 
