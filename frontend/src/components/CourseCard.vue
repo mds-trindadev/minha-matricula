@@ -1,11 +1,6 @@
 <template>
   <section>
-    <v-card
-      class="rounded-lg"
-      outlined
-      @click="handleCourse(course)"
-      width="100%"
-    >
+    <v-card class="rounded-lg" outlined width="100%">
       <v-app-bar class="toolbar" color="transparent" dense flat>
         <v-toolbar-title :class="getCampusColor(course.campus)">{{
           course.campus
@@ -20,23 +15,31 @@
 
       <v-card-text class="department">{{ course.department }}</v-card-text>
 
-      <v-card-text>
-        <div
-          v-for="(class_, index) in course.classes"
-          :key="index"
-          class="mr-1 my-1"
-        >
-          <v-chip v-if="index < 1" small>
-            {{ class_ }}
-          </v-chip>
-          <v-chip v-else-if="index === 1 && course.classes.length === 2" small>
-            {{ class_ }}
-          </v-chip>
-          <v-chip v-else-if="index === 1" small>
-            + {{ class_.length - 2 }}
-          </v-chip>
-        </div>
-      </v-card-text>
+      <v-card-actions>
+        <v-card-text>
+          <div
+            v-for="(class_, index) in course.classes"
+            :key="index"
+            class="mr-1 my-1"
+          >
+            <v-chip v-if="index < 1" small>
+              {{ class_ }}
+            </v-chip>
+            <v-chip
+              v-else-if="index === 1 && course.classes.length === 2"
+              small
+            >
+              {{ class_ }}
+            </v-chip>
+            <v-chip v-else-if="index === 1" small>
+              + {{ class_.length - 2 }}
+            </v-chip>
+          </div>
+        </v-card-text>
+
+        <v-spacer></v-spacer>
+        <slot></slot>
+      </v-card-actions>
     </v-card>
   </section>
 </template>
@@ -64,9 +67,6 @@ export default {
         default:
           return "";
       }
-    },
-    handleCourse() {
-      this.$emit("handle-course");
     },
   },
 };

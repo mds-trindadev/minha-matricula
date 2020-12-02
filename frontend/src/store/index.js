@@ -55,7 +55,20 @@ export default new Vuex.Store({
       });
     },
     SAVE_COURSE(state, course) {
+      state.courses.all.forEach((elem, index) => {
+        if (course.code === elem.code) {
+          state.courses.all[index]["saved"] = true;
+        }
+      });
       state.courses.saved.push(course);
+    },
+    REMOVE_COURSE(state, courseAndIndex) {
+      state.courses.all.forEach((elem, elemIndex) => {
+        if (courseAndIndex.course.code === elem.code) {
+          state.courses.all[elemIndex]["saved"] = false;
+        }
+      });
+      state.courses.saved.splice(courseAndIndex.index, 1);
     },
     REMOVE_ALL_SAVED_COURSES(state) {
       state.courses.saved = [];
@@ -73,6 +86,9 @@ export default new Vuex.Store({
     },
     saveCourse({ commit }, course) {
       commit("SAVE_COURSE", course);
+    },
+    removeCourse({ commit }, courseAndIndex) {
+      commit("REMOVE_COURSE", courseAndIndex);
     },
     removeAllSavedCourses({ commit }) {
       commit("REMOVE_ALL_SAVED_COURSES");

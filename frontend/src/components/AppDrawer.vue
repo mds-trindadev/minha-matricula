@@ -24,7 +24,10 @@
           :key="index"
           class="pa-2"
         >
-          <CourseCard :course="course" @handle-course="removeCourse">
+          <CourseCard :course="course">
+            <v-btn icon large @click="removeCourse(course, index)">
+              <v-icon> mdi-playlist-remove</v-icon>
+            </v-btn>
           </CourseCard>
         </v-list-item-content>
       </v-list>
@@ -33,7 +36,7 @@
     <v-dialog v-model="dialog" max-width="300px">
       <v-card>
         <v-card-title>
-          <span>Deseja mesmo limpar o rascunho?</span>
+          <span>Deseja limpar o rascunho?</span>
         </v-card-title>
         <v-card-actions>
           <v-spacer> </v-spacer>
@@ -85,8 +88,8 @@ export default {
           return "";
       }
     },
-    removeCourse() {
-      console.log("Remover disciplina");
+    removeCourse(course, index) {
+      this.$store.dispatch("removeCourse", { course, index });
     },
     removeAllSavedCourses() {
       this.$store.dispatch("removeAllSavedCourses");
