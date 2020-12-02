@@ -31,7 +31,9 @@ class Disciplina(Departamento):
 	def getDisciplina(self):
 		"""Retorna um dicionario com as informacoes referentes a disciplina"""
 
+		self.preRequisitos = re.findall(r'[A-Z]{3}[0-9]{4}', self.preRequisitos)
 		self.creditos = int(re.findall(r'\d+', str(self.cargaHoraria))[0])/15
+
 		return {
 				'codigo': self.codigo,
 				'nome': self.nome, 
@@ -58,6 +60,7 @@ class Turma(Disciplina):
 	def getTurma(self):
 		"""Retorna um dicionario com as informacoes referentes a turma"""
 
+		self.preRequisitos = re.findall(r'[A-Z]{3}[0-9]{4}', self.preRequisitos)
 		self.creditos = int(re.findall(r'\d+', str(self.cargaHoraria))[0])/15
 		return {
 				'codigo': self.codigo,
