@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <AppToolbar></AppToolbar>
-    <AppDrawer></AppDrawer>
+    <AppToolbar @toggle-drawer="drawer = !drawer"></AppToolbar>
+    <AppDrawer :drawer="drawer"></AppDrawer>
 
     <v-main>
       <router-view />

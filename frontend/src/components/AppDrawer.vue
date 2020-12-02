@@ -1,10 +1,10 @@
 <template>
   <section>
-    <!-- <v-navigation-drawer v-model="drawer" app right>
+    <v-navigation-drawer v-model="drawer" app right>
       <div v-for="(course, index) in courses.saved" :key="index">
         {{ course.title }}
       </div>
-    </v-navigation-drawer> -->
+    </v-navigation-drawer>
   </section>
 </template>
 
@@ -13,9 +13,12 @@ import { mapState } from "vuex";
 
 export default {
   name: "AppDrawer",
-  data: () => ({
-    drawer: false,
-  }),
+  props: {
+    drawer: {
+      type: Boolean,
+      required: true,
+    },
+  },
   computed: {
     ...mapState(["courses"]),
   },
