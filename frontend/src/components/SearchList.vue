@@ -9,20 +9,21 @@
         md="4"
         lg="3"
       >
-        <SearchListCard :course="course"> </SearchListCard>
+        <CourseCard :course="course" @handle-course="saveCourse(course)">
+        </CourseCard>
       </v-col>
     </v-row>
   </section>
 </template>
 
 <script>
-import SearchListCard from "@/components/SearchListCard";
+import CourseCard from "@/components/CourseCard";
 import { mapState } from "vuex";
 
 export default {
   name: "SearchList",
   components: {
-    SearchListCard,
+    CourseCard,
   },
   computed: {
     ...mapState(["courses"]),
@@ -34,6 +35,9 @@ export default {
   methods: {
     getCourses() {
       this.$store.dispatch("getAllCourses");
+    },
+    saveCourse(course) {
+      this.$store.dispatch("saveCourse", course);
     },
   },
 };
