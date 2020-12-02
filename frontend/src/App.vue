@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <AppToolbar @toggle-drawer="drawer = !drawer"></AppToolbar>
-    <AppDrawer :drawer="drawer"></AppDrawer>
+    <AppToolbar @toggle-drawer="toggleDrawer"></AppToolbar>
+    <AppDrawer ref="appDrawer"></AppDrawer>
 
     <v-main>
       <router-view />
@@ -19,8 +19,10 @@ export default {
     AppToolbar,
     AppDrawer,
   },
-  data: () => ({
-    drawer: false,
-  }),
+  methods: {
+    toggleDrawer() {
+      this.$refs.appDrawer.drawer = !this.$refs.appDrawer.drawer;
+    },
+  },
 };
 </script>
