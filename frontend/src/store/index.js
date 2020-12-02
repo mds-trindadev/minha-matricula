@@ -57,9 +57,9 @@ export default new Vuex.Store({
     SAVE_COURSE(state, course) {
       state.courses.saved.push(course);
     },
-    // ADD_COURSE(state, course) {
-    //   state.courses.saved.push(course);
-    // },
+    REMOVE_ALL_SAVED_COURSES(state) {
+      state.courses.saved = [];
+    },
   },
   actions: {
     async getFilters({ commit }) {
@@ -73,6 +73,9 @@ export default new Vuex.Store({
     },
     saveCourse({ commit }, course) {
       commit("SAVE_COURSE", course);
+    },
+    removeAllSavedCourses({ commit }) {
+      commit("REMOVE_ALL_SAVED_COURSES");
     },
   },
   getters: {
