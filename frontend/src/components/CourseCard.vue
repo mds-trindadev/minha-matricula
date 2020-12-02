@@ -3,10 +3,10 @@
     <v-card
       class="rounded-lg"
       outlined
-      @click="saveCourse(course)"
+      @click="handleCourse(course)"
       width="100%"
     >
-      <v-app-bar color="toolbar transparent" dense flat>
+      <v-app-bar class="toolbar" color="transparent" dense flat>
         <v-toolbar-title :class="getCampusColor(course.campus)">{{
           course.campus
         }}</v-toolbar-title>
@@ -26,8 +26,14 @@
           :key="index"
           class="mr-1 my-1"
         >
-          <v-chip small>
+          <v-chip v-if="index < 1" small>
             {{ class_ }}
+          </v-chip>
+          <v-chip v-else-if="index === 1 && course.classes.length === 2" small>
+            {{ class_ }}
+          </v-chip>
+          <v-chip v-else-if="index === 1" small>
+            + {{ class_.length - 2 }}
           </v-chip>
         </div>
       </v-card-text>
@@ -37,7 +43,7 @@
 
 <script>
 export default {
-  name: "SearchListCard",
+  name: "CourseCard",
   props: {
     course: {
       type: Object,
@@ -59,9 +65,8 @@ export default {
           return "";
       }
     },
-
-    saveCourse(course) {
-      this.$store.dispatch("saveCourse", course);
+    handleCourse() {
+      this.$emit("handle-course");
     },
   },
 };
