@@ -13,12 +13,9 @@ import { mapState } from "vuex";
 
 export default {
   name: "AppDrawer",
-  props: {
-    drawer: {
-      type: Boolean,
-      required: true,
-    },
-  },
+  data: () => ({
+    drawer: false,
+  }),
   computed: {
     ...mapState(["courses"]),
   },
