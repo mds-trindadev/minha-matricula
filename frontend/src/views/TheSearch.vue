@@ -2,7 +2,7 @@
   <section id="home">
     <v-container fluid>
       <v-row justify="center">
-        <v-col cols="12" lg="10" xl="8">
+        <v-col cols="12" md="11" lg="9" xl="8">
           <SearchToolbar></SearchToolbar>
           <SearchList></SearchList>
         </v-col>
