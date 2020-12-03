@@ -19,7 +19,11 @@ const routes = [
     props: true,
   },
   {
-    path: "/grade",
+    path: "/disciplina",
+    redirect: "/",
+  },
+  {
+    path: "/sugeridas",
     name: "schedule",
     component: TheSchedule,
   },
