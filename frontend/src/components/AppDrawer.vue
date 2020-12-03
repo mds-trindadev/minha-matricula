@@ -69,8 +69,10 @@ export default {
   },
   watch: {
     getSavedCourses() {
-      if (!this.$vuetify.breakpoint.mobile) {
-        this.drawer = true;
+      if (this.getSavedCourses.length > 0) {
+        if (!this.$vuetify.breakpoint.mobile) {
+          this.drawer = true;
+        }
       }
     },
   },
