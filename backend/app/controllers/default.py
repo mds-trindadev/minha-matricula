@@ -11,6 +11,7 @@ from app.controllers.turma import Disciplina
 from app.controllers.aluno import Aluno
 from app.controllers.semestre import Semestre
 from app.controllers.curso import Curso
+from app.controllers.prioridade_materia import Graph
 
 from flask_cors import CORS, cross_origin
 
@@ -50,7 +51,7 @@ aluno = Aluno()
 @cross_origin(supports_credentials=True)
 def pesquisa():
 	getData = request.get_json()
-	
+
 	# Lista que armazena dados
 	data = {}
 
@@ -117,7 +118,7 @@ def pesquisa():
 
 			temp = temp.getDisciplina()
 			if(temp['creditos'] == getData.get("creditos")):
-				data[temp.codigo] = temp
+				data[temp['codigo']] = temp
 
 	return data
 
@@ -179,7 +180,8 @@ def buscarDisciplina(codigo):
 @cross_origin(supports_credentials=True)
 def disciplina():
 	getData = request.get_json()
-	turma = Turma()
+	turma = Disciplina()
+	turma.limparVetorTurma()
 	if getData:
 		turma = buscarDisciplina(getData['codigo'])
 
@@ -203,17 +205,25 @@ def gradeHoraria():
 			temp.nome = getData.get("nomeDisciplina")
 			temp.cargaHoraria = getData.get("cargaHorariaDisciplina")
 			temp.ementa = getData.get("ementaDisciplina")
-			temp.preRequisitos = getData.get("preRequisitosDisciplina")
 			temp.concluida = True
-			if getData.get("turmaDisciplina"):
+
+			temp.preRequisitos = ''
+			if getData.get("preRequisitosDisciplina"):
+				for i in getData.get("preRequisitosDisciplina"):
+					temp.preRequisitos = temp.preRequisitos + ' ' + getData.get("preRequisitosDisciplina")[i]
+
+			if getData.get("turmasDisciplina"):
 				tempTurma = Turma()
-				for i in getData.get("turmaDisciplina"):
-					tempTurma.turma = i("turmaDisciplina")
-					tempTurma.periodo = i("periodoDisciplina")
-					tempTurma.professor = i("professorDisciplina")
-					tempTurma.horario = i("horarioDisciplina")
-			
-			aluno.adicionarTurma(turma)
+				for i in getData.get("turmasDisciplina"):
+					t = json.loads(getData.get("turmasDisciplina")[i].replace("'", '"').replace("None", '"None"'))
+					tempTurma.turma = t["turma"]
+					tempTurma.periodo = t["periodo"]
+					tempTurma.professor = t["professor"]
+					tempTurma.horario = t["horario"]
+
+					temp.addTurma(tempTurma.getTurma())
+
+			aluno.adicionarTurma(temp)
 			return { 'status': 'Success'}
 
 		elif getData.get("op") == 'rmDisciplina':
@@ -224,7 +234,7 @@ def gradeHoraria():
 			data = {}
 			for i in aluno.consultarTurmas():
 				if i:
-					data[i.codigo] = i.getTurma()
+					data[i.codigo] = i.getDisciplina()
 
 			return data
 
@@ -325,3 +335,8 @@ def upload():
 		return { 'status': 'Success'}
 
 	return { 'status': 'Fail'}
+
+@app.route('/bancoDados', methods=['GET', 'POST'])
+def bancoDados():
+	prioridade = Graph(3)
+	prioridade.buscarBancodeDados()
