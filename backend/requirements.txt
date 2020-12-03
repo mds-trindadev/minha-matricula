@@ -5,3 +5,4 @@ flask-jwt-extended==3.25.0
 camelot-py[cv]==0.8.2
 pdfminer.six==20201018
 pikepdf==2.2.0
+>>>>>>> f9c6cbbc (Merge da pasta frontend com a backend)

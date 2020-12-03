@@ -40,7 +40,6 @@ class Disciplina(Departamento):
 				'ementa': self.ementa, 
 				'preRequisitos': self.preRequisitos,
 				'cargaHoraria': self.cargaHoraria,
-				'creditos': self.creditos 
 				'creditos': self.creditos,
 				'prioridade': self.prioridade,
 				'concluida': self.concluida
