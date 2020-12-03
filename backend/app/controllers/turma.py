@@ -1,6 +1,5 @@
 import re
 
-vetorTurma = []
 class Departamento:
 	""" Classe Departamento """
 
@@ -16,6 +15,7 @@ class Departamento:
 
 class Disciplina(Departamento):
 	""" Classe Disciplina """
+	vetorTurma = []
 
 	def __init__(self, codigo=None, nome=None, ementa=None, preRequisitos=None, cargaHoraria=None, departamento=None, campus=None):
 		"""Inicializador"""
@@ -34,7 +34,14 @@ class Disciplina(Departamento):
 	def getDisciplina(self):
 		"""Retorna um dicionario com as informacoes referentes a disciplina"""
 
-		# self.preRequisitos = re.findall(r'[A-Z]{3}[0-9]{4}', self.preRequisitos)
+		temp = re.findall(r'[A-Z]{3}[0-9]{4}', self.preRequisitos)
+		
+		dictPreRequisitos = {}
+		n = 0
+		for i in temp:
+			dictPreRequisitos[n] = i
+			n += 1
+
 		self.creditos = int(re.findall(r'\d+', str(self.cargaHoraria))[0])/15
 
 		if self.departamento == 'FGA':
@@ -48,15 +55,15 @@ class Disciplina(Departamento):
 
 		dictTurmas = {}
 		n = 0;
-		for i in vetorTurma:
-			dictTurmas[n] = i
+		for i in self.vetorTurma:
+			dictTurmas[n] = str(i)
 			n += 1
 
 		return {
 				'codigo': self.codigo,
 				'nome': self.nome, 
 				'ementa': self.ementa, 
-				'preRequisitos': self.preRequisitos,
+				'preRequisitos': dictPreRequisitos,
 				'cargaHoraria': self.cargaHoraria,
 				'creditos': self.creditos,
 				'prioridade': self.prioridade,
@@ -69,7 +76,14 @@ class Disciplina(Departamento):
 	def addTurma(self, turma):
 		"""Adiciona novas turmas"""
 
-		vetorTurma.append(turma)
+		self.vetorTurma.append(turma)
+
+	def limparVetorTurma(self):
+		"""Limpa vetor de turmas"""
+
+		# self.limparVetorTurmarma = []
+		for i in self.vetorTurma:
+			print(i)
 
 class Turma(Disciplina):
 	""" Classe Turma """
