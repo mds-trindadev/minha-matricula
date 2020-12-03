@@ -1,56 +1,62 @@
 <template>
   <section>
-    <v-card
-      class="rounded-lg"
-      outlined
-      width="100%"
-      @click="openCourse(course)"
-    >
-      <v-app-bar class="toolbar" color="transparent" dense flat>
-        <v-toolbar-title :class="getCampusColor(course.campus)">{{
-          course.campus
-        }}</v-toolbar-title>
+    <v-hover v-slot="{ hover }">
+      <v-card
+        :elevation="hover ? 4 : 0"
+        :class="{
+          'rounded-lg': true,
+          'on-hover': hover,
+        }"
+        outlined
+        width="100%"
+        @click="openCourse(course)"
+      >
+        <v-app-bar class="toolbar" color="transparent" dense flat>
+          <v-toolbar-title :class="getCampusColor(course.campus)">{{
+            course.campus
+          }}</v-toolbar-title>
 
-        <v-spacer />
+          <v-spacer />
 
-        <v-toolbar-title> {{ course.credits }} créditos </v-toolbar-title>
-      </v-app-bar>
+          <v-toolbar-title> {{ course.credits }} créditos </v-toolbar-title>
+        </v-app-bar>
 
-      <v-card-title class="title pt-0">{{ course.title }}</v-card-title>
+        <v-card-title class="title pt-0">{{ course.title }}</v-card-title>
 
-      <v-card-text class="department">{{ course.department }}</v-card-text>
+        <v-card-text class="department">{{ course.department }}</v-card-text>
 
-      <v-card-actions class="py-0 pl-0">
-        <v-card-text>
-          <div
-            v-for="(classHour, index) in course.classes"
-            :key="index"
-            class="mr-1 my-1"
-          >
-            <v-chip v-if="index === 0" small>
-              {{ classHour }}
-            </v-chip>
-            <v-chip
-              v-else-if="index === 1 && course.classes.length === 2"
-              small
+        <v-card-actions class="py-0 pl-0">
+          <v-card-text>
+            <div
+              v-for="(classHour, index) in course.classes"
+              :key="index"
+              class="mr-1 my-1"
             >
-              {{ classHour }}
-            </v-chip>
-            <v-chip
-              v-else-if="index === 1 && course.classes.length > 2"
-              color="primary"
-              outlined
-              small
-            >
-              + {{ course.classes.length - 1 }}
-            </v-chip>
-          </div>
-        </v-card-text>
+              <v-chip v-if="index === 0" small>
+                {{ classHour }}
+              </v-chip>
+              <v-chip
+                v-else-if="index === 1 && course.classes.length === 2"
+                small
+              >
+                {{ classHour }}
+              </v-chip>
+              <v-chip
+                v-else-if="index === 1 && course.classes.length > 2"
+                color="primary"
+                outlined
+                small
+              >
+                + {{ course.classes.length - 1 }}
+              </v-chip>
+            </div>
+          </v-card-text>
 
-        <v-spacer></v-spacer>
-        <slot></slot>
-      </v-card-actions>
-    </v-card>
+          <v-spacer></v-spacer>
+          <slot></slot>
+        </v-card-actions>
+      </v-card>
+    </v-hover>
   </section>
 </template>
 
