@@ -11,20 +11,21 @@ export default new Vuex.Store({
       departments: [],
       campi: [],
     },
-    courses: {
-      all: [],
-      saved: [],
-    },
+    courses: [],
   },
   mutations: {
     SAVE_FILTERS(state, filters) {
       state.filters = filters;
     },
     SAVE_ALL_COURSES(state, courses) {
-      state.courses.all = courses;
+      // state.courses = [...courses];
+      state.courses = courses;
+      state.courses.forEach((course, index) => {
+        Vue.set(state.courses[index], "saved", false);
+      });
     },
     CAPITALIZE_ALL_COURSES(state) {
-      state.courses.all.forEach((course, index) => {
+      state.courses.forEach((course, index) => {
         var newTitle = [];
         var newDepartment = [];
 
@@ -50,28 +51,28 @@ export default new Vuex.Store({
           newDepartment.push(newString);
         });
 
-        state.courses.all[index].title = newTitle.join(" ");
-        state.courses.all[index].department = newDepartment.join(" ");
+        state.courses[index].title = newTitle.join(" ");
+        state.courses[index].department = newDepartment.join(" ");
       });
     },
     SAVE_COURSE(state, course) {
-      state.courses.all.forEach((elem, index) => {
+      state.courses.forEach((elem, index) => {
         if (course.code === elem.code) {
-          state.courses.all[index]["saved"] = true;
+          state.courses[index].saved = true;
         }
       });
-      state.courses.saved.push(course);
     },
     REMOVE_COURSE(state, courseAndIndex) {
-      state.courses.all.forEach((elem, elemIndex) => {
+      state.courses.forEach((elem, elemIndex) => {
         if (courseAndIndex.course.code === elem.code) {
-          state.courses.all[elemIndex]["saved"] = false;
+          state.courses[elemIndex].saved = false;
         }
       });
-      state.courses.saved.splice(courseAndIndex.index, 1);
     },
     REMOVE_ALL_SAVED_COURSES(state) {
-      state.courses.saved = [];
+      state.courses.forEach((course, index) => {
+        state.courses[index].saved = false;
+      });
     },
   },
   actions: {
@@ -95,8 +96,8 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    // getCourseById: (state) => (id) => {
-    //   return state.courses.find((course) => course.id === id);
-    // },
+    savedCourses(state) {
+      return state.courses.filter((course) => course.saved);
+    },
   },
 });

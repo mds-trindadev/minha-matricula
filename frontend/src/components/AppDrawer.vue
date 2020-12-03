@@ -11,16 +11,16 @@
           </v-list-item-subtitle>
         </v-list-item-content>
 
-        <v-list-item-avatar v-if="courses.saved.length" left>
-          <v-btn icon @click="dialog = true">
+        <v-list-item-avatar v-if="savedCourses.length" left>
+          <v-btn icon @click="openDialog()">
             <v-icon> mdi-trash-can</v-icon>
           </v-btn>
         </v-list-item-avatar>
       </v-list-item>
 
-      <v-list v-if="courses.saved.length">
+      <v-list v-if="savedCourses.length">
         <v-list-item-content
-          v-for="(course, index) in courses.saved"
+          v-for="(course, index) in savedCourses"
           :key="index"
           class="pa-2"
         >
@@ -52,7 +52,7 @@
 
 <script>
 import CourseCard from "@/components/CourseCard";
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   name: "AppDrawer",
@@ -65,9 +65,10 @@ export default {
   }),
   computed: {
     ...mapState(["courses"]),
+    ...mapGetters(["savedCourses"]),
   },
   watch: {
-    "courses.saved"() {
+    savedCourses() {
       if (!this.$vuetify.breakpoint.mobile) {
         this.drawer = true;
       }
