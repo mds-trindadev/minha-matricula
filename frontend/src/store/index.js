@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
-// import router from "@/router";
+import axios from "axios";
+// import data from "@/assets/data";
 import CourseService from "@/services/CourseService.js";
 
 Vue.use(Vuex);
@@ -8,14 +9,18 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     filters: {
-      credits: [],
+      credits: [1, 2, 3, 4, 5, 6],
       departments: [],
-      campi: [],
+      campi: ["FGA", "FCE"],
     },
     courses: [],
   },
   mutations: {
+    SET_COURSES(state, disciplinas) {
+      console.log(disciplinas);
+    },
     SAVE_FILTERS(state, filters) {
+      console.log(filters);
       state.filters = filters;
     },
     // SAVE_ALL_COURSES(state, courses) {
@@ -101,6 +106,9 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    async search(state, params) {
+      console.log(params);
+    },
     async getFilters({ commit }) {
       const { data } = await CourseService.getFilters();
       commit("SAVE_FILTERS", data);
@@ -114,6 +122,11 @@ export default new Vuex.Store({
       const { data } = await CourseService.getCourse(id);
       commit("SAVE_COURSE", data[0]);
       // commit("CAPITALIZE_ALL_COURSES");
+    },
+    async setCourses({ commit }) {
+      axios.get("@/assets/data.json").then((response) => {
+        commit("SET_COURSES", response.data.disciplina);
+      });
     },
     // async getCourseAndPrerequisites({ commit }, id) {
     //   try {
@@ -146,11 +159,17 @@ export default new Vuex.Store({
     },
   },
   getters: {
+    getFilters: (state) => {
+      return state.filters;
+    },
     getSavedCourses: (state) => {
       return state.courses.filter((course) => course.saved);
     },
     getCourse: (state) => (id) => {
       return state.courses.find((course) => course.code === id);
+    },
+    getCourses: (state) => (params) => {
+      return state.courses.find((campus) => campus !== params);
     },
   },
 });
