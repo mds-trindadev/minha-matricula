@@ -4,9 +4,9 @@
       <v-spacer />
       <v-btn icon @click="toggleDrawer">
         <v-badge
-          v-if="savedQty > 0"
+          v-if="savedCourses.length > 0"
           color="orange"
-          :content="savedQty"
+          :content="savedCourses.length"
           left
         ></v-badge>
         <v-icon>mdi-format-list-bulleted-square</v-icon>
@@ -15,21 +15,19 @@
   </section>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "AppToolbar",
+
   data: () => ({
     savedQty: 0,
   }),
+
   computed: {
-    ...mapState(["courses"]),
+    ...mapGetters(["savedCourses"]),
   },
-  watch: {
-    "courses.saved"() {
-      this.savedQty = this.courses.saved.length;
-    },
-  },
+
   methods: {
     toggleDrawer() {
       this.$emit("toggle-drawer");
