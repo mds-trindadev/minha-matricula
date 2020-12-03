@@ -67,9 +67,9 @@ def pesquisa():
 
 		# Percorre dicionario
 		for codigo in disciplinas:
-			turma = Turma()
+			temp = Disciplina()
 			# adiciona o codigo da disciplina na lista
-			turma.codigo = codigo
+			temp.codigo = codigo
 			info = ref.child(codigo).get()
 			
 			# verifica se o nome da materia corresponde a pesquisa
@@ -77,41 +77,47 @@ def pesquisa():
 				continue
 
 			# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
-			turma.nome = info['nome']
-			turma.cargaHoraria = info['cargaHoraria']
+			temp.nome = info['nome']
+			temp.departamento = temp.codigo[:3]
+			temp.cargaHoraria = info['cargaHoraria']
 
 			# verifica se a disciplina tem ementa disponivel e a adiciona na lista
 			if 'ementa' in info:
-				turma.ementa = info['ementa']
+				temp.ementa = info['ementa']
 			else:
-				turma.ementa = info['Indisponivel']
+				temp.ementa = info['Indisponivel']
 
 			if 'preRequisitos' in info:
-				turma.preRequisitos = info['preRequisitos']
+				temp.preRequisitos = info['preRequisitos']
 			else:
-				turma.preRequisitos = info['Indisponivel']
+				temp.preRequisitos = info['Indisponivel']
 
 			# percorre as turmas disponiveis na disciplina
 			if 'turmas' in info:
 				for i in info['turmas']:
+					tempTurma = Turma()
 					# adiciona as informacoes referentes a turma na lista
-					turma.sigla = info['turmas']
-					turma.periodo = info['turmas'][i]['periodo']
-					turma.professor = info['turmas'][i]['professor']
+					tempTurma.turma = i
+					tempTurma.periodo = info['turmas'][i]['periodo']
+					tempTurma.professor = info['turmas'][i]['professor']
 					if 'horario' in info['turmas'][i]:
-						turma.horario = info['turmas'][i]['horario']
+						temp.horario = info['turmas'][i]['horario']
 					else:
-						turma.horario = 'Indisponivel'
-			else:
-				turma.ementa = 'Indisponivel'
-				turma.sigla = 'Indisponivel'
-				turma.periodo = 'Indisponivel'
-				turma.professor = 'Indisponivel'
-				turma.horario = 'Indisponivel'
+						temp.horario = 'Indisponivel'
 
-			temp = turma.getTurma()
+					temp.addTurma(tempTurma.getTurma())
+			else:
+				tempTurma = Turma()
+				tempTurma.turma = 'Indisponivel'
+				tempTurma.periodo = 'Indisponivel'
+				tempTurma.professor = 'Indisponivel'
+				tempTurma.horario = 'Indisponivel'
+
+				temp.addTurma(tempTurma.getTurma())
+
+			temp = temp.getDisciplina()
 			if(temp['creditos'] == getData.get("creditos")):
-				data[turma.codigo] = temp
+				data[temp.codigo] = temp
 
 	return data
 
@@ -123,42 +129,51 @@ def buscarDisciplina(codigo):
 	disciplinas = ref.get()
 
 	if disciplinas:
-		turma = Turma()
-		turma.codigo = codigo
-
+		temp = Disciplina()
+		
+		# adiciona o codigo da disciplina na lista
+		temp.codigo = codigo
+		temp.departamento = campus
+			
 		# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
-		turma.nome = disciplinas['nome']
-		turma.cargaHoraria = disciplinas['cargaHoraria']
+		temp.nome = disciplinas['nome']
+		temp.cargaHoraria = disciplinas['cargaHoraria']
 
 		# verifica se a disciplina tem ementa disponivel e a adiciona na lista
 		if 'ementa' in disciplinas:
-			turma.ementa = disciplinas['ementa']
+			temp.ementa = disciplinas['ementa']
 		else:
-			turma.ementa = 'Indisponivel'
+			temp.ementa = disciplinas['Indisponivel']
 
 		if 'preRequisitos' in disciplinas:
-			turma.preRequisitos = disciplinas['preRequisitos']
+			temp.preRequisitos = disciplinas['preRequisitos']
 		else:
-			turma.preRequisitos = 'Indisponivel'
+			temp.preRequisitos = disciplinas['Indisponivel']
 
 		# percorre as turmas disponiveis na disciplina
 		if 'turmas' in disciplinas:
 			for i in disciplinas['turmas']:
+				tempTurma = Turma()
 				# adiciona as informacoes referentes a turma na lista
-				turma.sigla = disciplinas['turmas']
-				turma.periodo = disciplinas['turmas'][i]['periodo']
-				turma.professor = disciplinas['turmas'][i]['professor']
+				tempTurma.turma = i
+				tempTurma.periodo = disciplinas['turmas'][i]['periodo']
+				tempTurma.professor = disciplinas['turmas'][i]['professor']
 				if 'horario' in disciplinas['turmas'][i]:
-					turma.horario = disciplinas['turmas'][i]['horario']
+					temp.horario = disciplinas['turmas'][i]['horario']
 				else:
-					turma.horario = 'Indisponivel'
-		else:
-			turma.sigla = 'Indisponivel'
-			turma.periodo = 'Indisponivel'
-			turma.professor = 'Indisponivel'
-			turma.horario = 'Indisponivel'
+					temp.horario = 'Indisponivel'
 
-		return turma
+				temp.addTurma(tempTurma.getTurma())
+		else:
+			tempTurma = Turma()
+			tempTurma.turma = 'Indisponivel'
+			tempTurma.periodo = 'Indisponivel'
+			tempTurma.professor = 'Indisponivel'
+			tempTurma.horario = 'Indisponivel'
+
+			temp.addTurma(tempTurma.getTurma())
+
+		return temp
 
 @app.route("/disciplina", methods=["GET", "POST"])
 @cross_origin(supports_credentials=True)
@@ -166,8 +181,10 @@ def disciplina():
 	getData = request.get_json()
 	turma = Turma()
 	if getData:
-		turma = buscarDisciplina(getData)
-	return turma.getTurma()
+		turma = buscarDisciplina(getData['codigo'])
+
+	print(turma.getDisciplina())
+	return turma.getDisciplina()
 
 @app.route("/gradeHoraria", methods=["GET", "POST"])
 @cross_origin(supports_credentials=True)
@@ -180,19 +197,21 @@ def gradeHoraria():
 			return { 'status': 'Success'}
 
 		elif getData.get("op") == 'addDisciplina':
-			turma = Turma()
+			temp = Disciplina()
 
-			turma.codigo = getData.get("codigoDisciplina")
-			turma.nome = getData.get("nomeDisciplina")
-			turma.cargaHoraria = getData.get("cargaHorariaDisciplina")
-			turma.ementa = getData.get("ementaDisciplina")
-			turma.preRequisitos = getData.get("preRequisitosDisciplina")
-			turma.concluida = True
-			if getData.get("siglaDisciplina"):
-				turma.sigla = getData.get("siglaDisciplina")
-				turma.periodo = getData.get("periodoDisciplina")
-				turma.professor = getData.get("professorDisciplina")
-				turma.horario = getData.get("horarioDisciplina")
+			temp.codigo = getData.get("codigoDisciplina")
+			temp.nome = getData.get("nomeDisciplina")
+			temp.cargaHoraria = getData.get("cargaHorariaDisciplina")
+			temp.ementa = getData.get("ementaDisciplina")
+			temp.preRequisitos = getData.get("preRequisitosDisciplina")
+			temp.concluida = True
+			if getData.get("turmaDisciplina"):
+				tempTurma = Turma()
+				for i in getData.get("turmaDisciplina"):
+					tempTurma.turma = i("turmaDisciplina")
+					tempTurma.periodo = i("periodoDisciplina")
+					tempTurma.professor = i("professorDisciplina")
+					tempTurma.horario = i("horarioDisciplina")
 			
 			aluno.adicionarTurma(turma)
 			return { 'status': 'Success'}
