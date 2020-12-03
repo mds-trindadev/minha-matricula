@@ -2,11 +2,16 @@
   <section>
     <v-row>
       <v-col cols="12">
+        {{ getCourses(searchParams) }}
         <v-text-field
+          v-model="searchParams.string"
           outlined
           rounded
           label="Busque por uma disciplina"
           hide-details
+          clearable
+          append-icon="mdi-arrow-right"
+          @click:append="search()"
         ></v-text-field>
       </v-col>
 
@@ -29,7 +34,7 @@
             <v-checkbox
               v-for="(option, key) of filters[dialogKey].options"
               :key="key"
-              v-model="selected[dialogKey]"
+              v-model="searchParams[dialogKey]"
               :value="option"
               :label="option.toString()"
               hideDetails
@@ -52,7 +57,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   name: "SearchToolbar",
@@ -60,27 +65,25 @@ export default {
     columns: 3,
     dialog: false,
     dialogKey: null,
-    selected: {
+    searchParams: {
+      string: "",
       campi: [],
       departments: [],
       credits: [],
     },
   }),
   computed: {
-    ...mapState(["filters"]),
-  },
-
-  created() {
-    this.getFilters();
+    ...mapState(["filters", "courses"]),
+    ...mapGetters(["getCourses"]),
   },
 
   methods: {
-    getFilters() {
-      this.$store.dispatch("getFilters");
-    },
     openFilter(key) {
       this.dialogKey = key;
       this.dialog = true;
+    },
+    search() {
+      console.log(this.searchParams);
     },
   },
 };

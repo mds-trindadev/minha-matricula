@@ -33,7 +33,7 @@
               class="mr-1 my-1"
             >
               <v-chip v-if="index === 0" small>
-                {{ classHour }}
+                {{ classHour.time }}
               </v-chip>
               <v-chip
                 v-else-if="index === 1 && course.classes.length === 2"

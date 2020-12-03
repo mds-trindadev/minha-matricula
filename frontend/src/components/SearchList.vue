@@ -38,10 +38,6 @@ export default {
     ...mapState(["courses"]),
   },
 
-  created() {
-    this.getCourses();
-  },
-
   methods: {
     getCourses() {
       this.$store.dispatch("getAllCourses");
