@@ -1,6 +1,11 @@
 <template>
   <section>
-    <v-card class="rounded-lg" outlined width="100%">
+    <v-card
+      class="rounded-lg"
+      outlined
+      width="100%"
+      @click="openCourse(course)"
+    >
       <v-app-bar class="toolbar" color="transparent" dense flat>
         <v-toolbar-title :class="getCampusColor(course.campus)">{{
           course.campus
@@ -18,21 +23,26 @@
       <v-card-actions>
         <v-card-text>
           <div
-            v-for="(class_, index) in course.classes"
+            v-for="(classHour, index) in course.classes"
             :key="index"
             class="mr-1 my-1"
           >
-            <v-chip v-if="index < 1" small>
-              {{ class_ }}
+            <v-chip v-if="index === 0" small>
+              {{ classHour }}
             </v-chip>
             <v-chip
               v-else-if="index === 1 && course.classes.length === 2"
               small
             >
-              {{ class_ }}
+              {{ classHour }}
             </v-chip>
-            <v-chip v-else-if="index === 1" small>
-              + {{ class_.length - 2 }}
+            <v-chip
+              v-else-if="index === 1 && course.classes.length > 2"
+              color="primary"
+              outlined
+              small
+            >
+              + {{ course.classes.length - 1 }}
             </v-chip>
           </div>
         </v-card-text>
@@ -67,6 +77,9 @@ export default {
         default:
           return "";
       }
+    },
+    openCourse(course) {
+      console.log("open ", course.title);
     },
   },
 };
