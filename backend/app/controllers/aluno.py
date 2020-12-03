@@ -1,6 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
+import re
 
 class Aluno:
 	""" Classe Aluno """
@@ -49,3 +50,51 @@ class Aluno:
 
 		############## FALTA IMPLEMENTAR
 		return self.gradeHoraria
+
+	def checarCurso(self, curso):
+		"""Algoritmo para verificacao do curso do arquivo PDF"""
+
+		if re.match(r"ENGENHARIA DE SOFTWARE", curso):
+			curso = "ENGENHARIA DE SOFTWARE"
+		elif re.match(r"ARTES CÊNICAS", curso):
+			curso = "ARTES CÊNICAS"
+		elif re.match(r"ARTES VISUAIS", curso):
+			curso = "ARTES VISUAIS"
+		elif re.match(r"CIÊNCIA DA COMPUTAÇÃO", curso):
+			curso = "CIÊNCIA DA COMPUTAÇÃO"
+		elif re.match(r"CIÊNCIAS CONTÁBEIS", curso):
+			curso = "CIÊNCIAS CONTÁBEIS"
+		elif re.match(r"CIÊNCIAS NATURAIS", curso):
+			curso = "CIÊNCIAS NATURAIS"
+		elif re.match(r"COMPUTAÇÃO", curso):
+			curso = "COMPUTAÇÃO"
+		elif re.match(r"ENFERMAGEM", curso):
+			curso = "ENFERMAGEM"
+		elif re.match(r"ENGENHARIA AEROESPACIAL", curso):
+			curso = "ENGENHARIA AEROESPACIAL"
+		elif re.match(r"ENGENHARIA AUTOMOTIVA", curso):
+			curso = "ENGENHARIA AUTOMOTIVA"
+		elif re.match(r"ENGENHARIA DE COMPUTAÇÃO", curso):
+			curso = "ENGENHARIA DE COMPUTAÇÃO"
+		elif re.match(r"ENGENHARIA DE ENERGIA", curso):
+			curso = "ENGENHARIA DE ENERGIA"
+		elif re.match(r"ENGENHARIA ELETRÔNICA", curso):
+			curso = "ENGENHARIA ELETRÔNICA"
+		elif re.match(r"ENGENHARIA FLORESTAL", curso):
+			curso = "ENGENHARIA FLORESTAL"
+		elif re.match(r"ENGENHARIA MECÂNICA", curso):
+			curso = "ENGENHARIA MECÂNICA"
+		elif re.match(r"FARMÁCIA", curso):
+			curso = "FARMÁCIA"
+		elif re.match(r"FÍSICA", curso):
+			curso = "FÍSICA"
+		elif re.match(r"HISTÓRIA", curso):
+			curso = "HISTÓRIA"
+		elif re.match(r"LETRAS - LÍNGUA PORTUGUESA E RESPECTIVA LITERATURA", curso):
+			curso = "LETRAS - LÍNGUA PORTUGUESA E RESPECTIVA LITERATURA"
+		elif re.match(r"MÚSICA - FLAUTA", curso):
+			curso = "MÚSICA - FLAUTA"
+		elif re.match(r"RELAÇÕES INTERNACIONAIS", curso):
+			curso = "RELAÇÕES INTERNACIONAIS"
+
+		return curso
