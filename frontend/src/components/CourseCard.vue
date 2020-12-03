@@ -20,7 +20,7 @@
 
       <v-card-text class="department">{{ course.department }}</v-card-text>
 
-      <v-card-actions>
+      <v-card-actions class="py-0 pl-0">
         <v-card-text>
           <div
             v-for="(classHour, index) in course.classes"

@@ -1,6 +1,9 @@
 <template>
   <section>
     <v-app-bar app flat outlined>
+      <v-app-bar-nav-icon>
+        <v-img src="@/assets/logo1.svg" width="50" @click="goToHome()"></v-img>
+      </v-app-bar-nav-icon>
       <v-spacer />
       <v-btn icon @click="toggleDrawer">
         <v-badge
@@ -31,6 +34,9 @@ export default {
   methods: {
     toggleDrawer() {
       this.$emit("toggle-drawer");
+    },
+    goToHome() {
+      this.$router.push({ path: "/" });
     },
   },
 };
