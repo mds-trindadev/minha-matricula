@@ -317,6 +317,8 @@ def upload():
 				if turma:
 					turma.concluida = True
 					aluno.adicionarTurma(turma)
+
+		aluno.curso = aluno.checarCurso(data["curso"])
 		
 		return { 'status': 'Success'}
 
