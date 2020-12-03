@@ -1,4 +1,11 @@
 firebase-admin==4.4.0
 Flask==1.1.2
 Flask-Cors==3.0.9
+<<<<<<< HEAD
 flask-jwt-extended==3.25.0
+=======
+flask-jwt-extended==3.25.0
+camelot-py[cv]==0.8.2
+pdfminer.six==20201018
+pikepdf==2.2.0
+>>>>>>> backend
