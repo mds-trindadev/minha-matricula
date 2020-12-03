@@ -13,9 +13,10 @@ const routes = [
     component: TheSearch,
   },
   {
-    path: "/disciplina",
+    path: "/disciplina/:id",
     name: "course",
     component: TheCourse,
+    props: true,
   },
   {
     path: "/grade",

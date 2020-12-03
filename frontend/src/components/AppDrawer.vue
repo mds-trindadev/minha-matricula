@@ -11,21 +11,21 @@
           </v-list-item-subtitle>
         </v-list-item-content>
 
-        <v-list-item-avatar v-if="savedCourses.length" left>
+        <v-list-item-avatar v-if="getSavedCourses.length" left>
           <v-btn icon @click="openDialog()">
             <v-icon> mdi-trash-can</v-icon>
           </v-btn>
         </v-list-item-avatar>
       </v-list-item>
 
-      <v-list v-if="savedCourses.length">
+      <v-list v-if="getSavedCourses.length">
         <v-list-item-content
-          v-for="(course, index) in savedCourses"
+          v-for="(course, index) in getSavedCourses"
           :key="index"
           class="pa-2"
         >
           <CourseCard :course="course">
-            <v-btn icon large @click="removeCourse(course, index)">
+            <v-btn icon large @click.stop="removeCourse(course, index)">
               <v-icon> mdi-playlist-remove</v-icon>
             </v-btn>
           </CourseCard>
@@ -65,10 +65,10 @@ export default {
   }),
   computed: {
     ...mapState(["courses"]),
-    ...mapGetters(["savedCourses"]),
+    ...mapGetters(["getSavedCourses"]),
   },
   watch: {
-    savedCourses() {
+    getSavedCourses() {
       if (!this.$vuetify.breakpoint.mobile) {
         this.drawer = true;
       }

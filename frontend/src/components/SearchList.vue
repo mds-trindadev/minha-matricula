@@ -25,7 +25,7 @@
 
 <script>
 import CourseCard from "@/components/CourseCard";
-import { mapState, mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 export default {
   name: "SearchList",
@@ -36,7 +36,6 @@ export default {
 
   computed: {
     ...mapState(["courses"]),
-    ...mapGetters(["savedCourses"]),
   },
 
   created() {

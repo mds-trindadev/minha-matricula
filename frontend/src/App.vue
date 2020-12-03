@@ -4,7 +4,13 @@
     <AppDrawer ref="appDrawer"></AppDrawer>
 
     <v-main>
-      <router-view />
+      <v-container fluid>
+        <v-row justify="center">
+          <v-col cols="12" md="11" lg="9" xl="8">
+            <router-view />
+          </v-col>
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>
