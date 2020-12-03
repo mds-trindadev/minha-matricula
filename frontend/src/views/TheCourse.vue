@@ -17,18 +17,7 @@
               <span class="header">Ementa</span>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula
-              ullamcorper malesuada proin libero nunc consequat interdum varius
-              sit. Eros donec ac odio tempor orci. Id porta nibh venenatis cras
-              sed felis eget velit aliquet. Habitasse platea dictumst quisque
-              sagittis purus. Fusce ut placerat orci nulla pellentesque
-              dignissim enim sit amet. Morbi enim nunc faucibus a pellentesque
-              sit. Faucibus pulvinar elementum integer enim. Vulputate mi sit
-              amet mauris commodo quis imperdiet massa. Est lorem ipsum dolor
-              sit amet. Nisl tincidunt eget nullam non nisi est. Blandit massa
-              enim nec dui nunc mattis enim. Et pharetra pharetra massa massa
-              ultricies mi quis hendrerit.
+              {{ getCourse(id).syllabus }}
             </v-expansion-panel-content>
           </v-expansion-panel>
           <v-expansion-panel>
@@ -39,7 +28,8 @@
               <span class="header">Pré-requisitos</span>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              <v-row>
+              {{ getCourse(id).prerequisites }}
+              <!-- <v-row>
                 <v-col
                   v-for="prerequisite in getCourse(id).prerequisites"
                   :key="prerequisite"
@@ -51,7 +41,7 @@
                 >
                   <CourseCard :course="getCourse(prerequisite)"></CourseCard>
                 </v-col>
-              </v-row>
+              </v-row> -->
             </v-expansion-panel-content>
           </v-expansion-panel>
           <v-expansion-panel>
@@ -62,8 +52,12 @@
               <span class="header">Turmas</span>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              <v-row>
-                Cards das turmas disponíveis.
+              <v-row
+                v-for="courseClass in getCourse(id).classes"
+                :key="courseClass.code"
+              >
+                {{ courseClass }}
+
                 <!-- <v-col
                   v-for="prerequisite in getCourse(id).prerequisites"
                   :key="prerequisite"
@@ -86,16 +80,17 @@
 
 <script>
 import { mapGetters } from "vuex";
-import CourseCard from "@/components/CourseCard";
+// import CourseCard from "@/components/CourseCard";
 
 export default {
   name: "TheCourse",
+  components: {
+    // CourseCard,
+  },
   data: () => ({
     expansionPanel: [2],
   }),
-  components: {
-    CourseCard,
-  },
+
   props: {
     id: {
       required: true,
@@ -105,11 +100,11 @@ export default {
     ...mapGetters(["getCourse"]),
   },
   created() {
-    this.requestCourseAndPrerequisites(this.id);
+    this.requestCourse(this.id);
   },
   methods: {
-    requestCourseAndPrerequisites(id) {
-      this.$store.dispatch("getCourseAndPrerequisites", id);
+    requestCourse(id) {
+      this.$store.dispatch("getCourse", id);
     },
   },
 };

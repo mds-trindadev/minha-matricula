@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import router from "@/router";
+// import router from "@/router";
 import CourseService from "@/services/CourseService.js";
 
 Vue.use(Vuex);
@@ -18,15 +18,36 @@ export default new Vuex.Store({
     SAVE_FILTERS(state, filters) {
       state.filters = filters;
     },
-    SAVE_ALL_COURSES(state, courses) {
-      courses.forEach((course, index) => {
-        Vue.set(courses[index], "saved", false);
-      });
-      state.courses = courses;
-    },
+    // SAVE_ALL_COURSES(state, courses) {
+    //   courses.forEach((course, index) => {
+    //     Vue.set(courses[index], "saved", false);
+    //   });
+    //   state.courses = courses;
+    // },
     SAVE_COURSE(state, course) {
+      const formattedCourse = {
+        campus: course.campus,
+        timeLoad: course.cargaHoraria,
+        code: course.codigo,
+        concluded: course.concluida,
+        credits: course.creditos,
+        department: course.departamento,
+        syllabus: course.ementa,
+        title: course.nome,
+        prerequisites: course.preRequisitos,
+        priority: course.prioridade,
+        classes: Object.keys(course.turmas)
+          .map((key) => course.turmas[key])
+          .map((key) => ({
+            time: key.horario,
+            period: key.periodo,
+            teacher: key.professor,
+            code: key.turma,
+          })),
+      };
+
       Vue.set(course, "saved", false);
-      state.courses.push(course);
+      state.courses.push(formattedCourse);
     },
     CAPITALIZE_ALL_COURSES(state) {
       state.courses.forEach((course, index) => {
@@ -92,27 +113,28 @@ export default new Vuex.Store({
     async getCourse({ commit }, id) {
       const { data } = await CourseService.getCourse(id);
       commit("SAVE_COURSE", data[0]);
-      commit("CAPITALIZE_ALL_COURSES");
+      // commit("CAPITALIZE_ALL_COURSES");
     },
-    async getCourseAndPrerequisites({ commit }, id) {
-      try {
-        const { data } = await CourseService.getCourse(id);
-        if (data[0]) {
-          commit("SAVE_COURSE", data[0]);
-        }
+    // async getCourseAndPrerequisites({ commit }, id) {
+    //   try {
+    //     const { data } = await CourseService.getCourse(id);
+    //     if (data) {
+    //       commit("SAVE_COURSE", data);
+    //     }
 
-        data[0].prerequisites.forEach(async (prerequisite) => {
-          const { data } = await CourseService.getCourse(prerequisite);
-          if (data[0]) {
-            commit("SAVE_COURSE", data[0]);
-          }
-        });
-      } catch (error) {
-        router.push({ path: "/" });
-      }
+    //     data.preRequisitos.forEach(async (prerequisite) => {
+    //       const { data } = await CourseService.getCourse(prerequisite);
+    //       if (data) {
+    //         commit("SAVE_COURSE", data);
+    //       }
+    //     });
+    //   } catch (error) {
+    //     // router.push({ path: "/" });
+    //     console.log(error);
+    //   }
 
-      commit("CAPITALIZE_ALL_COURSES");
-    },
+    //   commit("CAPITALIZE_ALL_COURSES");
+    // },
     saveCourse({ commit }, course) {
       commit("SAVE_LOCAL_COURSE", course);
     },
