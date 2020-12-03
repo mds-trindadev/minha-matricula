@@ -110,10 +110,10 @@ def pesquisa():
 					tempTurma.periodo = info['turmas'][i]['periodo']
 					tempTurma.professor = info['turmas'][i]['professor']
 					if 'horario' in info['turmas'][i]:
-						temp.horario = info['turmas'][i]['horario']
+						tempTurma.horario = info['turmas'][i]['horario']
 					else:
-						temp.horario = 'Indisponivel'
-
+						tempTurma.horario = 'Indisponivel'
+					
 					temp.addTurma(tempTurma.getTurma())
 			else:
 				tempTurma = Turma()
@@ -168,9 +168,9 @@ def buscarDisciplina(codigo):
 				tempTurma.periodo = disciplinas['turmas'][i]['periodo']
 				tempTurma.professor = disciplinas['turmas'][i]['professor']
 				if 'horario' in disciplinas['turmas'][i]:
-					temp.horario = disciplinas['turmas'][i]['horario']
+					tempTurma.horario = disciplinas['turmas'][i]['horario']
 				else:
-					temp.horario = 'Indisponivel'
+					tempTurma.horario = 'Indisponivel'
 
 				temp.addTurma(tempTurma.getTurma())
 		else:
@@ -354,5 +354,5 @@ def upload():
 
 @app.route('/bancoDados', methods=['GET', 'POST'])
 def bancoDados():
-	prioridade = Graph(3)
+	prioridade = Graph(100)
 	prioridade.buscarBancodeDados()

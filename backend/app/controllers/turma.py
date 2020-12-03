@@ -15,7 +15,6 @@ class Departamento:
 
 class Disciplina(Departamento):
 	""" Classe Disciplina """
-	vetorTurma = []
 
 	def __init__(self, codigo=None, nome=None, ementa=None, preRequisitos=None, cargaHoraria=None, departamento=None, campus=None):
 		"""Inicializador"""
@@ -30,6 +29,7 @@ class Disciplina(Departamento):
 		self.concluida = False
 		self.campus = campus
 		self.departamento = departamento
+		self.vetorTurma = []
 
 	def getDisciplina(self):
 		"""Retorna um dicionario com as informacoes referentes a disciplina"""
