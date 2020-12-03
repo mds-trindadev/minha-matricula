@@ -4,9 +4,9 @@
       <v-spacer />
       <v-btn icon @click="toggleDrawer">
         <v-badge
-          v-if="savedCourses.length > 0"
+          v-if="getSavedCourses.length > 0"
           color="orange"
-          :content="savedCourses.length"
+          :content="getSavedCourses.length"
           left
         ></v-badge>
         <v-icon>mdi-format-list-bulleted-square</v-icon>
@@ -25,7 +25,7 @@ export default {
   }),
 
   computed: {
-    ...mapGetters(["savedCourses"]),
+    ...mapGetters(["getSavedCourses"]),
   },
 
   methods: {

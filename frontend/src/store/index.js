@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import router from "@/router";
 import CourseService from "@/services/CourseService.js";
 
 Vue.use(Vuex);
@@ -18,11 +19,14 @@ export default new Vuex.Store({
       state.filters = filters;
     },
     SAVE_ALL_COURSES(state, courses) {
-      // state.courses = [...courses];
-      state.courses = courses;
-      state.courses.forEach((course, index) => {
-        Vue.set(state.courses[index], "saved", false);
+      courses.forEach((course, index) => {
+        Vue.set(courses[index], "saved", false);
       });
+      state.courses = courses;
+    },
+    SAVE_COURSE(state, course) {
+      Vue.set(course, "saved", false);
+      state.courses.push(course);
     },
     CAPITALIZE_ALL_COURSES(state) {
       state.courses.forEach((course, index) => {
@@ -55,7 +59,7 @@ export default new Vuex.Store({
         state.courses[index].department = newDepartment.join(" ");
       });
     },
-    SAVE_COURSE(state, course) {
+    SAVE_LOCAL_COURSE(state, course) {
       state.courses.forEach((elem, index) => {
         if (course.code === elem.code) {
           state.courses[index].saved = true;
@@ -85,8 +89,32 @@ export default new Vuex.Store({
       commit("SAVE_ALL_COURSES", data);
       commit("CAPITALIZE_ALL_COURSES");
     },
+    async getCourse({ commit }, id) {
+      const { data } = await CourseService.getCourse(id);
+      commit("SAVE_COURSE", data[0]);
+      commit("CAPITALIZE_ALL_COURSES");
+    },
+    async getCourseAndPrerequisites({ commit }, id) {
+      try {
+        const { data } = await CourseService.getCourse(id);
+        if (data[0]) {
+          commit("SAVE_COURSE", data[0]);
+        }
+
+        data[0].prerequisites.forEach(async (prerequisite) => {
+          const { data } = await CourseService.getCourse(prerequisite);
+          if (data[0]) {
+            commit("SAVE_COURSE", data[0]);
+          }
+        });
+      } catch (error) {
+        router.push({ path: "/" });
+      }
+
+      commit("CAPITALIZE_ALL_COURSES");
+    },
     saveCourse({ commit }, course) {
-      commit("SAVE_COURSE", course);
+      commit("SAVE_LOCAL_COURSE", course);
     },
     removeCourse({ commit }, courseAndIndex) {
       commit("REMOVE_COURSE", courseAndIndex);
@@ -96,8 +124,11 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    savedCourses(state) {
+    getSavedCourses: (state) => {
       return state.courses.filter((course) => course.saved);
+    },
+    getCourse: (state) => (id) => {
+      return state.courses.find((course) => course.code === id);
     },
   },
 });

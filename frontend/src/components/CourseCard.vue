@@ -79,7 +79,9 @@ export default {
       }
     },
     openCourse(course) {
-      console.log("open ", course.title);
+      this.$router.push({
+        path: `/disciplina/${course.code}`,
+      });
     },
   },
 };
