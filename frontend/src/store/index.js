@@ -6,6 +6,30 @@ import CourseService from "@/services/CourseService.js";
 
 Vue.use(Vuex);
 
+function formatCourseData(course) {
+  return {
+    campus: course.campus,
+    timeLoad: course.cargaHoraria,
+    code: course.codigo,
+    concluded: course.concluida,
+    credits: course.creditos,
+    department: course.departamento,
+    syllabus: course.ementa,
+    title: course.nome,
+    prerequisites: course.preRequisitos,
+    priority: course.prioridade,
+    classes: Object.keys(course.turmas)
+      .map((key) => course.turmas[key])
+      .map((key) => ({
+        time: key.horario,
+        period: key.periodo,
+        teacher: key.professor,
+        code: key.turma,
+      })),
+    saved: false,
+  };
+}
+
 export default new Vuex.Store({
   state: {
     filters: {
@@ -17,14 +41,9 @@ export default new Vuex.Store({
     concluded: [],
   },
   mutations: {
-    SET_COURSES(state, disciplinas) {
-      console.log(disciplinas);
-    },
     SET_CONCLUDED(state, courses) {
-      console.log(courses);
       Object.entries(courses).forEach(([key, value]) => {
         console.log(key);
-
         const formattedCourse = {
           campus: value.campus,
           timeLoad: value.cargaHoraria,
@@ -49,10 +68,8 @@ export default new Vuex.Store({
         Vue.set(formattedCourse, "saved", false);
         state.concluded.push(formattedCourse);
       });
-      console.log("concluded: ", state.concluded);
     },
     SAVE_FILTERS(state, filters) {
-      console.log(filters);
       state.filters = filters;
     },
     // SAVE_ALL_COURSES(state, courses) {
@@ -62,28 +79,8 @@ export default new Vuex.Store({
     //   state.courses = courses;
     // },
     SAVE_COURSE(state, course) {
-      const formattedCourse = {
-        campus: course.campus,
-        timeLoad: course.cargaHoraria,
-        code: course.codigo,
-        concluded: course.concluida,
-        credits: course.creditos,
-        department: course.departamento,
-        syllabus: course.ementa,
-        title: course.nome,
-        prerequisites: course.preRequisitos,
-        priority: course.prioridade,
-        classes: Object.keys(course.turmas)
-          .map((key) => course.turmas[key])
-          .map((key) => ({
-            time: key.horario,
-            period: key.periodo,
-            teacher: key.professor,
-            code: key.turma,
-          })),
-      };
-
-      Vue.set(course, "saved", false);
+      const formattedCourse = formatCourseData(course);
+      // Vue.set(course, "saved", false);
       state.courses.push(formattedCourse);
     },
     CAPITALIZE_ALL_COURSES(state) {
@@ -138,21 +135,18 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async search(state, params) {
-      console.log(params);
-    },
     async getFilters({ commit }) {
       const { data } = await CourseService.getFilters();
       commit("SAVE_FILTERS", data);
     },
-    async getAllCourses({ commit }) {
-      const { data } = await CourseService.getCourses();
-      commit("SAVE_ALL_COURSES", data);
-      commit("CAPITALIZE_ALL_COURSES");
-    },
-    async getCourse({ commit }, id) {
+    // async getAllCourses({ commit }) {
+    //   const { data } = await CourseService.getCourses();
+    //   commit("SAVE_ALL_COURSES", data);
+    //   commit("CAPITALIZE_ALL_COURSES");
+    // },
+    async requestGetCourse({ commit }, id) {
       const { data } = await CourseService.getCourse(id);
-      commit("SAVE_COURSE", data[0]);
+      commit("SAVE_COURSE", data);
       // commit("CAPITALIZE_ALL_COURSES");
     },
     async setCourses({ commit }) {
@@ -164,8 +158,6 @@ export default new Vuex.Store({
       await CourseService.uploadFile(formData);
       const { data } = await CourseService.getConcludedCourses(formData);
       commit("SET_CONCLUDED", data);
-
-      console.log(data);
     },
     // async getCourseAndPrerequisites({ commit }, id) {
     //   try {
