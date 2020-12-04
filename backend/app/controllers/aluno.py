@@ -2,6 +2,10 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 import re
+import json
+import operator
+from app.controllers.turma import Turma
+from app.controllers.turma import Disciplina
 
 class Aluno:
 	""" Classe Aluno """
@@ -45,11 +49,92 @@ class Aluno:
 
 		return self.gradeHoraria
 
-	def sugerirGradeHoraria(self, fluxo):
+	def sugerirGradeHoraria(self):
 		"""Algoritmo para sugestao de grade horaria"""
 
-		############## FALTA IMPLEMENTAR
+		ref = db.reference('/curso/' + self.curso)
+		fluxo = ref.get()
+
+		ref = db.reference('/trancamento/'+self.curso)
+		grauTrancamento = ref.get()
+
+		cursadas = {}
+		for i in self.turmasCursadas:
+			if i:
+				for k in grauTrancamento:
+					if k:
+						for l in k:
+							if i.codigo == l:
+								cursadas[l] = k[l]['grauTrancamento']
+								k[l]['cursada'] = 1
+
+		cursadasOrdenadas = sorted(cursadas.items(), key=lambda x: x[1], reverse=True)
+
+		for i in cursadasOrdenadas:
+			turma = Disciplina()
+			turma = self.buscarDisciplina(i[0])
+			self.adicionarGradeHoraria(turma)
+
 		return self.gradeHoraria
+
+	def adicionarGradeHoraria(self, turma):
+		"""Adiciona uma turma a lista de turmas do aluno"""
+
+		self.gradeHoraria.append(turma)
+
+	def buscarDisciplina(self, codigo):
+		campus = codigo[:3]
+
+		# Referencia a no do banco de dados
+		ref = db.reference('/disciplina/' + campus + '/' + codigo)
+		disciplinas = ref.get()
+
+		if disciplinas:
+			temp = Disciplina()
+			
+			# adiciona o codigo da disciplina na lista
+			temp.codigo = codigo
+			temp.departamento = campus
+				
+			# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
+			temp.nome = disciplinas['nome']
+			temp.cargaHoraria = disciplinas['cargaHoraria']
+
+			# verifica se a disciplina tem ementa disponivel e a adiciona na lista
+			if 'ementa' in disciplinas:
+				temp.ementa = disciplinas['ementa']
+			else:
+				temp.ementa = disciplinas['Indisponivel']
+
+			if 'preRequisitos' in disciplinas:
+				temp.preRequisitos = disciplinas['preRequisitos']
+			else:
+				temp.preRequisitos = disciplinas['Indisponivel']
+
+			# percorre as turmas disponiveis na disciplina
+			if 'turmas' in disciplinas:
+				for i in disciplinas['turmas']:
+					tempTurma = Turma()
+					# adiciona as informacoes referentes a turma na lista
+					tempTurma.turma = i
+					tempTurma.periodo = disciplinas['turmas'][i]['periodo']
+					tempTurma.professor = disciplinas['turmas'][i]['professor']
+					if 'horario' in disciplinas['turmas'][i]:
+						tempTurma.horario = disciplinas['turmas'][i]['horario']
+					else:
+						tempTurma.horario = 'Indisponivel'
+
+					temp.addTurma(tempTurma.getTurma())
+			else:
+				tempTurma = Turma()
+				tempTurma.turma = 'Indisponivel'
+				tempTurma.periodo = 'Indisponivel'
+				tempTurma.professor = 'Indisponivel'
+				tempTurma.horario = 'Indisponivel'
+
+				temp.addTurma(tempTurma.getTurma())
+
+			return temp
 
 	def checarCurso(self, curso):
 		"""Algoritmo para verificacao do curso do arquivo PDF"""
