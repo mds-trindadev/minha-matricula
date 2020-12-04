@@ -44,9 +44,29 @@
         <v-expansion-panels>
           <v-expansion-panel>
             <v-expansion-panel-header>
-              {{ getTitle(col) }}
+              <template v-slot:actions>
+                <v-icon class="icon">mdi-36px mdi-chevron-down</v-icon>
+              </template>
+              <span class="header">{{ getTitle(col) }}</span>
             </v-expansion-panel-header>
-            <v-expansion-panel-content> ... </v-expansion-panel-content>
+            <v-expansion-panel-content>
+              <v-row>
+                <v-col
+                  cols="12"
+                  v-for="course in getConcludedCourses"
+                  :key="course.code"
+                >
+                  <CourseCard :course="course">
+                    <v-btn icon large @click.stop="saveCourse(course)">
+                      <v-icon v-if="course.saved" color="primary">
+                        mdi-playlist-check</v-icon
+                      >
+                      <v-icon v-else> mdi-playlist-plus</v-icon>
+                    </v-btn>
+                  </CourseCard>
+                </v-col>
+              </v-row>
+            </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
       </v-col>
@@ -67,22 +87,30 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import CourseCard from "@/components/CourseCard";
+
 export default {
   name: "TheSchedule",
+  components: {
+    CourseCard,
+  },
 
   data: () => ({
     file: null,
   }),
+  computed: {
+    ...mapGetters(["getConcludedCourses"]),
+  },
   methods: {
     getTitle(id) {
       switch (id) {
         case 1:
           return "Disciplinas obrigatórias";
         case 2:
-          return "Disciplinas obrigatórias cursadas";
-
+          return "Disciplinas cursadas";
         case 3:
-          return "Recomendação de disciplinas";
+          return "Recomendação";
       }
     },
     submitFile() {
@@ -95,6 +123,9 @@ export default {
 
         this.$store.dispatch("uploadFile", formData);
       }
+    },
+    saveCourse(course) {
+      this.$store.dispatch("saveCourse", course);
     },
   },
 };

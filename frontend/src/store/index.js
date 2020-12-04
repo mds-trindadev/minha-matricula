@@ -14,10 +14,42 @@ export default new Vuex.Store({
       campi: ["FGA", "FCE"],
     },
     courses: [],
+    concluded: [],
   },
   mutations: {
     SET_COURSES(state, disciplinas) {
       console.log(disciplinas);
+    },
+    SET_CONCLUDED(state, courses) {
+      console.log(courses);
+      Object.entries(courses).forEach(([key, value]) => {
+        console.log(key);
+
+        const formattedCourse = {
+          campus: value.campus,
+          timeLoad: value.cargaHoraria,
+          code: value.codigo,
+          concluded: value.concluida,
+          credits: value.creditos,
+          department: value.departamento,
+          syllabus: value.ementa,
+          title: value.nome,
+          prerequisites: value.preRequisitos,
+          priority: value.prioridade,
+          classes: Object.keys(value.turmas)
+            .map((key) => value.turmas[key])
+            .map((key) => ({
+              time: key.horario,
+              period: key.periodo,
+              teacher: key.professor,
+              code: key.turma,
+            })),
+        };
+
+        Vue.set(formattedCourse, "saved", false);
+        state.concluded.push(formattedCourse);
+      });
+      console.log("concluded: ", state.concluded);
     },
     SAVE_FILTERS(state, filters) {
       console.log(filters);
@@ -129,9 +161,11 @@ export default new Vuex.Store({
       });
     },
     async uploadFile({ commit }, formData) {
-      const { data } = await CourseService.uploadFile(formData);
+      await CourseService.uploadFile(formData);
+      const { data } = await CourseService.getConcludedCourses(formData);
+      commit("SET_CONCLUDED", data);
+
       console.log(data);
-      commit("SET_COURSES", data);
     },
     // async getCourseAndPrerequisites({ commit }, id) {
     //   try {
@@ -175,6 +209,9 @@ export default new Vuex.Store({
     },
     getCourses: (state) => (params) => {
       return state.courses.find((campus) => campus !== params);
+    },
+    getConcludedCourses: (state) => {
+      return state.concluded;
     },
   },
 });

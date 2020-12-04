@@ -26,11 +26,19 @@ export default {
     });
   },
   getCourse(id) {
-    return apiClient.get(`/disciplina?codigo=${id}`); /* fake */
-    // return apiClient.post("/disciplina", { codigo: id }); /* real */
+    // return apiClient.get(`/disciplina?codigo=${id}`); /* fake */
+    return apiClient.post("/disciplina", { codigo: id }); /* real */
   },
   uploadFile(formData) {
-    console.log(formData);
     return apiClient.post("/upload", formData);
+  },
+  getConcludedCourses() {
+    return apiClient.post("/gradeHoraria", { op: "getTurmas" });
+  },
+  suggestSchedule() {
+    return apiClient.post("/gradeHoraria", { op: "sugerirGradeHoraria" });
+  },
+  getSchedule() {
+    return apiClient.post("/gradeHoraria", { op: "getGradeHoraria" });
   },
 };

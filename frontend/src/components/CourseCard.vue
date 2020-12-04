@@ -26,15 +26,13 @@
         <v-card-text class="department">{{ course.department }}</v-card-text>
 
         <v-card-actions class="py-0 pl-0">
-          <v-card-text>
+          <v-card-text v-if="course.classes[0].code">
             <div
               v-for="(classHour, index) in course.classes"
               :key="index"
               class="mr-1 my-1"
             >
-              <v-chip v-if="index === 0" small>
-                {{ classHour.time }}
-              </v-chip>
+              <v-chip v-if="index === 0" small> </v-chip>
               <v-chip
                 v-else-if="index === 1 && course.classes.length === 2"
                 small
