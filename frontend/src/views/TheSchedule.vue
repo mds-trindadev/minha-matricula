@@ -1,9 +1,68 @@
 <template>
   <section id="schedule">
-    <h1>Schedule</h1>
-    <h1>Schedule</h1>
-    <h1>Schedule</h1>
-    <h1>Schedule</h1>
+    <v-card full-width outlined>
+      <v-card-title>
+        Recomendação de disciplinas baseada no seu histórico!
+      </v-card-title>
+      <v-card-subtitle>
+        Faça o <i>upload</i> do seu <strong>Histórico Escolar</strong> para
+        receber uma recomendação de próximas disciplinas para cursar.
+        <br />
+        O Histórico pode ser emitido no portal <strong>SIGAA</strong>, em
+        <mark><i>Ensino</i> > <i>Emitir Histórico</i> </mark>.
+      </v-card-subtitle>
+      <v-card-text>
+        <v-row justify="center">
+          <v-col class="text-center" cols="5">
+            <v-file-input
+              v-model="file"
+              accept="application/pdf"
+              truncate-length="30"
+              prepend-icon=""
+              prepend-inner-icon="mdi-file"
+              label="Faça o upload"
+              outlined
+              rounded
+            >
+            </v-file-input>
+            <v-btn
+              v-if="this.file"
+              color="blue-grey"
+              class="ma-2 white--text"
+              @click="submitFile()"
+            >
+              Upload
+              <v-icon right dark> mdi-cloud-upload </v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-card-text>
+    </v-card>
+
+    <v-row>
+      <v-col v-for="col in 3" :key="col">
+        <v-expansion-panels>
+          <v-expansion-panel>
+            <v-expansion-panel-header>
+              {{ getTitle(col) }}
+            </v-expansion-panel-header>
+            <v-expansion-panel-content> ... </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
+      </v-col>
+    </v-row>
+    <!-- <v-card>
+      <v-card-title class="title">Título da grade</v-card-title>
+      <v-card-subtitle class="department">Subtítulo da grade.</v-card-subtitle>
+      <v-card-text>
+        <v-data-table
+          :headers="table.days"
+          :items="table.classes"
+          :items-per-page="5"
+          class="elevation-1"
+        ></v-data-table>
+      </v-card-text>
+    </v-card> -->
   </section>
 </template>
 
@@ -12,7 +71,48 @@ export default {
   name: "TheSchedule",
 
   data: () => ({
-    title: "Grade Horária",
+    file: null,
   }),
+  methods: {
+    getTitle(id) {
+      switch (id) {
+        case 1:
+          return "Disciplinas obrigatórias";
+        case 2:
+          return "Disciplinas obrigatórias cursadas";
+
+        case 3:
+          return "Recomendação de disciplinas";
+      }
+    },
+    submitFile() {
+      if (this.file) {
+        let formData = new FormData();
+
+        console.log(this.file);
+
+        formData.append("file", this.file);
+
+        this.$store.dispatch("uploadFile", formData);
+      }
+    },
+  },
 };
 </script>
+
+<style scoped>
+.title {
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+}
+
+.department {
+  font-size: 30px !important;
+  font-weight: 300 !important;
+  line-height: 1.1 !important;
+}
+
+mark {
+  background-color: #ffd394;
+}
+</style>

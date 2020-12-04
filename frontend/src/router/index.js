@@ -23,7 +23,7 @@ const routes = [
     redirect: "/",
   },
   {
-    path: "/sugeridas",
+    path: "/grade",
     name: "schedule",
     component: TheSchedule,
   },
