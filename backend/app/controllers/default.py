@@ -105,7 +105,7 @@ def pesquisa():
 						tempTurma.horario = info['turmas'][i]['horario']
 					else:
 						tempTurma.horario = 'Indisponivel'
-					
+
 					temp.addTurma(tempTurma.getTurma())
 			else:
 				tempTurma = Turma()
@@ -181,11 +181,9 @@ def buscarDisciplina(codigo):
 def disciplina():
 	getData = request.get_json()
 	turma = Disciplina()
-	turma.limparVetorTurma()
 	if getData:
 		turma = buscarDisciplina(getData['codigo'])
 
-	print(turma.getDisciplina())
 	return turma.getDisciplina()
 
 @app.route("/gradeHoraria", methods=["GET", "POST"])
@@ -242,22 +240,14 @@ def gradeHoraria():
 			data = {}
 			for i in aluno.consultarGradeHoraria():
 				if i:
-					data[i.codigo] = i.getTurma()
+					data[i.codigo] = i.getDisciplina()
 
 			return data
 
 		elif getData.get("op") == 'sugerirGradeHoraria':
 			data = {}
-
-			ref = db.reference('/curso/' + aluno.curso)
-			fluxo = ref.get()
-
-
-			for i in aluno.consultarGradeHoraria(fluxo):
-				if i:
-					data[i.codigo] = i.getTurma()
-
-			return data
+			aluno.sugerirGradeHoraria()
+			return { 'status': 'Success'}
 
 		else:
 			return { 'status': 'Fail'}
@@ -336,7 +326,7 @@ def upload():
 
 	return { 'status': 'Fail'}
 
-@app.route('/bancoDados', methods=['GET', 'POST'])
-def bancoDados():
-	prioridade = Graph(100)
-	prioridade.buscarBancodeDados()
+# @app.route('/bancoDados', methods=['GET', 'POST'])
+# def bancoDados():
+# 	prioridade = Graph(100)
+# 	prioridade.buscarBancodeDados()

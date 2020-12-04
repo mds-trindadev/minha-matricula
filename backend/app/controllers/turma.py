@@ -78,13 +78,6 @@ class Disciplina(Departamento):
 
 		self.vetorTurma.append(turma)
 
-	def limparVetorTurma(self):
-		"""Limpa vetor de turmas"""
-
-		# self.limparVetorTurmarma = []
-		for i in self.vetorTurma:
-			print(i)
-
 class Turma(Disciplina):
 	""" Classe Turma """
 
