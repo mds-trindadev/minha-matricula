@@ -326,6 +326,19 @@ def upload():
 
 	return { 'status': 'Fail'}
 
+@app.route('/fluxo', methods=['GET', 'POST'])
+def fluxo():
+	getData = request.get_json()
+	ref = db.reference('/curso/' + getData.get("curso"))
+	fluxo = ref.get()
+	n = 1
+	dictFluxo = {}
+	for i in fluxo:
+		if i:
+			dictFluxo[n] = i
+			n += 1
+	return dictFluxo
+
 # @app.route('/bancoDados', methods=['GET', 'POST'])
 # def bancoDados():
 # 	prioridade = Graph(100)
