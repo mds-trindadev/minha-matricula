@@ -57,77 +57,127 @@ def pesquisa():
 	data = {}
 
 	if getData:
-		campus = getData.get("campus")
+		ref = ''
 		if getData.get("campus") == "unb":
-			campus = "FAC"
+			# Referencia a no do banco de dados
+			ref = db.reference('/disciplina/')
 
-		# Referencia a no do banco de dados
-		ref = db.reference('/disciplina/' + campus)
-		cont = 0
+			departamento = ref.get()
+			for w in departamento:
+				ref = db.reference('/disciplina/'+w)
+				disciplinas = ref.get()
+				
+				# Percorre dicionario
+				for codigo in disciplinas:
+					temp = Disciplina()
+					# adiciona o codigo da disciplina na lista
+					temp.codigo = codigo
+					info = ref.child(codigo).get()
+					
+					# verifica se o nome da materia corresponde a pesquisa
+					# if(info['nome'] != getData.get("nome")):
+					if not re.match(getData.get("nome"), info['nome']):
+						continue
 
-		# Pega os dados do banco
-		disciplinas = ref.get()
+					# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
+					temp.nome = info['nome']
+					temp.departamento = temp.codigo[:3]
+					temp.cargaHoraria = info['cargaHoraria']
 
-		# Percorre dicionario
-		for codigo in disciplinas:
-			# contador de parada para nao percorrer todas as disciplinas
-			cont += 1
-			if cont > 3:
-				break
-
-			turma = Turma()
-			temp = Disciplina()
-			# adiciona o codigo da disciplina na lista
-			temp.codigo = codigo
-			info = ref.child(codigo).get()
-			
-			# verifica se o nome da materia corresponde a pesquisa
-			if(info['nome'] != getData.get("nome")):
-				continue
-
-			# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
-			temp.nome = info['nome']
-			temp.departamento = temp.codigo[:3]
-			temp.cargaHoraria = info['cargaHoraria']
-
-			# verifica se a disciplina tem ementa disponivel e a adiciona na lista
-			if 'ementa' in info:
-				temp.ementa = info['ementa']
-			else:
-				temp.ementa = 'Indisponivel'
-
-			if 'preRequisitos' in info:
-				temp.preRequisitos = info['preRequisitos']
-			else:
-				temp.preRequisitos = 'Indisponivel'
-
-			# percorre as turmas disponiveis na disciplina
-			if 'turmas' in info:
-				for i in info['turmas']:
-					tempTurma = Turma()
-					# adiciona as informacoes referentes a turma na lista
-					tempTurma.turma = i
-					tempTurma.periodo = info['turmas'][i]['periodo']
-					tempTurma.professor = info['turmas'][i]['professor']
-					if 'horario' in info['turmas'][i]:
-						tempTurma.horario = info['turmas'][i]['horario']
+					# verifica se a disciplina tem ementa disponivel e a adiciona na lista
+					if 'ementa' in info:
+						temp.ementa = info['ementa']
 					else:
+						temp.ementa = 'Indisponivel'
+
+					if 'preRequisitos' in info:
+						temp.preRequisitos = info['preRequisitos']
+					else:
+						temp.preRequisitos = 'Indisponivel'
+
+					# percorre as turmas disponiveis na disciplina
+					if 'turmas' in info:
+						for i in info['turmas']:
+							tempTurma = Turma()
+							# adiciona as informacoes referentes a turma na lista
+							tempTurma.turma = i
+							tempTurma.periodo = info['turmas'][i]['periodo']
+							tempTurma.professor = info['turmas'][i]['professor']
+							if 'horario' in info['turmas'][i]:
+								tempTurma.horario = info['turmas'][i]['horario']
+							else:
+								tempTurma.horario = 'Indisponivel'
+
+							temp.addTurma(tempTurma)
+					else:
+						tempTurma = Turma()
+						tempTurma.turma = 'Indisponivel'
+						tempTurma.periodo = 'Indisponivel'
+						tempTurma.professor = 'Indisponivel'
 						tempTurma.horario = 'Indisponivel'
 
+						temp.addTurma(tempTurma)
+
+					temp = temp.getDisciplina()
+					if(temp['creditos'] == getData.get("creditos")):
+						data[temp['codigo']] = temp
+		else:
+			ref = db.reference('/disciplina/' + getData.get("campus"))
+			disciplinas = ref.get()
+
+			# Percorre dicionario
+			for codigo in disciplinas:
+				temp = Disciplina()
+				# adiciona o codigo da disciplina na lista
+				temp.codigo = codigo
+				info = ref.child(codigo).get()
+				
+				# verifica se o nome da materia corresponde a pesquisa
+				if not re.match(getData.get("nome"), info['nome']):
+					continue
+
+				# adiciona o nome e a carga horaria da disciplina na lista, por esta presente em todas as disciplinas nao e feita a verificacao da existencia dos dados
+				temp.nome = info['nome']
+				temp.departamento = temp.codigo[:3]
+				temp.cargaHoraria = info['cargaHoraria']
+
+				# verifica se a disciplina tem ementa disponivel e a adiciona na lista
+				if 'ementa' in info:
+					temp.ementa = info['ementa']
+				else:
+					temp.ementa = 'Indisponivel'
+
+				if 'preRequisitos' in info:
+					temp.preRequisitos = info['preRequisitos']
+				else:
+					temp.preRequisitos = 'Indisponivel'
+
+				# percorre as turmas disponiveis na disciplina
+				if 'turmas' in info:
+					for i in info['turmas']:
+						tempTurma = Turma()
+						# adiciona as informacoes referentes a turma na lista
+						tempTurma.turma = i
+						tempTurma.periodo = info['turmas'][i]['periodo']
+						tempTurma.professor = info['turmas'][i]['professor']
+						if 'horario' in info['turmas'][i]:
+							tempTurma.horario = info['turmas'][i]['horario']
+						else:
+							tempTurma.horario = 'Indisponivel'
+
+						temp.addTurma(tempTurma)
+				else:
+					tempTurma = Turma()
+					tempTurma.turma = 'Indisponivel'
+					tempTurma.periodo = 'Indisponivel'
+					tempTurma.professor = 'Indisponivel'
+					tempTurma.horario = 'Indisponivel'
+
 					temp.addTurma(tempTurma)
-			else:
-				tempTurma = Turma()
-				tempTurma.turma = 'Indisponivel'
-				tempTurma.periodo = 'Indisponivel'
-				tempTurma.professor = 'Indisponivel'
-				tempTurma.horario = 'Indisponivel'
 
-				temp.addTurma(tempTurma)
-
-			temp = temp.getDisciplina()
-			if(temp['creditos'] == getData.get("creditos")):
-				data[temp['codigo']] = temp
-
+				temp = temp.getDisciplina()
+				if(temp['creditos'] == getData.get("creditos")):
+					data[temp['codigo']] = temp
 	return data
 
 def buscarDisciplina(codigo):
@@ -337,8 +387,33 @@ def upload():
 					aluno.adicionarTurma(turma)
 
 		aluno.curso = aluno.checarCurso(data["curso"])
+		####################################################################
+
+		aluno.sugerirGradeHoraria()
+
+		dataGradeHoraria = {}
+		for i in aluno.consultarGradeHoraria():
+			if i:
+				dataGradeHoraria[i.codigo] = i.getDisciplina()
+
+		####################################################################
+		print(data["curso"])
+		ref = db.reference('/curso/' + aluno.checarCurso(data["curso"]))
+		fluxo = ref.get()
+		n = 1
+		dictFluxo = {}
+		for i in fluxo:
+			if i:
+				dictFluxo[n] = i
+				n += 1
+		####################################################################
+
+		dataTurmas = {}
+		for i in aluno.consultarTurmas():
+			if i:
+				dataTurmas[i.codigo] = i.getDisciplina()
 		
-		return { 'status': 'Success'}
+		return { 'gradeHoraria': dataGradeHoraria, 'fluxoCurso': dictFluxo, 'turmasCursadas': dataTurmas }
 
 	return { 'status': 'Fail'}
 
@@ -354,8 +429,3 @@ def fluxo():
 			dictFluxo[n] = i
 			n += 1
 	return dictFluxo
-
-# @app.route('/bancoDados', methods=['GET', 'POST'])
-# def bancoDados():
-# 	prioridade = Graph(100)
-# 	prioridade.buscarBancodeDados()
