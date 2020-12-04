@@ -15,7 +15,6 @@ class Departamento:
 
 class Disciplina(Departamento):
 	""" Classe Disciplina """
-	vetorTurma = []
 
 	def __init__(self, codigo=None, nome=None, ementa=None, preRequisitos=None, cargaHoraria=None, departamento=None, campus=None):
 		"""Inicializador"""
@@ -30,6 +29,7 @@ class Disciplina(Departamento):
 		self.concluida = False
 		self.campus = campus
 		self.departamento = departamento
+		self.vetorTurma = []
 
 	def getDisciplina(self):
 		"""Retorna um dicionario com as informacoes referentes a disciplina"""
@@ -77,13 +77,6 @@ class Disciplina(Departamento):
 		"""Adiciona novas turmas"""
 
 		self.vetorTurma.append(turma)
-
-	def limparVetorTurma(self):
-		"""Limpa vetor de turmas"""
-
-		# self.limparVetorTurmarma = []
-		for i in self.vetorTurma:
-			print(i)
 
 class Turma(Disciplina):
 	""" Classe Turma """

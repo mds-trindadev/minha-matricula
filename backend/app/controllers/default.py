@@ -86,12 +86,12 @@ def pesquisa():
 			if 'ementa' in info:
 				temp.ementa = info['ementa']
 			else:
-				temp.ementa = info['Indisponivel']
+				temp.ementa = 'Indisponivel'
 
 			if 'preRequisitos' in info:
 				temp.preRequisitos = info['preRequisitos']
 			else:
-				temp.preRequisitos = info['Indisponivel']
+				temp.preRequisitos = 'Indisponivel'
 
 			# percorre as turmas disponiveis na disciplina
 			if 'turmas' in info:
@@ -102,9 +102,9 @@ def pesquisa():
 					tempTurma.periodo = info['turmas'][i]['periodo']
 					tempTurma.professor = info['turmas'][i]['professor']
 					if 'horario' in info['turmas'][i]:
-						temp.horario = info['turmas'][i]['horario']
+						tempTurma.horario = info['turmas'][i]['horario']
 					else:
-						temp.horario = 'Indisponivel'
+						tempTurma.horario = 'Indisponivel'
 
 					temp.addTurma(tempTurma.getTurma())
 			else:
@@ -144,12 +144,12 @@ def buscarDisciplina(codigo):
 		if 'ementa' in disciplinas:
 			temp.ementa = disciplinas['ementa']
 		else:
-			temp.ementa = disciplinas['Indisponivel']
+			temp.ementa = 'Indisponivel'
 
 		if 'preRequisitos' in disciplinas:
 			temp.preRequisitos = disciplinas['preRequisitos']
 		else:
-			temp.preRequisitos = disciplinas['Indisponivel']
+			temp.preRequisitos = 'Indisponivel'
 
 		# percorre as turmas disponiveis na disciplina
 		if 'turmas' in disciplinas:
@@ -160,9 +160,9 @@ def buscarDisciplina(codigo):
 				tempTurma.periodo = disciplinas['turmas'][i]['periodo']
 				tempTurma.professor = disciplinas['turmas'][i]['professor']
 				if 'horario' in disciplinas['turmas'][i]:
-					temp.horario = disciplinas['turmas'][i]['horario']
+					tempTurma.horario = disciplinas['turmas'][i]['horario']
 				else:
-					temp.horario = 'Indisponivel'
+					tempTurma.horario = 'Indisponivel'
 
 				temp.addTurma(tempTurma.getTurma())
 		else:
@@ -181,11 +181,9 @@ def buscarDisciplina(codigo):
 def disciplina():
 	getData = request.get_json()
 	turma = Disciplina()
-	turma.limparVetorTurma()
 	if getData:
 		turma = buscarDisciplina(getData['codigo'])
 
-	print(turma.getDisciplina())
 	return turma.getDisciplina()
 
 @app.route("/gradeHoraria", methods=["GET", "POST"])
@@ -242,22 +240,14 @@ def gradeHoraria():
 			data = {}
 			for i in aluno.consultarGradeHoraria():
 				if i:
-					data[i.codigo] = i.getTurma()
+					data[i.codigo] = i.getDisciplina()
 
 			return data
 
 		elif getData.get("op") == 'sugerirGradeHoraria':
 			data = {}
-
-			ref = db.reference('/curso/' + aluno.curso)
-			fluxo = ref.get()
-
-
-			for i in aluno.consultarGradeHoraria(fluxo):
-				if i:
-					data[i.codigo] = i.getTurma()
-
-			return data
+			aluno.sugerirGradeHoraria()
+			return { 'status': 'Success'}
 
 		else:
 			return { 'status': 'Fail'}
@@ -336,7 +326,7 @@ def upload():
 
 	return { 'status': 'Fail'}
 
-@app.route('/bancoDados', methods=['GET', 'POST'])
-def bancoDados():
-	prioridade = Graph(3)
-	prioridade.buscarBancodeDados()
+# @app.route('/bancoDados', methods=['GET', 'POST'])
+# def bancoDados():
+# 	prioridade = Graph(100)
+# 	prioridade.buscarBancodeDados()
