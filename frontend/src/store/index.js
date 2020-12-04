@@ -128,6 +128,11 @@ export default new Vuex.Store({
         commit("SET_COURSES", response.data.disciplina);
       });
     },
+    async uploadFile({ commit }, formData) {
+      const { data } = await CourseService.uploadFile(formData);
+      console.log(data);
+      commit("SET_COURSES", data);
+    },
     // async getCourseAndPrerequisites({ commit }, id) {
     //   try {
     //     const { data } = await CourseService.getCourse(id);

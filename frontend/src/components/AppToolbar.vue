@@ -2,9 +2,18 @@
   <section>
     <v-app-bar app flat outlined>
       <v-app-bar-nav-icon>
-        <v-img src="@/assets/logo1.svg" width="50" @click="goToHome()"></v-img>
+        <v-img
+          src="@/assets/logo1.svg"
+          width="50"
+          @click="goToPath('/')"
+        ></v-img>
       </v-app-bar-nav-icon>
       <v-spacer />
+
+      <v-tabs right :value="getTab()">
+        <v-tab to="/">Busca</v-tab>
+        <v-tab to="/grade">Sugestão</v-tab>
+      </v-tabs>
       <v-btn icon @click="toggleDrawer">
         <v-badge
           v-if="getSavedCourses.length > 0"
@@ -35,8 +44,16 @@ export default {
     toggleDrawer() {
       this.$emit("toggle-drawer");
     },
-    goToHome() {
-      this.$router.push({ path: "/" });
+    goToPath(path) {
+      this.$router.push({ path: path });
+    },
+    getTab() {
+      switch (this.$route.name) {
+        case "search":
+          return "tab-1";
+        case "schedule":
+          return "tab-2";
+      }
     },
   },
 };

@@ -1,12 +1,12 @@
 <template>
   <section id="course">
     <v-card v-if="getCourse(id)" flat>
-      <v-card-subtitle class="text-h3 title">{{
+      <v-card-title class="text-h3 title">{{
         getCourse(id).title
-      }}</v-card-subtitle>
-      <v-card-title class="department pt-0">
+      }}</v-card-title>
+      <v-card-subtitle class="department pt-0">
         {{ getCourse(id).department }}
-      </v-card-title>
+      </v-card-subtitle>
       <v-card-text>
         <v-expansion-panels v-model="expansionPanel" flat multiple>
           <v-expansion-panel>
