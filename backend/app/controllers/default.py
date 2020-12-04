@@ -397,14 +397,18 @@ def upload():
 				dataGradeHoraria[i.codigo] = i.getDisciplina()
 
 		####################################################################
-		print(data["curso"])
 		ref = db.reference('/curso/' + aluno.checarCurso(data["curso"]))
 		fluxo = ref.get()
 		n = 1
 		dictFluxo = {}
 		for i in fluxo:
 			if i:
-				dictFluxo[n] = i
+				dictFluxoSemestre = {}
+				for j in i:
+					turma = Disciplina()
+					turma = buscarDisciplina(j)
+					dictFluxoSemestre[turma.codigo] = turma.getDisciplina()
+				dictFluxo[n] = dictFluxoSemestre
 				n += 1
 		####################################################################
 
@@ -412,8 +416,14 @@ def upload():
 		for i in aluno.consultarTurmas():
 			if i:
 				dataTurmas[i.codigo] = i.getDisciplina()
-		
-		return { 'gradeHoraria': dataGradeHoraria, 'fluxoCurso': dictFluxo, 'turmasCursadas': dataTurmas }
+		####################################################################
+
+		dataNaoPodeCursar = {}
+		for i in aluno.consultarTurmasNaoPodeCursar():
+			if i:
+				dataNaoPodeCursar[i.codigo] = i.getDisciplina()
+
+		return { 'gradeHoraria': dataGradeHoraria, 'fluxoCurso': dictFluxo, 'turmasCursadas': dataTurmas, 'naoPodeCursar': dataNaoPodeCursar }
 
 	return { 'status': 'Fail'}
 

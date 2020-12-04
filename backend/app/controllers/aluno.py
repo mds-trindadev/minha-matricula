@@ -12,13 +12,15 @@ class Aluno:
 
 	turmasCursadas = []
 	gradeHoraria = []
+	naoPodeCursar = []
 
-	def __init__(self, curso=None, turmasCursadas=None, gradeHoraria=None):
+	def __init__(self, curso=None, turmasCursadas=None, gradeHoraria=None, naoPodeCursar=None):
 		"""Inicializador"""
 
 		self.curso = curso
 		self.turmasCursadas.append(turmasCursadas)
 		self.gradeHoraria.append(gradeHoraria)
+		self.naoPodeCursar.append(naoPodeCursar)
 
 	def adicionarTurma(self, turma):
 		"""Adiciona uma turma a lista de turmas do aluno"""
@@ -44,6 +46,11 @@ class Aluno:
 
 		return self.turmasCursadas
 
+	def consultarTurmasNaoPodeCursar(self):
+		"""Retorna uma lista com as turmas cursadas pelo aluno"""
+
+		return self.naoPodeCursar
+
 	def consultarGradeHoraria(self):
 		"""Retorna uma lista com a grade horaria do aluno"""
 
@@ -58,7 +65,8 @@ class Aluno:
 		ref = db.reference('/trancamento/'+self.curso)
 		grauTrancamento = ref.get()
 
-		cursadas = {}
+		naocursadas = {}
+		temp = []
 		for i in self.turmasCursadas:
 			if i:
 				for k in grauTrancamento:
@@ -66,20 +74,32 @@ class Aluno:
 						for l in k:
 							if i.codigo == l:
 								k[l]['cursada'] = 1
+								temp.append(l)
 
 		for k in grauTrancamento:
 			if k:
 				for l in k:
 					if k[l]['cursada'] == 0:
-						cursadas[l] = k[l]['grauTrancamento']
-								
+						naocursadas[l] = k[l]['grauTrancamento']
 
-		cursadasOrdenadas = sorted(cursadas.items(), key=lambda x: x[1], reverse=True)
+		naocursadasOrdenadas = sorted(naocursadas.items(), key=lambda x: x[1], reverse=True)
 
-		for i in cursadasOrdenadas:
+		for i in naocursadasOrdenadas:
 			turma = Disciplina()
 			turma = self.buscarDisciplina(i[0])
-			self.adicionarGradeHoraria(turma)
+			preRequisitos = re.findall(r"[A-Z]{3}[0-9]{4}", turma.preRequisitos)
+			
+			verifica = []
+			if preRequisitos:
+				for k in preRequisitos:
+					for j in temp:
+						if j == k:
+							verifica.append(True)
+
+			if len(verifica) == len(preRequisitos):
+				self.adicionarGradeHoraria(turma)
+			else:
+				self.naoPodeCursar.append(turma)
 
 		return self.gradeHoraria
 
