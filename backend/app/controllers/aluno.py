@@ -65,8 +65,14 @@ class Aluno:
 					if k:
 						for l in k:
 							if i.codigo == l:
-								cursadas[l] = k[l]['grauTrancamento']
 								k[l]['cursada'] = 1
+
+		for k in grauTrancamento:
+			if k:
+				for l in k:
+					if k[l]['cursada'] == 0:
+						cursadas[l] = k[l]['grauTrancamento']
+								
 
 		cursadasOrdenadas = sorted(cursadas.items(), key=lambda x: x[1], reverse=True)
 
@@ -104,12 +110,12 @@ class Aluno:
 			if 'ementa' in disciplinas:
 				temp.ementa = disciplinas['ementa']
 			else:
-				temp.ementa = disciplinas['Indisponivel']
+				temp.ementa = 'Indisponivel'
 
 			if 'preRequisitos' in disciplinas:
 				temp.preRequisitos = disciplinas['preRequisitos']
 			else:
-				temp.preRequisitos = disciplinas['Indisponivel']
+				temp.preRequisitos = 'Indisponivel'
 
 			# percorre as turmas disponiveis na disciplina
 			if 'turmas' in disciplinas:
@@ -124,7 +130,7 @@ class Aluno:
 					else:
 						tempTurma.horario = 'Indisponivel'
 
-					temp.addTurma(tempTurma.getTurma())
+					temp.addTurma(tempTurma)
 			else:
 				tempTurma = Turma()
 				tempTurma.turma = 'Indisponivel'
@@ -132,7 +138,7 @@ class Aluno:
 				tempTurma.professor = 'Indisponivel'
 				tempTurma.horario = 'Indisponivel'
 
-				temp.addTurma(tempTurma.getTurma())
+				temp.addTurma(tempTurma)
 
 			return temp
 
