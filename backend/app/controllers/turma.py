@@ -84,6 +84,15 @@ class Turma(Disciplina):
 	def getTurma(self):
 		"""Retorna um dicionario com as informacoes referentes a turma"""
 
+		if self.turma[0] == ' ':
+			self.turma = self.turma[1:]
+
+		self.turma.replace('  ', ' ')
+
+		if self.horario[0] == ' ':
+			self.horario = self.horario[1:]
+
+		self.horario.replace('  ', ' ')
 		return {
 				'turma': self.turma,
 				'horario': self.horario,
