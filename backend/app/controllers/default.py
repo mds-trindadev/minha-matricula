@@ -86,12 +86,12 @@ def pesquisa():
 			if 'ementa' in info:
 				temp.ementa = info['ementa']
 			else:
-				temp.ementa = info['Indisponivel']
+				temp.ementa = 'Indisponivel'
 
 			if 'preRequisitos' in info:
 				temp.preRequisitos = info['preRequisitos']
 			else:
-				temp.preRequisitos = info['Indisponivel']
+				temp.preRequisitos = 'Indisponivel'
 
 			# percorre as turmas disponiveis na disciplina
 			if 'turmas' in info:
@@ -144,12 +144,12 @@ def buscarDisciplina(codigo):
 		if 'ementa' in disciplinas:
 			temp.ementa = disciplinas['ementa']
 		else:
-			temp.ementa = disciplinas['Indisponivel']
+			temp.ementa = 'Indisponivel'
 
 		if 'preRequisitos' in disciplinas:
 			temp.preRequisitos = disciplinas['preRequisitos']
 		else:
-			temp.preRequisitos = disciplinas['Indisponivel']
+			temp.preRequisitos = 'Indisponivel'
 
 		# percorre as turmas disponiveis na disciplina
 		if 'turmas' in disciplinas:
