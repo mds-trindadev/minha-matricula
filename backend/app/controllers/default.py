@@ -106,7 +106,7 @@ def pesquisa():
 					else:
 						tempTurma.horario = 'Indisponivel'
 
-					temp.addTurma(tempTurma.getTurma())
+					temp.addTurma(tempTurma)
 			else:
 				tempTurma = Turma()
 				tempTurma.turma = 'Indisponivel'
@@ -114,7 +114,7 @@ def pesquisa():
 				tempTurma.professor = 'Indisponivel'
 				tempTurma.horario = 'Indisponivel'
 
-				temp.addTurma(tempTurma.getTurma())
+				temp.addTurma(tempTurma)
 
 			temp = temp.getDisciplina()
 			if(temp['creditos'] == getData.get("creditos")):
@@ -164,7 +164,7 @@ def buscarDisciplina(codigo):
 				else:
 					tempTurma.horario = 'Indisponivel'
 
-				temp.addTurma(tempTurma.getTurma())
+				temp.addTurma(tempTurma)
 		else:
 			tempTurma = Turma()
 			tempTurma.turma = 'Indisponivel'
@@ -172,7 +172,7 @@ def buscarDisciplina(codigo):
 			tempTurma.professor = 'Indisponivel'
 			tempTurma.horario = 'Indisponivel'
 
-			temp.addTurma(tempTurma.getTurma())
+			temp.addTurma(tempTurma)
 
 		return temp
 
@@ -219,7 +219,7 @@ def gradeHoraria():
 					tempTurma.professor = t["professor"]
 					tempTurma.horario = t["horario"]
 
-					temp.addTurma(tempTurma.getTurma())
+					temp.addTurma(tempTurma)
 
 			aluno.adicionarTurma(temp)
 			return { 'status': 'Success'}

@@ -34,14 +34,6 @@ class Disciplina(Departamento):
 	def getDisciplina(self):
 		"""Retorna um dicionario com as informacoes referentes a disciplina"""
 
-		temp = re.findall(r'[A-Z]{3}[0-9]{4}', self.preRequisitos)
-		
-		dictPreRequisitos = {}
-		n = 0
-		for i in temp:
-			dictPreRequisitos[n] = i
-			n += 1
-
 		self.creditos = int(re.findall(r'\d+', str(self.cargaHoraria))[0])/15
 
 		if self.departamento == 'FGA':
@@ -56,14 +48,14 @@ class Disciplina(Departamento):
 		dictTurmas = {}
 		n = 0;
 		for i in self.vetorTurma:
-			dictTurmas[n] = str(i)
+			dictTurmas[n] = i.getTurma()
 			n += 1
 
 		return {
 				'codigo': self.codigo,
 				'nome': self.nome, 
 				'ementa': self.ementa, 
-				'preRequisitos': dictPreRequisitos,
+				'preRequisitos': self.preRequisitos,
 				'cargaHoraria': self.cargaHoraria,
 				'creditos': self.creditos,
 				'prioridade': self.prioridade,
