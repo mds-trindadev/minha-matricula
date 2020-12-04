@@ -1,14 +1,14 @@
 <template>
   <section id="course">
     <v-card v-if="getCourse(id)" flat>
-      <v-card-title class="text-h3 title">{{
+      <v-card-title class="text-h4 title">{{
         getCourse(id).title
       }}</v-card-title>
-      <v-card-subtitle class="department pt-0">
+      <v-card-subtitle class="text-h5 department pt-0">
         {{ getCourse(id).department }}
       </v-card-subtitle>
       <v-card-text>
-        <v-expansion-panels v-model="expansionPanel" flat multiple>
+        <v-expansion-panels :disabled="getCourse(id).syllabus" accordion flat>
           <v-expansion-panel>
             <v-expansion-panel-header class="px-0 text-h5">
               <template v-slot:actions>
@@ -20,6 +20,8 @@
               {{ getCourse(id).syllabus }}
             </v-expansion-panel-content>
           </v-expansion-panel>
+        </v-expansion-panels>
+        <v-expansion-panels accordion flat>
           <v-expansion-panel>
             <v-expansion-panel-header class="px-0 text-h5">
               <template v-slot:actions>
@@ -44,6 +46,8 @@
               </v-row> -->
             </v-expansion-panel-content>
           </v-expansion-panel>
+        </v-expansion-panels>
+        <v-expansion-panels accordion flat>
           <v-expansion-panel>
             <v-expansion-panel-header class="px-0 text-h5">
               <template v-slot:actions>
@@ -100,12 +104,9 @@ export default {
     ...mapGetters(["getCourse"]),
   },
   created() {
-    this.requestCourse(this.id);
-  },
-  methods: {
-    requestCourse(id) {
-      this.$store.dispatch("getCourse", id);
-    },
+    if (!this.getCourse(this.id)) {
+      this.$store.dispatch("requestGetCourse", this.id);
+    }
   },
 };
 </script>
@@ -117,7 +118,6 @@ export default {
 }
 
 .department {
-  font-size: 30px !important;
   font-weight: 300 !important;
   line-height: 1.1 !important;
 }
