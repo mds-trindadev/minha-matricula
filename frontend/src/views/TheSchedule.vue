@@ -1,6 +1,6 @@
 <template>
   <section id="schedule">
-    <v-card full-width outlined>
+    <v-card full-width flat>
       <v-card-title class="text-h4 title">
         Recomendação personalizada!
       </v-card-title>
@@ -43,105 +43,27 @@
         </v-row>
       </v-card-text>
 
-      <v-card-text>
-        <v-expansion-panels v-model="expansionPanel" accordion flat multiple>
-          <v-expansion-panel>
-            <v-expansion-panel-header class="px-0 text-h5">
-              <template v-slot:actions>
-                <v-icon class="icon">mdi-36px mdi-chevron-down</v-icon>
-              </template>
-
-              <span class="header">Recomendação</span>
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <v-row>
-                <v-col
-                  cols="12"
-                  v-for="course in getConcludedCourses"
-                  :key="course.code"
-                >
-                  <CourseCard :course="course">
-                    <v-btn icon large @click.stop="saveCourse(course)">
-                      <v-icon v-if="course.saved" color="primary">
-                        mdi-playlist-check</v-icon
-                      >
-                      <v-icon v-else> mdi-playlist-plus</v-icon>
-                    </v-btn>
-                  </CourseCard>
-                </v-col>
-              </v-row>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-          <v-expansion-panel>
-            <v-expansion-panel-header class="px-0 text-h5">
-              <template v-slot:actions>
-                <v-icon class="icon">mdi-36px mdi-chevron-down</v-icon>
-              </template>
-
-              <span class="header">Disciplinas cursadas</span>
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <v-row>
-                <v-col
-                  cols="12"
-                  v-for="course in getConcludedCourses"
-                  :key="course.code"
-                >
-                  <CourseCard :course="course">
-                    <v-btn icon large @click.stop="saveCourse(course)">
-                      <v-icon v-if="course.saved" color="primary">
-                        mdi-playlist-check</v-icon
-                      >
-                      <v-icon v-else> mdi-playlist-plus</v-icon>
-                    </v-btn>
-                  </CourseCard>
-                </v-col>
-              </v-row>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-          <v-expansion-panel>
-            <v-expansion-panel-header class="px-0 text-h5">
-              <template v-slot:actions>
-                <v-icon class="icon">mdi-36px mdi-chevron-down</v-icon>
-              </template>
-
-              <span class="header"> Obrigatórias do curso</span>
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <v-row>
-                <v-col
-                  cols="12"
-                  v-for="course in getConcludedCourses"
-                  :key="course.code"
-                >
-                  <CourseCard :course="course">
-                    <v-btn icon large @click.stop="saveCourse(course)">
-                      <v-icon v-if="course.saved" color="primary">
-                        mdi-playlist-check</v-icon
-                      >
-                      <v-icon v-else> mdi-playlist-plus</v-icon>
-                    </v-btn>
-                  </CourseCard>
-                </v-col>
-              </v-row>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
-      </v-card-text>
+      <v-row>
+        <v-col
+          v-for="(course, index) in getCourses"
+          :key="index"
+          cols="12"
+          sm="6"
+          md="4"
+          lg="4"
+          xl="3"
+        >
+          <CourseCard :course="course" :index="index" :maxCredits="20">
+            <v-btn icon large @click.stop="saveCourse(course)">
+              <v-icon v-if="course.saved" color="primary">
+                mdi-playlist-check</v-icon
+              >
+              <v-icon v-else> mdi-playlist-plus</v-icon>
+            </v-btn>
+          </CourseCard>
+        </v-col>
+      </v-row>
     </v-card>
-
-    <!-- <v-card>
-      <v-card-title class="title">Título da grade</v-card-title>
-      <v-card-subtitle class="department">Subtítulo da grade.</v-card-subtitle>
-      <v-card-text>
-        <v-data-table
-          :headers="table.days"
-          :items="table.classes"
-          :items-per-page="5"
-          class="elevation-1"
-        ></v-data-table>
-      </v-card-text>
-    </v-card> -->
   </section>
 </template>
 
@@ -159,13 +81,14 @@ export default {
     expansionPanel: [0],
     file: null,
     loading: false,
+    totalCredits: 0,
   }),
   computed: {
-    ...mapGetters(["getConcludedCourses"]),
+    ...mapGetters(["getCourses"]),
   },
   watch: {
-    getConcludedCourses() {
-      if (this.getConcludedCourses) {
+    getCourses() {
+      if (this.getCourses) {
         this.loading = false;
       }
     },
@@ -187,7 +110,7 @@ export default {
 
         formData.append("file", this.file);
 
-        this.$store.dispatch("uploadFile", formData);
+        this.$store.dispatch("requestUploadFile", formData);
         this.loading = true;
       }
     },
@@ -208,6 +131,14 @@ export default {
   font-size: 30px !important;
   font-weight: 300 !important;
   line-height: 1.1 !important;
+}
+
+.icon {
+  order: 0;
+}
+
+.header {
+  order: 1;
 }
 
 .v-card__text,

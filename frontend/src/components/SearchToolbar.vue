@@ -2,7 +2,6 @@
   <section>
     <v-row>
       <v-col cols="12">
-        {{ getCourses(searchParams) }}
         <v-text-field
           v-model="searchParams.string"
           outlined
