@@ -4,7 +4,7 @@
       <v-card-title class="text-h4 title">{{
         getCourse(id).title
       }}</v-card-title>
-      <v-card-subtitle class="text-h5 department pt-0">
+      <v-card-subtitle class="text-h5 department pt-3">
         {{ getCourse(id).department }}
       </v-card-subtitle>
       <v-card-text>
