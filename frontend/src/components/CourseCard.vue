@@ -3,14 +3,26 @@
     <v-hover v-slot="{ hover }">
       <v-card
         :elevation="hover ? 4 : 0"
-        :class="{
-          'rounded-lg': true,
-          'on-hover': hover,
-        }"
+        :class="[
+          getSideColor(),
+          {
+            'rounded-lg': true,
+            'on-hover': hover,
+          },
+        ]"
         outlined
         width="100%"
         @click="openCourse(course)"
       >
+        curriculum: {{ course.curriculum }}
+        <br />
+        concluded: {{ course.concluded }}
+        <br />
+
+        suggested: {{ course.suggested }}
+        <br />
+
+        available: {{ course.available }}
         <v-app-bar class="toolbar" color="transparent" dense flat>
           <v-toolbar-title :class="getCampusColor(course.campus)">{{
             course.campus
@@ -66,6 +78,14 @@ export default {
       type: Object,
       required: true,
     },
+    index: {
+      type: Number,
+      required: false,
+    },
+    maxCredits: {
+      type: Number,
+      required: false,
+    },
   },
   methods: {
     getCampusColor(campus) {
@@ -86,6 +106,15 @@ export default {
       this.$router.push({
         path: `/disciplina/${course.code}`,
       });
+    },
+    getSideColor() {
+      if (this.course.concluded) {
+        return "concluded";
+      } else if (this.course.suggested) {
+        return "suggested";
+      } else if (!this.course.available) {
+        return "unavailable";
+      }
     },
   },
 };
@@ -112,5 +141,21 @@ export default {
 .v-card__text,
 .v-card__title {
   word-break: break-word;
+}
+
+.concluded {
+  border-left: 5px solid gray !important;
+}
+
+.suggested {
+  border-left: 5px solid green !important;
+}
+
+.available {
+  border-left: 5px solid blue !important;
+}
+
+.unavailable {
+  border-left: 5px solid red !important;
 }
 </style>

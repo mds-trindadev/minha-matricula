@@ -1,21 +1,42 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import axios from "axios";
-// import data from "@/assets/data";
 import CourseService from "@/services/CourseService.js";
 
 Vue.use(Vuex);
 
-function formatCourseData(course) {
+function capitalizeText(string) {
+  var capitalized = [];
+
+  string.split(" ").forEach((substring) => {
+    var newString = substring.toLowerCase();
+
+    if (substring.length > 3) {
+      newString = substring.charAt(0).toUpperCase();
+      newString += substring.slice(1).toLowerCase();
+    }
+
+    capitalized.push(newString);
+  });
+
+  return capitalized.join(" ");
+}
+
+function formatCourseData({
+  course,
+  curriculum = false,
+  suggested = false,
+  available = true,
+  concluded = false,
+}) {
+  console.log(`[${course.codigo}] ${course.nome}`);
   return {
     campus: course.campus,
     timeLoad: course.cargaHoraria,
     code: course.codigo,
-    concluded: course.concluida,
     credits: course.creditos,
     department: course.departamento,
     syllabus: course.ementa,
-    title: course.nome,
+    title: capitalizeText(course.nome),
     prerequisites: course.preRequisitos,
     priority: course.prioridade,
     classes: Object.keys(course.turmas)
@@ -27,6 +48,10 @@ function formatCourseData(course) {
         code: key.turma,
       })),
     saved: false,
+    curriculum,
+    suggested,
+    available,
+    concluded,
   };
 }
 
@@ -41,152 +66,165 @@ export default new Vuex.Store({
     concluded: [],
   },
   mutations: {
-    SET_CONCLUDED(state, courses) {
-      Object.entries(courses).forEach(([key, value]) => {
-        console.log(key);
-        const formattedCourse = {
-          campus: value.campus,
-          timeLoad: value.cargaHoraria,
-          code: value.codigo,
-          concluded: value.concluida,
-          credits: value.creditos,
-          department: value.departamento,
-          syllabus: value.ementa,
-          title: value.nome,
-          prerequisites: value.preRequisitos,
-          priority: value.prioridade,
-          classes: Object.keys(value.turmas)
-            .map((key) => value.turmas[key])
-            .map((key) => ({
-              time: key.horario,
-              period: key.periodo,
-              teacher: key.professor,
-              code: key.turma,
-            })),
-        };
-
-        Vue.set(formattedCourse, "saved", false);
-        state.concluded.push(formattedCourse);
-      });
-    },
-    SAVE_FILTERS(state, filters) {
-      state.filters = filters;
-    },
-    // SAVE_ALL_COURSES(state, courses) {
-    //   courses.forEach((course, index) => {
-    //     Vue.set(courses[index], "saved", false);
-    //   });
-    //   state.courses = courses;
-    // },
+    // Pesquisa
+    // Disciplina
     SAVE_COURSE(state, course) {
       const formattedCourse = formatCourseData(course);
-      // Vue.set(course, "saved", false);
       state.courses.push(formattedCourse);
     },
-    CAPITALIZE_ALL_COURSES(state) {
-      state.courses.forEach((course, index) => {
-        var newTitle = [];
-        var newDepartment = [];
 
-        course.title.split(" ").forEach((string) => {
-          var newString = string.toLowerCase();
+    SAVE_CONCLUDED(state, courses) {
+      console.log("Concluídas");
+      // console.log(courses);
 
-          if (string.length > 3) {
-            newString = string.charAt(0).toUpperCase();
-            newString += string.slice(1).toLowerCase();
-          }
+      for (var newCourse in courses) {
+        const index = state.courses.findIndex(
+          (course) => courses[newCourse].codigo === course.code
+        );
 
-          newTitle.push(newString);
-        });
+        if (index !== -1) {
+          state.courses[index].concluded = true;
+        } else {
+          const formattedCourse = formatCourseData({
+            course: courses[newCourse],
+            concluded: true,
+          });
 
-        course.department.split(" ").forEach((string) => {
-          var newString = string.toLowerCase();
-
-          if (string.length > 3) {
-            newString = string.charAt(0).toUpperCase();
-            newString += string.slice(1).toLowerCase();
-          }
-
-          newDepartment.push(newString);
-        });
-
-        state.courses[index].title = newTitle.join(" ");
-        state.courses[index].department = newDepartment.join(" ");
-      });
+          state.courses.push(formattedCourse);
+        }
+      }
     },
-    SAVE_LOCAL_COURSE(state, course) {
+
+    SAVE_SUGGESTED(state, courses) {
+      console.log("Sugeridas");
+      // console.log(courses);
+
+      for (var newCourse in courses) {
+        const index = state.courses.findIndex(
+          (course) => courses[newCourse].codigo === course.code
+        );
+
+        if (index !== -1) {
+          state.courses[index].suggested = true;
+        } else {
+          const formattedCourse = formatCourseData({
+            course: courses[newCourse],
+            suggested: true,
+          });
+
+          state.courses.push(formattedCourse);
+        }
+      }
+    },
+
+    SAVE_UNAVAILABLE(state, courses) {
+      console.log("Pode cursar");
+      // console.log(courses);
+
+      for (var newCourse in courses) {
+        const index = state.courses.findIndex(
+          (course) => courses[newCourse].codigo === course.code
+        );
+
+        if (index !== -1) {
+          state.courses[index].available = false;
+        } else {
+          const formattedCourse = formatCourseData({
+            course: courses[newCourse],
+            available: false,
+          });
+
+          state.courses.push(formattedCourse);
+        }
+      }
+    },
+
+    SAVE_CURRICULUM(state, courses) {
+      console.log("Obigatórias");
+      // console.log(courses);
+
+      for (var semester in courses) {
+        for (var prop in courses[semester]) {
+          const formattedCourse = formatCourseData({
+            course: courses[semester][prop],
+            curriculum: true,
+          });
+
+          state.courses.push(formattedCourse);
+        }
+      }
+    },
+
+    SET_CONCLUDED(state, courses) {
+      for (const property in courses) {
+        const formattedCourse = formatCourseData(courses[property]);
+        state.concluded.push(formattedCourse);
+      }
+    },
+
+    // Rascunho
+    SAVE_COURSE_LOCALLY(state, course) {
       state.courses.forEach((elem, index) => {
         if (course.code === elem.code) {
           state.courses[index].saved = true;
         }
       });
     },
-    REMOVE_COURSE(state, courseAndIndex) {
+    REMOVE_COURSE_LOCALLY(state, courseAndIndex) {
       state.courses.forEach((elem, elemIndex) => {
         if (courseAndIndex.course.code === elem.code) {
           state.courses[elemIndex].saved = false;
         }
       });
     },
-    REMOVE_ALL_SAVED_COURSES(state) {
+    REMOVE_ALL_COURSES_LOCALLY(state) {
       state.courses.forEach((course, index) => {
         state.courses[index].saved = false;
       });
     },
   },
   actions: {
-    async getFilters({ commit }) {
-      const { data } = await CourseService.getFilters();
-      commit("SAVE_FILTERS", data);
-    },
-    // async getAllCourses({ commit }) {
-    //   const { data } = await CourseService.getCourses();
-    //   commit("SAVE_ALL_COURSES", data);
-    //   commit("CAPITALIZE_ALL_COURSES");
-    // },
+    // Pesquisa
+
+    // Disciplina
     async requestGetCourse({ commit }, id) {
       const { data } = await CourseService.getCourse(id);
       commit("SAVE_COURSE", data);
-      // commit("CAPITALIZE_ALL_COURSES");
     },
-    async setCourses({ commit }) {
-      axios.get("@/assets/data.json").then((response) => {
-        commit("SET_COURSES", response.data.disciplina);
-      });
-    },
-    async uploadFile({ commit }, formData) {
-      await CourseService.uploadFile(formData);
-      const { data } = await CourseService.getConcludedCourses(formData);
-      commit("SET_CONCLUDED", data);
-    },
-    // async getCourseAndPrerequisites({ commit }, id) {
-    //   try {
-    //     const { data } = await CourseService.getCourse(id);
-    //     if (data) {
-    //       commit("SAVE_COURSE", data);
-    //     }
 
-    //     data.preRequisitos.forEach(async (prerequisite) => {
-    //       const { data } = await CourseService.getCourse(prerequisite);
-    //       if (data) {
-    //         commit("SAVE_COURSE", data);
-    //       }
-    //     });
-    //   } catch (error) {
-    //     // router.push({ path: "/" });
-    //     console.log(error);
-    //   }
+    // Grade
+    async requestUploadFile({ commit, state }, formData) {
+      try {
+        const { data } = await CourseService.uploadFile(formData);
+        console.log(data);
 
-    //   commit("CAPITALIZE_ALL_COURSES");
-    // },
-    saveCourse({ commit }, course) {
-      commit("SAVE_LOCAL_COURSE", course);
+        const {
+          // fluxoCurso: curriculum,
+          gradeHoraria: suggested,
+          naoPodeCursar: unavailable,
+          turmasCursadas: concluded,
+        } = data;
+
+        commit("SAVE_CONCLUDED", concluded);
+        commit("SAVE_SUGGESTED", suggested);
+        commit("SAVE_UNAVAILABLE", unavailable);
+        // commit("SAVE_CURRICULUM", curriculum);
+
+        console.log(state.courses);
+      } catch (error) {
+        console.log(error);
+      }
     },
-    removeCourse({ commit }, courseAndIndex) {
-      commit("REMOVE_COURSE", courseAndIndex);
+
+    // Rascunho
+    saveCourseLocally({ commit }, course) {
+      commit("SAVE_COURSE_LOCALLY", course);
     },
-    removeAllSavedCourses({ commit }) {
-      commit("REMOVE_ALL_SAVED_COURSES");
+    removeCourseLocally({ commit }, courseAndIndex) {
+      commit("REMOVE_COURSE_LOCALLY", courseAndIndex);
+    },
+    removeAllCoursesLocally({ commit }) {
+      commit("REMOVE_ALL_COURSES_LOCALLY");
     },
   },
   getters: {
@@ -199,11 +237,11 @@ export default new Vuex.Store({
     getCourse: (state) => (id) => {
       return state.courses.find((course) => course.code === id);
     },
-    getCourses: (state) => (params) => {
-      return state.courses.find((campus) => campus !== params);
-    },
-    getConcludedCourses: (state) => {
-      return state.concluded;
+    // getCourses: (state) => (params) => {
+    //   return state.courses.find((campus) => campus !== params);
+    // },
+    getCourses: (state) => {
+      return state.courses;
     },
   },
 });
