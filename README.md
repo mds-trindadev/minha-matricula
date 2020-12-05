@@ -76,4 +76,12 @@ python3 run.py
 
 ### Frontend
 
-Em breve.
+Instale o Vue/cli
+```
+npm install -g @vue/cli
+```
+
+Rode o servidor
+```
+npm run serve
+```
