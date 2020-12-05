@@ -76,4 +76,39 @@ python3 run.py
 
 ### Frontend
 
-Em breve.
+Entre na pasta do frontend.
+
+```
+cd frontend/
+```
+
+#### Node.js e npm
+Se não possuir o Node.js e o npm, instale utilizando o nvm.
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+```
+Feche e abra o terminal.
+
+```
+nvm install 'lts/*'
+```
+Verifique a instalação.
+
+```
+npm --version && node --version
+```
+ 
+#### Ambiente de desenvolvimento
+ 
+Em `frontend/`
+
+ ```
+npm install
+```
+
+Para executar
+
+```
+npm run serve
+```
