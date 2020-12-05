@@ -2,7 +2,7 @@
   <section>
     <v-row>
       <v-col
-        v-for="(course, index) in getFilteredCourses(params)"
+        v-for="(course, index) in courses"
         :key="index"
         cols="12"
         sm="6"
@@ -25,7 +25,7 @@
 
 <script>
 import CourseCard from "@/components/CourseCard";
-import { mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 export default {
   name: "SearchList",
@@ -34,21 +34,8 @@ export default {
     CourseCard,
   },
 
-  props: {
-    params: {
-      type: Object,
-      required: true,
-    },
-  },
-
-  watch: {
-    params() {
-      console.log("dale");
-    },
-  },
-
   computed: {
-    ...mapGetters(["getFilteredCourses"]),
+    ...mapState(["courses"]),
   },
 
   methods: {

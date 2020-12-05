@@ -1,10 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import CourseService from "@/services/CourseService.js";
-// import data from "@/assets/data";
 import data from "./courses";
 import departments from "@/store/departments";
-
 Vue.use(Vuex);
 
 function capitalizeText(string) {
@@ -223,13 +221,13 @@ export default new Vuex.Store({
   },
   actions: {
     // Pesquisa
-    setCourses({ commit }) {
-      commit("SET_COURSES");
-    },
+    // setCourses({ commit }) {
+    //   commit("SET_COURSES");
+    // },
 
-    setFilters({ commit }) {
-      commit("SET_FILTERS");
-    },
+    // setFilters({ commit }) {
+    //   commit("SET_FILTERS");
+    // },
 
     // Disciplina
     async requestGetCourse({ commit }, id) {
@@ -275,6 +273,18 @@ export default new Vuex.Store({
   getters: {
     getFilters: (state) => {
       return state.filters;
+    },
+    getSavedCourses: (state) => {
+      return state.courses.filter((course) => course.saved);
+    },
+    getCourse: (state) => (id) => {
+      return state.courses.find((course) => course.code === id);
+    },
+    // getCourses: (state) => (params) => {
+    //   return state.courses.find((campus) => campus !== params);
+    // },
+    getCourses: (state) => {
+      return state.courses;
     },
 
     getFilterOptions: (state) => (name) => {
@@ -341,18 +351,6 @@ export default new Vuex.Store({
 
         // String
       });
-    },
-    getSavedCourses: (state) => {
-      return state.courses;
-    },
-    getCourse: (state) => (id) => {
-      return state.courses.find((course) => course.code === id);
-    },
-    // getCourses: (state) => (params) => {
-    //   return state.courses.find((campus) => campus !== params);
-    // },
-    getCourses: (state) => {
-      return state.courses;
     },
   },
 });

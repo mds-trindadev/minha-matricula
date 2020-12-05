@@ -29,29 +29,7 @@
         <v-card-text class="department">{{ course.department }}</v-card-text>
 
         <v-card-actions class="py-0 pl-0">
-          <v-card-text v-if="course.classes[0].code">
-            <div
-              v-for="(classHour, index) in course.classes"
-              :key="index"
-              class="mr-1 my-1"
-            >
-              <v-chip v-if="index === 0" small> </v-chip>
-              <v-chip
-                v-else-if="index === 1 && course.classes.length === 2"
-                small
-              >
-                {{ classHour }}
-              </v-chip>
-              <v-chip
-                v-else-if="index === 1 && course.classes.length > 2"
-                color="primary"
-                outlined
-                small
-              >
-                + {{ course.classes.length - 1 }}
-              </v-chip>
-            </div>
-          </v-card-text>
+         
 
           <v-spacer></v-spacer>
           <slot></slot>
@@ -99,7 +77,13 @@ export default {
       });
     },
     getSideColor() {
-      return "concluded";
+      if (this.course.concluded) {
+        return "concluded";
+      } else if (this.course.suggested) {
+        return "suggested";
+      } else if (!this.course.available) {
+        return "unavailable";
+      }
     },
   },
 };

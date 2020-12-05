@@ -15,12 +15,12 @@
         <v-tab to="/grade">Sugestão</v-tab>
       </v-tabs>
       <v-btn icon @click="toggleDrawer">
-        <!-- <v-badge
+        <v-badge
           v-if="getSavedCourses.length > 0"
           color="orange"
           :content="getSavedCourses.length"
           left
-        ></v-badge> -->
+        ></v-badge>
         <v-icon>mdi-format-list-bulleted-square</v-icon>
       </v-btn>
     </v-app-bar>
