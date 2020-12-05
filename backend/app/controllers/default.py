@@ -392,9 +392,11 @@ def upload():
 		aluno.sugerirGradeHoraria()
 
 		dataGradeHoraria = {}
+		s = 0
 		for i in aluno.consultarGradeHoraria():
 			if i:
-				dataGradeHoraria[i.codigo] = i.getDisciplina()
+				dataGradeHoraria[s] = i.getDisciplina()
+				s += 1
 
 		####################################################################
 		ref = db.reference('/curso/' + aluno.checarCurso(data["curso"]))
@@ -423,7 +425,8 @@ def upload():
 			if i:
 				dataNaoPodeCursar[i.codigo] = i.getDisciplina()
 
-		return { 'gradeHoraria': dataGradeHoraria, 'fluxoCurso': dictFluxo, 'turmasCursadas': dataTurmas, 'naoPodeCursar': dataNaoPodeCursar }
+		return { 'gradeHoraria': dataGradeHoraria }
+		# return { 'gradeHoraria': dataGradeHoraria, 'fluxoCurso': dictFluxo, 'turmasCursadas': dataTurmas, 'naoPodeCursar': dataNaoPodeCursar }
 
 	return { 'status': 'Fail'}
 
