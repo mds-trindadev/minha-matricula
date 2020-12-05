@@ -14,15 +14,6 @@
         width="100%"
         @click="openCourse(course)"
       >
-        curriculum: {{ course.curriculum }}
-        <br />
-        concluded: {{ course.concluded }}
-        <br />
-
-        suggested: {{ course.suggested }}
-        <br />
-
-        available: {{ course.available }}
         <v-app-bar class="toolbar" color="transparent" dense flat>
           <v-toolbar-title :class="getCampusColor(course.campus)">{{
             course.campus
@@ -108,13 +99,7 @@ export default {
       });
     },
     getSideColor() {
-      if (this.course.concluded) {
-        return "concluded";
-      } else if (this.course.suggested) {
-        return "suggested";
-      } else if (!this.course.available) {
-        return "unavailable";
-      }
+      return "concluded";
     },
   },
 };

@@ -1,7 +1,7 @@
 <template>
   <section id="home">
-    <SearchToolbar></SearchToolbar>
-    <SearchList></SearchList>
+    <SearchToolbar @handle-search="setParams"></SearchToolbar>
+    <SearchList :params="params" :key="updateCards"></SearchList>
   </section>
 </template>
 
@@ -16,7 +16,19 @@ export default {
     SearchList,
   },
   data: () => ({
-    title: "Home",
+    params: {},
+    updateCards: 0,
   }),
+
+  created() {
+    this.$store.dispatch("setCourses");
+  },
+
+  methods: {
+    setParams(params) {
+      this.params = params;
+      this.updateCards += 1;
+    },
+  },
 };
 </script>

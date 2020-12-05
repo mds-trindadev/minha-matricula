@@ -16,9 +16,15 @@
 
       <v-col>
         <v-slide-group show-arrows>
-          <v-slide-item v-for="(filter, key) of filters" :key="filter.label">
-            <v-btn class="mx-2" outlined rounded small @click="openFilter(key)">
-              {{ filter.label }}
+          <v-slide-item v-for="filter in getFilters" :key="filter.title">
+            <v-btn
+              class="mx-2"
+              outlined
+              rounded
+              small
+              @click="openFilter(filter.name)"
+            >
+              {{ filter.title }}
             </v-btn>
           </v-slide-item>
         </v-slide-group>
@@ -27,15 +33,17 @@
     <v-row v-if="dialog" justify="center">
       <v-dialog v-model="dialog" scrollable max-width="500px">
         <v-card>
-          <v-card-title>{{ filters[dialogKey].label }}</v-card-title>
+          <v-card-title>{{ getFilterOptions(dialogKey).title }}</v-card-title>
           <v-divider></v-divider>
           <v-card-text>
             <v-checkbox
-              v-for="(option, key) of filters[dialogKey].options"
-              :key="key"
+              v-for="option in getFilterOptions(dialogKey).options"
+              :key="dialogKey === 'departments' ? option.initials : option"
               v-model="searchParams[dialogKey]"
               :value="option"
-              :label="option.toString()"
+              :label="
+                dialogKey === 'departments' ? option.title : option.toString()
+              "
               hideDetails
             >
             </v-checkbox>
@@ -56,7 +64,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "SearchToolbar",
@@ -66,14 +74,13 @@ export default {
     dialogKey: null,
     searchParams: {
       string: "",
-      campi: [],
+      // campi: [],
       departments: [],
       credits: [],
     },
   }),
   computed: {
-    ...mapState(["filters", "courses"]),
-    ...mapGetters(["getCourses"]),
+    ...mapGetters(["getFilters", "getFilterOptions"]),
   },
 
   methods: {
@@ -82,7 +89,7 @@ export default {
       this.dialog = true;
     },
     search() {
-      console.log(this.searchParams);
+      this.$emit("handle-search", this.searchParams);
     },
   },
 };
