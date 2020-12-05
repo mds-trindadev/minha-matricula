@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import CourseService from "@/services/CourseService.js";
+// import data from "@/assets/data";
+import data from "./courses";
+import departments from "@/store/departments";
 
 Vue.use(Vuex);
 
@@ -57,16 +60,51 @@ function formatCourseData({
 
 export default new Vuex.Store({
   state: {
-    filters: {
-      credits: [1, 2, 3, 4, 5, 6],
-      departments: [],
-      campi: ["FGA", "FCE"],
-    },
+    filters: [
+      {
+        name: "credits",
+        title: "Créditos",
+        options: [1, 2, 3, 4, 5, 6],
+      },
+      {
+        name: "departments",
+        title: "Departamentos",
+        options: departments,
+      },
+      // campi: ["FGA", "FCE"],
+    ],
     courses: [],
     concluded: [],
   },
   mutations: {
     // Pesquisa
+    SET_COURSES(state) {
+      state.courses = [];
+      for (var dept in data.courses) {
+        for (var cod in data.courses[dept]) {
+          var course = data.courses[dept][cod];
+
+          var courseClasses = [];
+          for (var courseClass in data.courses[dept][cod].classes) {
+            courseClasses.push(data.courses[dept][cod].classes[courseClass]);
+          }
+
+          course.classes = courseClass;
+          Vue.set(course, "saved", false);
+          Vue.set(course, "classes", courseClass);
+          Vue.set(course, "credits", 4);
+          Vue.set(course, "campus", "FGA");
+          Vue.set(course, "department", dept);
+          Vue.set(
+            course,
+            "title",
+            capitalizeText(data.courses[dept][cod].title)
+          );
+          state.courses.push(course);
+        }
+      }
+    },
+
     // Disciplina
     SAVE_COURSE(state, course) {
       const formattedCourse = formatCourseData(course);
@@ -185,6 +223,13 @@ export default new Vuex.Store({
   },
   actions: {
     // Pesquisa
+    setCourses({ commit }) {
+      commit("SET_COURSES");
+    },
+
+    setFilters({ commit }) {
+      commit("SET_FILTERS");
+    },
 
     // Disciplina
     async requestGetCourse({ commit }, id) {
@@ -231,8 +276,74 @@ export default new Vuex.Store({
     getFilters: (state) => {
       return state.filters;
     },
+
+    getFilterOptions: (state) => (name) => {
+      return state.filters.find((filter) => filter.name === name);
+    },
+    getFilteredCourses: (state) => (params) => {
+      return state.courses.filter((course) => {
+        // cada curso
+        // Créditos
+
+        var credits = false;
+        if (params.credits && params.credits.length > 0) {
+          params.credits.forEach((credit) => {
+            // console.log(`course: ${course.credits}, filter: ${credit}`);
+            if (course.credits === credit) {
+              credits = true;
+            }
+          });
+        } else {
+          credits = true;
+        }
+
+        // Departamento
+        var departments = false;
+        if (params.departments && params.departments.length > 0) {
+          params.departments.forEach((department) => {
+            console
+              .log
+              // `course: ${course.department}, filter: ${department.initials}`
+              ();
+
+            if (course.department === department.initials) {
+              departments = true;
+            }
+          });
+        } else {
+          departments = true;
+        }
+
+        // String
+        var string = false;
+        if (params.string && params.string !== "") {
+          `courseS: ${course.title}, filterS: ${params.string}`;
+
+          string = course.title
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .includes(
+              params.string
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+            );
+        } else {
+          string = true;
+        }
+
+        if (credits && departments && string) {
+          return true;
+        } else {
+          return false;
+        }
+
+        // String
+      });
+    },
     getSavedCourses: (state) => {
-      return state.courses.filter((course) => course.saved);
+      return state.courses;
     },
     getCourse: (state) => (id) => {
       return state.courses.find((course) => course.code === id);
