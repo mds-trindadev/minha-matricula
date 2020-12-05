@@ -38,7 +38,7 @@ export default {
   suggestSchedule() {
     return apiClient.post("/gradeHoraria", { op: "sugerirGradeHoraria" });
   },
-  getSchedule() {
+  getSuggestedSchedule() {
     return apiClient.post("/gradeHoraria", { op: "getGradeHoraria" });
   },
 };

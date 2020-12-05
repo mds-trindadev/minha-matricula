@@ -30,6 +30,7 @@ class Disciplina(Departamento):
 		self.campus = campus
 		self.departamento = departamento
 		self.vetorTurma = []
+		self.semestre = 0
 
 	def getDisciplina(self):
 		"""Retorna um dicionario com as informacoes referentes a disciplina"""

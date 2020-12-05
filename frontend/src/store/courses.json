@@ -1,0 +1,3697 @@
+{
+  "program": {},
+  "courses": {
+    "ADM": {
+      "ADM0002": {
+        "timeLoad": "30 h.",
+        "title": "ESTUDOS E PESQUISAS EM ADMINISTRAÇÃO",
+        "prerequisites": "( ( ADM0198 ) )",
+        "classes": {
+          "AA": {
+            "time": "2T67 4T67",
+            "period": "2020.1",
+            "professor": "DIEGO MOTA VIEIRA (30h)"
+          },
+          "B": {
+            "time": "4T56",
+            "period": "2020.1",
+            "professor": "MARIA AMELIA DE PAULA DIAS (30h)"
+          },
+          "BD": {
+            "time": "6T67 6N12",
+            "period": "2020.1",
+            "professor": "JOSE MARCIO CARVALHO (30h)"
+          },
+          "C": {
+            "time": "7M34",
+            "period": "2020.1",
+            "professor": "KAROLL HAUSSLER CARNEIRO RAMOS (30h)"
+          },
+          "E": {
+            "time": "5M5  5T1",
+            "period": "2020.1",
+            "professor": "ELUIZA ALBERTO DE MORAIS WATANABE (30h)"
+          },
+          "G": {
+            "time": "6N123",
+            "period": "2020.1",
+            "professor": "SIEGRID GUILLAUMON DECHANDT (30h)"
+          },
+          "O": {
+            "time": "3T67 5T67",
+            "period": "2020.1",
+            "professor": "ELAINE RABELO NEIVA (30h)"
+          },
+          "Q": {
+            "time": "24T6",
+            "period": "2020.1",
+            "professor": "SILVIA ARAUJO DOS REIS (30h)"
+          },
+          "ZA": {
+            "time": "4T23",
+            "period": "2020.1",
+            "professor": "ALDERY SILVEIRA JUNIOR (30h)"
+          },
+          "ZB": {
+            "time": "7M5 7T1",
+            "period": "2020.1",
+            "professor": "EVALDO CESAR CAVALCANTE RODRIGUES (30h)"
+          }
+        }
+      },
+      "ADM0003": {
+        "timeLoad": "30 h.",
+        "title": "TÓPICOS CONTEMPORÂNEOS EM ESTRATÉGIA",
+        "prerequisites": "( ( ADM0023 ) )"
+      }
+    },
+    "BOT": {
+      "BOT0001": {
+        "timeLoad": "90 h.",
+        "title": "SISTEMATICA DOS VEGETAIS SUPERIORES",
+        "prerequisites": "( ( ICB0098 )  OU ( BOT0021 ) )"
+      },
+      "BOT0004": {
+        "timeLoad": "60 h.",
+        "title": "INTRODUCAO A ANATOMIA VEGETAL",
+        "prerequisites": "( ( BOT0049 )  OU ( BOT0021 )  OU ( BOT0044 )  OU ( ICB0250 )  OU ( ICB0251 ) )",
+        "classes": {
+          "A": {
+            "time": "2M12 6M34",
+            "period": "2020.1",
+            "professor": "SUELI MARIA GOMES (20h)"
+          },
+          "B": {
+            "time": "2M12 3T45",
+            "period": "2020.1",
+            "professor": "SUELI MARIA GOMES (20h)"
+          },
+          "C": {
+            "time": "2M12 2M34",
+            "period": "2020.1",
+            "professor": "SUELI MARIA GOMES (20h)"
+          },
+          "D": {
+            "time": "2M12 5M34",
+            "period": "2020.1",
+            "professor": "LUIZ ALFREDO RODRIGUES PEREIRA (20h)"
+          },
+          "E": {
+            "time": "2M12 5M12",
+            "period": "2020.1",
+            "professor": "CONCEICAO ENEIDA DOS SANTOS SILVEIRA (20h)"
+          },
+          "F": {
+            "time": "5N12 5N34",
+            "period": "2020.1",
+            "professor": "LUIZ ALFREDO RODRIGUES PEREIRA (20h)"
+          }
+        }
+      }
+    },
+    "FGA": {
+      "FGA0001": {
+        "timeLoad": "60 h.",
+        "title": "CONTRATAÇÃO DE SERVIÇOS DE TECNOLOGIA DA INFORMAÇÃO",
+        "prerequisites": "( ( FGA0206 )  OU ( CIC0140 )  OU ( ADM0092 )  OU ( EPR0072 ) )"
+      },
+      "FGA0003": {
+        "timeLoad": "60 h.",
+        "title": "COMPILADORES 1",
+        "prerequisites": "( ( FGA0147 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T23 6T23",
+            "periodo": "2020.1",
+            "professor": "FABIO MACEDO MENDES (60h)"
+          }
+        }
+      },
+      "FGA0004": {
+        "timeLoad": "60 h.",
+        "title": "TÉCNICAS DE MEDIÇÃO FUNCIONAL E ESTIMATIVAS DE SOFTWARE",
+        "prerequisites": "( ( FGA0172 ) )"
+      },
+      "FGA0006": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DE EQUAÇÕES DIFERENCIAIS PARA ENGENHARIA",
+        "prerequisites": "( ( MAT0031  E MAT0027 ) )"
+      },
+      "FGA0007": {
+        "timeLoad": "60 h.",
+        "title": "CONFIABILIDADE DE COMPONENTES E SISTEMAS",
+        "prerequisites": "( ( FGA0157  E FGA0179 ) )"
+      },
+      "FGA0008": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS AEROESPACIAIS",
+        "prerequisites": "( ( IFD0171  E FGA0254 ) )",
+        "turmas": {
+          "A": {
+            "horario": "24T23",
+            "periodo": "2020.1",
+            "professor": "LUIS FERNANDO BALDUINO DE SOUSA (30h)"
+          }
+        }
+      },
+      "FGA0009": {
+        "timeLoad": "60 h.",
+        "title": "TRABALHO DE CONCLUSÃO DE CURSO 1",
+        "prerequisites": "",
+        "turmas": {
+          "01A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "PAULA MEYER SOARES (60h)"
+          },
+          "02A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "ARTEM ANDRIANOV (60h)"
+          },
+          "03A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "CARLOS ALBERTO GURGEL VERAS (60h)"
+          },
+          "04A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "JORGE ANDRES CORMANE ANGARITA (60h)"
+          },
+          "05A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "RONNI GERALDO GOMES DE AMORIM (60h)"
+          },
+          "06A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "MARIA DEL PILAR HIDALGO FALLA (60h)"
+          },
+          "07A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "ANDRE LUIZ PERON MARTINS LANNA (60h)"
+          },
+          "08A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "DANIEL MAURICIO MUNOZ ARBOLEDA (60h)"
+          },
+          "09A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "ROBERTO DE SOUZA BAPTISTA (60h)"
+          },
+          "10A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "NILTON CORREIA DA SILVA (60h)"
+          },
+          "11A": {
+            "horario": "37M5  37T1",
+            "periodo": "2020.1",
+            "professor": "SUELIA DE SIQUEIRA RODRIGUES FLEURY ROSA (60h)"
+          },
+          "12A": {
+            "horario": "7M45  7T23",
+            "periodo": "2020.1",
+            "professor": "ALEX REIS (60h)"
+          },
+          "13A": {
+            "horario": "7M45  7T23",
+            "periodo": "2020.1",
+            "professor": "FABIANA FREITAS MENDES (30h)"
+          },
+          "14A": {
+            "horario": "7M45  7T23",
+            "periodo": "2020.1",
+            "professor": "BRUNO CESAR RIBAS (60h)"
+          },
+          "15A": {
+            "horario": "7M45  7T23",
+            "periodo": "2020.1",
+            "professor": "CARLA SILVA ROCHA AGUIAR (60h)"
+          },
+          "16A": {
+            "horario": "7M45  7T23",
+            "periodo": "2020.1",
+            "professor": "CRISTIANE SOARES RAMOS (60h)"
+          },
+          "17A": {
+            "horario": "7M45  7T23",
+            "periodo": "2020.1",
+            "professor": "CRISTIANO JACQUES MIOSSO RODRIGUES MENDES (60h)"
+          },
+          "18A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "DIOGO CAETANO GARCIA (60h)"
+          },
+          "19A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "DOMENICO SIMONE (60h)"
+          },
+          "20A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "EDISON GUSTAVO CUEVA GALARRAGA (60h)"
+          },
+          "21A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "EULER DE VILHENA GARCIA (60h)"
+          },
+          "22A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "FABIANA FREITAS MENDES (60h)"
+          },
+          "23A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "FABIO CORDEIRO DE LISBOA (60h)"
+          },
+          "24A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "FABRICIO ATAIDES BRAZ (60h)"
+          },
+          "25A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "FERNANDO PAIVA SCARDUA (60h)"
+          },
+          "26A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "FLAVIO HENRIQUE JUSTINIANO RIBEIRO DA SILVA (60h)"
+          },
+          "27A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "GEORGE MARSICANO CORREA (60h)"
+          },
+          "28A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "JOSE FELICIO DA SILVA (60h)"
+          },
+          "29A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "WILLIAM REIS SILVA (30h)"
+          },
+          "30A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "GIANCARLO SANTILLI (30h)"
+          },
+          "31A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "LUCIANO GONCALVES NOLETO (60h)"
+          },
+          "32A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "LUIS FILOMENO DE JESUS FERNANDES (60h)"
+          },
+          "33A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "MARCUS VINICIUS CHAFFIM COSTA (60h)"
+          },
+          "34A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "MILENE SERRANO (30h)"
+          },
+          "35A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "OLEXIY SHYNKARENKO (60h)"
+          },
+          "36A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "PAOLO GESSINI (30h)"
+          },
+          "37A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "PATRICIA REGINA SOBRAL BRAGA (60h)"
+          },
+          "38A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "REJANE MARIA DA COSTA FIGUEIREDO (60h)"
+          },
+          "39A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "RENAN UTIDA BARBOSA FERREIRA (60h)"
+          },
+          "40A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "RENATO CORAL SAMPAIO (60h)"
+          },
+          "41A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "RHANDER VIANA (60h)"
+          },
+          "42A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "ROSEANY DE VASCONCELOS VIEIRA LOPES (60h)"
+          },
+          "43A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "VANDOR ROBERTO VILARDI RISSOLI (60h)"
+          },
+          "44A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "RICARDO AJAX DIAS KOSLOSKI (60h)"
+          },
+          "45A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "DANIEL COSTA ARAUJO (60h)"
+          },
+          "46A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "THIAGO FELIPPE KURUDEZ CORDEIRO (60h)"
+          },
+          "47A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "PAOLO GESSINI (60h)"
+          },
+          "48A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "MARIO DE OLIVEIRA ANDRADE (60h)"
+          },
+          "49A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "MARIA ALZIRA DE ARAUJO NUNES (60h)"
+          },
+          "50A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "GLAUCO VITOR PEDROSA (60h)"
+          },
+          "51A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "GIANCARLO SANTILLI (60h)"
+          },
+          "52A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "FABIO ALFAIA DA CUNHA (60h)"
+          },
+          "53A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "GERARDO ANTONIO IDROBO PIZO (60h)"
+          },
+          "54A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "MATEUS RODRIGUES MIRANDA (60h)"
+          },
+          "55A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "MARIA VITORIA DUARTE FERRARI (60h)"
+          },
+          "56A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "RODRIGO ARBEY MUNOZ MENESES (60h)"
+          },
+          "57A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "EVANDRO LEONARDO SILVA TEIXEIRA (60h)"
+          },
+          "58A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "FABIO MACEDO MENDES (60h)"
+          },
+          "59A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "GIOVANNI ALMEIDA SANTOS (60h)"
+          },
+          "60A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "JOSIANE DO SOCORRO AGUIAR DE SOUZA DE OLIVEIRA CAMPOS (60h)"
+          },
+          "61A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "MARCELO BENTO DA SILVA (60h)"
+          },
+          "62A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "SANDRO AUGUSTO PAVLIK HADDAD (60h)"
+          },
+          "63A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "SANDRA MARIA DA LUZ (60h)"
+          },
+          "64A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "SEBASTIEN ROLAND MARIE JOSEPH RONDINEAU (60h)"
+          },
+          "65A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "TIAGO ALVES DA FONSECA (60h)"
+          },
+          "66A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "WANDER CLEBER MARIA PEREIRA DA SILVA (60h)"
+          },
+          "67A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "WILLIAM REIS SILVA (60h)"
+          },
+          "68A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "WILLIAM REIS SILVA (30h)"
+          },
+          "69A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "ADSON FERREIRA DA ROCHA (60h)"
+          },
+          "70A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "HENRIQUE GOMES DE MOURA (60h)"
+          },
+          "71A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "RAFAEL FAZZOLINO PINTO BARBOSA (60h)"
+          },
+          "72A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "RUDI HENRI VAN ELS (60h)"
+          },
+          "73A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "TALLITA KAROLLINE NUNES ROCHA (60h)"
+          },
+          "74A": {
+            "horario": "7M45  7T12",
+            "periodo": "2020.1",
+            "professor": "MAURA ANGELICA MILFONT SHZU (60h)"
+          }
+        }
+      },
+      "FGA0010": {
+        "timeLoad": "60 h.",
+        "title": "PRINCÍPIO DE COMUNICAÇÃO",
+        "prerequisites": ""
+      },
+      "FGA0011": {
+        "timeLoad": "60 h.",
+        "title": "TRABALHO DE CONCLUSÃO DE CURSO 2",
+        "prerequisites": "( FGA0009 ) ",
+        "turmas": {
+          "01A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "CRISTIANE SOARES RAMOS (45h)"
+          },
+          "02A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "CARLA SILVA ROCHA AGUIAR (90h)"
+          },
+          "03A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "MARCUS VINICIUS BATISTUTA (90h)"
+          },
+          "04A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "NILTON CORREIA DA SILVA (90h)"
+          },
+          "05A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "MILENE SERRANO (45h)"
+          },
+          "06A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "FABIO CORDEIRO DE LISBOA (90h)"
+          },
+          "07A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "SERGIO HENRIQUE DA SILVA CARNEIRO (90h)"
+          },
+          "08A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "WANDER CLEBER MARIA PEREIRA DA SILVA (90h)"
+          },
+          "09A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "RHANDER VIANA (45h)"
+          },
+          "10A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "WILLIAM REIS SILVA (90h)"
+          },
+          "11A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "RHANDER VIANA (90h)"
+          },
+          "12A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "PAULA MEYER SOARES (90h)"
+          },
+          "13A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "RONNI GERALDO GOMES DE AMORIM (90h)"
+          },
+          "14A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "RENATO CORAL SAMPAIO (90h)"
+          },
+          "15A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "CARLA SILVA ROCHA AGUIAR (45h)"
+          },
+          "16A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "BRUNO CESAR RIBAS (90h)"
+          },
+          "17A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "JOHN LENON CARDOSO GARDENGHI (45h)"
+          },
+          "18A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "CRISTIANE SOARES RAMOS (90h)"
+          },
+          "19A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "SUELIA DE SIQUEIRA RODRIGUES FLEURY ROSA (90h)"
+          },
+          "20A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "DANIEL MAURICIO MUNOZ ARBOLEDA (90h)"
+          },
+          "21A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "WELLINGTON AVELINO DO AMARAL (90h)"
+          },
+          "22A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "DANIEL MAURICIO MUNOZ ARBOLEDA (45h)"
+          },
+          "23A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "LUIS FILOMENO DE JESUS FERNANDES (90h)"
+          },
+          "24A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "ALEX REIS (90h)"
+          },
+          "25A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "ANDRE MURILO DE ALMEIDA PINTO (90h)"
+          },
+          "26A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "DIOGO CAETANO GARCIA (90h)"
+          },
+          "27A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "DOMENICO SIMONE (90h)"
+          },
+          "28A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "EULER DE VILHENA GARCIA (90h)"
+          },
+          "29A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "FABIO ALFAIA DA CUNHA (90h)"
+          },
+          "30A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "FELIPE CHAGAS STORTI (90h)"
+          },
+          "31A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "FABIO CORDEIRO DE LISBOA (45h)"
+          },
+          "32A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "FERNANDO PAIVA SCARDUA (90h)"
+          },
+          "33A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "GERARDO ANTONIO IDROBO PIZO (90h)"
+          },
+          "34A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "GILMAR SILVA BESERRA (90h)"
+          },
+          "35A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "GLAUCO VITOR PEDROSA (90h)"
+          },
+          "36A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "JHON NERO VAZ GOULART (90h)"
+          },
+          "37A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "JORGE ANDRES CORMANE ANGARITA (90h)"
+          },
+          "38A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "JOSE FELICIO DA SILVA (90h)"
+          },
+          "39A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "JOSIANE DO SOCORRO AGUIAR DE SOUZA DE OLIVEIRA CAMPOS (90h)"
+          },
+          "40A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "LUCIANO GONCALVES NOLETO (90h)"
+          },
+          "41A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "MARCUS VINICIUS CHAFFIM COSTA (90h)"
+          },
+          "42A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "MARIA ALZIRA DE ARAUJO NUNES (90h)"
+          },
+          "43A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "MARIA DEL PILAR HIDALGO FALLA (90h)"
+          },
+          "44A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "MARIA VITORIA DUARTE FERRARI (45h)"
+          },
+          "45A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "MARIO DE OLIVEIRA ANDRADE (90h)"
+          },
+          "46A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "OLEXIY SHYNKARENKO (90h)"
+          },
+          "47A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "RICARDO AJAX DIAS KOSLOSKI (90h)"
+          },
+          "48A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "ROBERTO DE SOUZA BAPTISTA (90h)"
+          },
+          "49A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "TIAGO ALVES DA FONSECA (90h)"
+          },
+          "50A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "VANDOR ROBERTO VILARDI RISSOLI (90h)"
+          },
+          "51A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "FABRICIO ATAIDES BRAZ (90h)"
+          },
+          "52A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "MATEUS RODRIGUES MIRANDA (90h)"
+          },
+          "53A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "GABRIELA CUNHA POSSA (45h)"
+          },
+          "54A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "RITA DE CASSIA SILVA (90h)"
+          },
+          "55A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "ARTEM ANDRIANOV (90h)"
+          },
+          "56A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "GIANCARLO SANTILLI (90h)"
+          },
+          "57A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "DOMENICO SIMONE (45h)"
+          },
+          "58A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "GLAUCO VITOR PEDROSA (45h)"
+          },
+          "59A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "ALESSANDRO BORGES DE SOUSA OLIVEIRA (45h)"
+          },
+          "60A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "CRISTIANO JACQUES MIOSSO RODRIGUES MENDES (90h)"
+          },
+          "61A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "FABIO MACEDO MENDES (90h)"
+          },
+          "62A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "GIANCARLO SANTILLI (45h)"
+          },
+          "63A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "SANDRO AUGUSTO PAVLIK HADDAD (90h)"
+          },
+          "64A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "LEONARDO AGUAYO (90h)"
+          },
+          "65A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "TALLITA KAROLLINE NUNES ROCHA (90h)"
+          },
+          "66A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "RICARDO RAMOS FRAGELLI (90h)"
+          },
+          "67A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "AUGUSTO CESAR DE MENDONCA BRASIL (90h)"
+          },
+          "68A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "EDGARD COSTA OLIVEIRA (90h)"
+          },
+          "69A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "EDISON GUSTAVO CUEVA GALARRAGA (90h)"
+          },
+          "70A": {
+            "horario": "246N34",
+            "periodo": "2020.1",
+            "professor": "HENRIQUE GOMES DE MOURA (90h)"
+          }
+        }
+      },
+      "FGA0012": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS DE CONTROLE",
+        "prerequisites": ""
+      },
+      "FGA0013": {
+        "timeLoad": "60 h.",
+        "title": "ANATOMIA E FISIOLOGIA HUMANA",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "2M12 5M12",
+            "periodo": "2020.1",
+            "professor": "SUELIA DE SIQUEIRA RODRIGUES FLEURY ROSA (60h)"
+          }
+        }
+      },
+      "FGA0014": {
+        "timeLoad": "60 h.",
+        "title": "PROCESSAMENTO DE SINAIS BIOLÓGICOS",
+        "prerequisites": "( ( FGA0219 ) )",
+        "turmas": {
+          "01": {
+            "horario": "35T45",
+            "periodo": "2020.1",
+            "professor": "MARCUS VINICIUS CHAFFIM COSTA (60h)"
+          }
+        }
+      },
+      "FGA0015": {
+        "timeLoad": "60 h.",
+        "title": "PROCESSAMENTO DIGITAL DE IMAGENS",
+        "prerequisites": "( ( FGA0219 )  OU ( FGA0102  E FGA0157 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M12 4M12",
+            "periodo": "2020.1",
+            "professor": "RENAN UTIDA BARBOSA FERREIRA (60h)"
+          }
+        }
+      },
+      "FGA0016": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAL EM INSTRUMENTAÇÃO BIOMÉDICA",
+        "turmas": {
+          "A": {
+            "horario": "2M34 5M34",
+            "periodo": "2020.1",
+            "professor": "SUELIA DE SIQUEIRA RODRIGUES FLEURY ROSA (60h)"
+          }
+        }
+      },
+      "FGA0017": {
+        "timeLoad": "60 h.",
+        "title": "PROJETOS DE CIRCUITOS INTEGRADOS 1",
+        "prerequisites": "( ( ENE0181 )  OU ( FGA0217 )  OU ( FGA0068  E FGA0070 ) ) ( ( FGA0215 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "SANDRO AUGUSTO PAVLIK HADDAD (60h)"
+          }
+        }
+      },
+      "FGA0019": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS EM SISTEMAS DE COMPUTAÇÃO DE ALTO DESEMPENHO",
+        "prerequisites": ""
+      },
+      "FGA0020": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO E ANÁLISE DE ALGORITMO",
+        "prerequisites": ""
+      },
+      "FGA0021": {
+        "timeLoad": "210 h.",
+        "title": "ESTÁGIO SUPERVISIONADO",
+        "prerequisites": "",
+        "turmas": {
+          "01A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "GIANCARLO SANTILLI (210h)"
+          },
+          "02A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "ENEIDA GONZALEZ VALDES (210h)"
+          },
+          "03A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "RONNI GERALDO GOMES DE AMORIM (210h)"
+          },
+          "04A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "FELIPE CHAGAS STORTI (210h)"
+          },
+          "05A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "TIAGO ALVES DA FONSECA (210h)"
+          },
+          "06A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "ROBERTO DE SOUZA BAPTISTA (210h)"
+          },
+          "07A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "HIMILSYS HERNANDEZ GONZALEZ (210h)"
+          },
+          "08A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "ANDRE MURILO DE ALMEIDA PINTO (210h)"
+          },
+          "09A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "ROSEANY DE VASCONCELOS VIEIRA LOPES (210h)"
+          },
+          "10A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "LUCIANO GONCALVES NOLETO (210h)"
+          },
+          "11A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "MARIA VITORIA DUARTE FERRARI (210h)"
+          },
+          "12A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "PAULA MEYER SOARES (210h)"
+          },
+          "13A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "SEBASTIEN ROLAND MARIE JOSEPH RONDINEAU (210h)"
+          },
+          "14A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "DOMENICO SIMONE (210h)"
+          },
+          "15A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "RHANDER VIANA (210h)"
+          },
+          "16A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "ARTEM ANDRIANOV (210h)"
+          },
+          "17A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "WILLIAM REIS SILVA (210h)"
+          },
+          "18A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "FABRICIO ATAIDES BRAZ (210h)"
+          },
+          "19A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "WELLINGTON AVELINO DO AMARAL (210h)"
+          },
+          "20A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "CARLA TATIANA MOTA ANFLOR (210h)"
+          },
+          "21A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "JOSE FELICIO DA SILVA (210h)"
+          },
+          "22A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "SANDRO AUGUSTO PAVLIK HADDAD (210h)"
+          },
+          "23A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "LEONARDO AGUAYO (210h)"
+          },
+          "24A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "DANIEL MAURICIO MUNOZ ARBOLEDA (210h)"
+          },
+          "25A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "HENRIQUE GOMES DE MOURA (210h)"
+          },
+          "26A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "GERARDO ANTONIO IDROBO PIZO (210h)"
+          },
+          "27A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "SUELIA DE SIQUEIRA RODRIGUES FLEURY ROSA (210h)"
+          },
+          "28A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "ANDRE LUIZ PERON MARTINS LANNA (210h)"
+          },
+          "29A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "CARLA SILVA ROCHA AGUIAR (210h)"
+          },
+          "30A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "CRISTIANE SOARES RAMOS (210h)"
+          },
+          "31A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "EDSON ALVES DA COSTA JUNIOR (210h)"
+          },
+          "32A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "FABIO MACEDO MENDES (210h)"
+          },
+          "33A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "GIOVANNI ALMEIDA SANTOS (210h)"
+          },
+          "34A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "MAURICIO SERRANO (210h)"
+          },
+          "35A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "MILENE SERRANO (210h)"
+          },
+          "36A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "GLAUCO VITOR PEDROSA (210h)"
+          },
+          "37A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "NILTON CORREIA DA SILVA (210h)"
+          },
+          "38A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "RAFAEL FAZZOLINO PINTO BARBOSA (210h)"
+          },
+          "39A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "REJANE MARIA DA COSTA FIGUEIREDO (210h)"
+          },
+          "40A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "RENATO CORAL SAMPAIO (210h)"
+          },
+          "41A": {
+            "horario": "234567T67  7N12",
+            "periodo": "2020.1",
+            "professor": "WANDER CLEBER MARIA PEREIRA DA SILVA (210h)"
+          },
+          "42A": {
+            "horario": "234567T6  23456N1 7N12",
+            "periodo": "2020.1",
+            "professor": "LUIS FILOMENO DE JESUS FERNANDES (210h)"
+          }
+        }
+      },
+      "FGA0023": {
+        "timeLoad": "60 h.",
+        "title": "DINÂMICA DOS MECANISMOS",
+        "prerequisites": "( ( FGA0154 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "RITA DE CASSIA SILVA (60h)"
+          }
+        }
+      },
+      "FGA0024": {
+        "timeLoad": "60 h.",
+        "title": "MODELAGEM E SIMULAÇÃO DE SISTEMAS ENERGÉTICOS",
+        "prerequisites": "( ( FGA0204  E FGA0186  E FGA0160 ) )"
+      },
+      "FGA0025": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS DE ENERGIA SOLAR E EÓLICA",
+        "prerequisites": "( ( FGA0086  E FGA0087 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4T23 6T23",
+            "periodo": "2020.1",
+            "professor": "JORGE ANDRES CORMANE ANGARITA (60h)"
+          }
+        }
+      },
+      "FGA0026": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DE ARQUITETURA DE SOFTWARE",
+        "prerequisites": "( ( FGA0172 ) )"
+      },
+      "FGA0027": {
+        "timeLoad": "60 h.",
+        "title": "PRINCÍPIOS DE ROBÓTICA EDUCACIONAL",
+        "prerequisites": "( ( CIC0007 ) )"
+      },
+      "FGA0028": {
+        "timeLoad": "60 h.",
+        "title": "PROGRAMAÇÃO PARA COMPETIÇÕES",
+        "prerequisites": "( ( CIC0004 ) )"
+      },
+      "FGA0030": {
+        "timeLoad": "60 h.",
+        "title": "ESTRUTURAS DE DADOS 2",
+        "prerequisites": "( ( FGA0147 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "26M12",
+            "periodo": "2020.1",
+            "professor": "BRUNO CESAR RIBAS (60h)"
+          }
+        }
+      },
+      "FGA0031": {
+        "timeLoad": "30 h.",
+        "title": "SEMINÁRIOS EM ENGENHARIA DE SOFTWARE",
+        "prerequisites": "( ( CIC0007 )  OU ( CIC0088 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M12",
+            "periodo": "2020.1",
+            "professor": "ANDRE BARROS DE SALES (30h)"
+          }
+        }
+      },
+      "FGA0034": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS EM MATEMÁTICA APLICADA",
+        "prerequisites": "( ( MAT0048 )  OU ( MAT0026 ) )"
+      },
+      "FGA0035": {
+        "timeLoad": "60 h.",
+        "title": "ANÁLISE DE SISTEMAS DE ENERGIA ELÉTRICA",
+        "prerequisites": "( ( FGA0262 ) )"
+      },
+      "FGA0036": {
+        "timeLoad": "60 h.",
+        "title": "PRÉ-CÁLCULO PARA ENGENHARIA",
+        "prerequisites": ""
+      },
+      "FGA0037": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS EM ENGENHARIA AEROESPACIAL",
+        "turmas": {
+          "A": {
+            "horario": "2T23 4T23",
+            "periodo": "2020.1",
+            "professor": "ARTUR ELIAS DE MORAIS BERTOLDI (60h)"
+          },
+          "B": {
+            "horario": "4M12 6M12",
+            "periodo": "2020.1",
+            "professor": "MANUEL NASCIMENTO DIAS BARCELOS JUNIOR (60h)"
+          }
+        }
+      },
+      "FGA0038": {
+        "timeLoad": "75 h.",
+        "title": "AERODINÂMICA DE SISTEMAS AEROESPACIAIS",
+        "prerequisites": "( FGA0204 ) ",
+        "turmas": {
+          "01A": {
+            "horario": "35T45 6T3",
+            "periodo": "2020.1",
+            "professor": "OLEXIY SHYNKARENKO (75h)"
+          }
+        }
+      },
+      "FGA0039": {
+        "timeLoad": "75 h.",
+        "title": "MECÂNICA DE ESTRUTURAS AEROESPACIAIS",
+        "prerequisites": "( ( FGA0179 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "2M5 35M12",
+            "periodo": "2020.1",
+            "professor": "ARTEM ANDRIANOV (75h)"
+          }
+        }
+      },
+      "FGA0040": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS DE CONTROLE AUTOMOTIVO",
+        "prerequisites": "( ( FGA0230 ) )"
+      },
+      "FGA0041": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS EM JOGOS DIGITAIS",
+        "prerequisites": "( ( CIC0007 ) OU ( CIC0088 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "WANDER CLEBER MARIA PEREIRA DA SILVA (60h)"
+          }
+        }
+      },
+      "FGA0042": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS EM SISTEMAS CRÍTICOS",
+        "prerequisites": "( ( CIC0007 )  OU ( CIC0088 ) )"
+      },
+      "FGA0043": {
+        "timeLoad": "60 h.",
+        "title": "DINÂMICA DOS GASES PARA SISTEMAS AEROESPACIAIS",
+        "prerequisites": "( ( FGA0038 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "OLEXIY SHYNKARENKO (60h)"
+          }
+        }
+      },
+      "FGA0044": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE SISTEMAS DE CONTROLE",
+        "prerequisites": "( ( FGA0197 )  OU ( FGA0093 ) )"
+      },
+      "FGA0045": {
+        "timeLoad": "60 h.",
+        "title": "MECÂNICA DO VÔO",
+        "prerequisites": "( ( FGA0008  E FGA0038 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "WILLIAM REIS SILVA (60h)"
+          }
+        }
+      },
+      "FGA0046": {
+        "timeLoad": "60 h.",
+        "title": "MÉTODOS E TÉCNICAS DA ESCRITA CIENTÍFICA",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "3T45 5T45",
+            "periodo": "2020.1",
+            "professor": "VANESSA MARIA DE CASTRO (60h)"
+          },
+          "B": {
+            "horario": "4M5 6M5 4T1 6T1",
+            "periodo": "2020.1",
+            "professor": "SANDRA MARIA FALEIROS LIMA (60h)"
+          }
+        }
+      },
+      "FGA0047": {
+        "timeLoad": "60 h.",
+        "title": "PROCESSOS PETROQUÍMICOS",
+        "prerequisites": "( ( FGA0156  E FGA0175 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "PATRICIA REGINA SOBRAL BRAGA (60h)"
+          }
+        }
+      },
+      "FGA0048": {
+        "timeLoad": "60 h.",
+        "title": "MECÂNICA DO VOO ESPACIAL",
+        "prerequisites": "( ( FGA0045 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M12 6M12",
+            "periodo": "2020.1",
+            "professor": "WILLIAM REIS SILVA (60h)"
+          }
+        }
+      },
+      "FGA0049": {
+        "timeLoad": "90 h.",
+        "title": "PROJETO DE SISTEMAS AEROESPACIAIS",
+        "prerequisites": "( ( FGA0038  E FGA0045 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "246M34",
+            "periodo": "2020.1",
+            "professor": "RONNE TOLEDO (60h)"
+          }
+        }
+      },
+      "FGA0050": {
+        "timeLoad": "60 h.",
+        "title": "DINÂMICA DE ESTRUTURAS AEROESPACIAIS",
+        "prerequisites": "( FGA0039 ) ",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "SERGIO HENRIQUE DA SILVA CARNEIRO (60h)"
+          }
+        }
+      },
+      "FGA0052": {
+        "timeLoad": "90 h.",
+        "title": "PROPULSÃO AEROESPACIAL",
+        "prerequisites": "( ( FGA0043  E ENM0071 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "235M12",
+            "periodo": "2020.1",
+            "professor": "DOMENICO SIMONE (60h)"
+          }
+        }
+      },
+      "FGA0053": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS EM PROGRAMAÇÃO",
+        "turmas": {
+          "A": {
+            "horario": "6T23 6T45",
+            "periodo": "2020.1",
+            "professor": "EDSON ALVES DA COSTA JUNIOR (60h)"
+          }
+        }
+      },
+      "FGA0054": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS EM GOVERNANÇA DE TECNOLOGIA DA INFORMAÇÃO",
+        "prerequisites": ""
+      },
+      "FGA0055": {
+        "timeLoad": "60 h.",
+        "title": "TECNOLOGIAS DE FABRICAÇÃO 1",
+        "prerequisites": "( ( FGA0078  E FGA0075 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "RHANDER VIANA (60h)"
+          }
+        }
+      },
+      "FGA0056": {
+        "timeLoad": "60 h.",
+        "title": "TECNOLOGIAS DE FABRICAÇÃO 2",
+        "prerequisites": "( ( FGA0078  E FGA0075 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "EDISON GUSTAVO CUEVA GALARRAGA (60h)"
+          }
+        }
+      },
+      "FGA0057": {
+        "timeLoad": "60 h.",
+        "title": "ELETRÔNICA DE POTÊNCIA",
+        "prerequisites": "( ( FGA0086  E FGA0087  E FGA0068  E FGA0070 ) )",
+        "turmas": {
+          "AF": {
+            "horario": "3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "MARCUS VINICIUS BATISTUTA (60h)"
+          }
+        }
+      },
+      "FGA0058": {
+        "timeLoad": "60 h.",
+        "title": "CRIPTOGRAFIA E SEGURANÇA DE REDES",
+        "prerequisites": "( ( FGA0085 )  OU ( FGA0159 ) )"
+      },
+      "FGA0060": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS DE BANCO DE DADOS 2",
+        "prerequisites": "( ( FGA0137 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "VANDOR ROBERTO VILARDI RISSOLI (60h)"
+          }
+        }
+      },
+      "FGA0061": {
+        "timeLoad": "60 h.",
+        "title": "FÍSICA PARA JOGOS ELETRÔNICOS 1",
+        "prerequisites": "( ( MAT0031  E IFD0171  E MAT0025 ) )"
+      },
+      "FGA0062": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE SISTEMAS DE OBSERVAÇÃO DA TERRA",
+        "prerequisites": "( ( FGA0048  E FGA0199 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35T23",
+            "periodo": "2020.1",
+            "professor": "GIANCARLO SANTILLI (60h)"
+          },
+          "02A": {
+            "horario": "35M34",
+            "periodo": "2020.1",
+            "professor": "GIANCARLO SANTILLI (60h)"
+          }
+        }
+      },
+      "FGA0063": {
+        "timeLoad": "60 h.",
+        "title": "PROPULSÃO AERONÁUTICA",
+        "prerequisites": "( ( FGA0043  E ENM0071 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "DOMENICO SIMONE (60h)"
+          }
+        }
+      },
+      "FGA0064": {
+        "timeLoad": "60 h.",
+        "title": "PROPULSÃO QUÍMICA",
+        "prerequisites": "( ( FGA0052 ) )"
+      },
+      "FGA0065": {
+        "timeLoad": "60 h.",
+        "title": "PROPULSÃO ELÉTRICA",
+        "prerequisites": "( ( FGA0052  E FGA0143 ) )"
+      },
+      "FGA0066": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DE VARIÁVEL COMPLEXA PARA ENGENHARIA",
+        "prerequisites": "( ( MAT0027  E MAT0031 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35M34",
+            "periodo": "2020.1",
+            "professor": "RONNI GERALDO GOMES DE AMORIM (30h)"
+          }
+        }
+      },
+      "FGA0067": {
+        "timeLoad": "60 h.",
+        "title": "TEORIA DE CIRCUITOS ELETRÔNICOS 1",
+        "prerequisites": "( ( MAT0048 )  OU ( MAT0026 ) ) ( FGA0069 )",
+        "turmas": {
+          "03": {
+            "horario": "35M12",
+            "periodo": "2020.1",
+            "professor": "LUIS FILOMENO DE JESUS FERNANDES (60h)"
+          },
+          "A": {
+            "horario": "35M12",
+            "periodo": "2020.1",
+            "professor": "MARCELINO MONTEIRO DE ANDRADE (60h)"
+          },
+          "B": {
+            "horario": "24M12",
+            "periodo": "2020.1",
+            "professor": "EULER DE VILHENA GARCIA (60h)"
+          }
+        }
+      },
+      "FGA0068": {
+        "timeLoad": "60 h.",
+        "title": "TEORIA DE CIRCUITOS ELETRÔNICOS 2",
+        "prerequisites": "( ( FGA0196 )  OU ( FGA0067  E FGA0069  E FGA0101  E FGA0100 ) ) ( FGA0070 )",
+        "turmas": {
+          "A": {
+            "horario": "2M34 4M34",
+            "periodo": "2020.1",
+            "professor": "GILMAR SILVA BESERRA (60h)"
+          }
+        }
+      },
+      "FGA0069": {
+        "timeLoad": "30 h.",
+        "title": "PRÁTICA DE CIRCUITOS ELETRÔNICOS 1",
+        "prerequisites": "( ( MAT0048 )  OU ( MAT0026 ) ) ( FGA0067 ) ( ( ENE0044 ) )"
+      },
+      "FGA0070": {
+        "timeLoad": "30 h.",
+        "title": "PRÁTICA DE CIRCUITOS ELETRÔNICOS 2",
+        "prerequisites": "( ( FGA0196 )  OU ( FGA0067  E FGA0069  E FGA0101  E FGA0100 ) ) ( FGA0068 )"
+      },
+      "FGA0071": {
+        "timeLoad": "30 h.",
+        "title": "PRÁTICA DE ELETRÔNICA DIGITAL 1",
+        "prerequisites": "( ( MAT0031 ) ) ( FGA0073 ) ( ( CIC0094 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "2T23",
+            "periodo": "2020.1",
+            "professor": "HENRIQUE MARRA TAIRA MENEGAZ (30h)"
+          },
+          "02A": {
+            "horario": "2T45",
+            "periodo": "2020.1",
+            "professor": "HENRIQUE MARRA TAIRA MENEGAZ (30h)"
+          },
+          "03A": {
+            "horario": "6M12",
+            "periodo": "2020.1",
+            "professor": "MARIANA COSTA BERNARDES MATIAS (30h)"
+          },
+          "04A": {
+            "horario": "2M12",
+            "periodo": "2020.1",
+            "professor": "GILMAR SILVA BESERRA (30h)"
+          },
+          "05A": {
+            "horario": "2M34",
+            "periodo": "2020.1",
+            "professor": "GUILLERMO ALVAREZ BESTARD (30h)"
+          },
+          "06A": {
+            "horario": "6M34",
+            "periodo": "2020.1",
+            "professor": "MARIANA COSTA BERNARDES MATIAS (30h)"
+          },
+          "07A": {
+            "horario": "4T45",
+            "periodo": "2020.1",
+            "professor": "CLAUDIA PATRICIA OCHOA DIAZ (30h)"
+          },
+          "08A": {
+            "horario": "6T45",
+            "periodo": "2020.1",
+            "professor": "CLAUDIA PATRICIA OCHOA DIAZ (30h)"
+          },
+          "09A": {
+            "horario": "2M12",
+            "periodo": "2020.1",
+            "professor": "HENRIQUE MARRA TAIRA MENEGAZ (30h)"
+          },
+          "10A": {
+            "horario": "2M34",
+            "periodo": "2020.1",
+            "professor": "HENRIQUE MARRA TAIRA MENEGAZ (30h)"
+          }
+        }
+      },
+      "FGA0072": {
+        "timeLoad": "30 h.",
+        "title": "PRÁTICA DE ELETRÔNICA DIGITAL 2",
+        "prerequisites": "( ( ENE0277 )  OU ( FGA0073  E FGA0071 ) ) ( FGA0074 )",
+        "turmas": {
+          "A": {
+            "horario": "4M12",
+            "periodo": "2020.1",
+            "professor": "GILMAR SILVA BESERRA (30h)"
+          },
+          "B": {
+            "horario": "4M34",
+            "periodo": "2020.1",
+            "professor": "DANIEL MAURICIO MUNOZ ARBOLEDA (30h)"
+          }
+        }
+      },
+      "FGA0073": {
+        "timeLoad": "60 h.",
+        "title": "TEORIA DE ELETRÔNICA DIGITAL 1",
+        "prerequisites": "( ( MAT0031 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M12 6M12",
+            "periodo": "2020.1",
+            "professor": "RENATO VILELA LOPES (60h)"
+          },
+          "B": {
+            "horario": "4T23 6T23",
+            "periodo": "2020.1",
+            "professor": "RENATO VILELA LOPES (60h)"
+          }
+        }
+      },
+      "FGA0074": {
+        "timeLoad": "60 h.",
+        "title": "TEORIA DE ELETRÔNICA DIGITAL 2",
+        "prerequisites": "( ( ENE0277 )  OU ( FGA0073  E FGA0071 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "DANIEL MAURICIO MUNOZ ARBOLEDA (60h)"
+          }
+        }
+      },
+      "FGA0075": {
+        "timeLoad": "15 h.",
+        "title": "LABORATÓRIO DE MATERIAIS DE CONSTRUÇÃO",
+        "prerequisites": "( ( IQD0051 )  OU ( IQD0125  E IQD0126 ) )"
+      },
+      "FGA0076": {
+        "timeLoad": "60 h.",
+        "title": "EQUIPAMENTOS TERMOFLUIDOS AUTOMOTIVOS",
+        "prerequisites": "( ( ENM0080 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M12 4M12",
+            "periodo": "2020.1",
+            "professor": "ALESSANDRO BORGES DE SOUSA OLIVEIRA (30h)"
+          }
+        }
+      },
+      "FGA0077": {
+        "timeLoad": "60 h.",
+        "title": "INTRODUÇÃO AO DESGASTE",
+        "prerequisites": "( ( FGA0055  E FGA0056 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T45 5T45",
+            "periodo": "2020.1",
+            "professor": "EDISON GUSTAVO CUEVA GALARRAGA (60h)"
+          }
+        }
+      },
+      "FGA0078": {
+        "timeLoad": "45 h.",
+        "title": "TEORIA DE MATERIAIS DE CONSTRUÇÃO",
+        "prerequisites": "( ( IQD0051 )  OU ( IQD0125  E IQD0126 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T23 4T23",
+            "periodo": "2020.1",
+            "professor": "EMMANUEL PACHECO ROCHA LIMA (45h)"
+          },
+          "B": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "RODRIGO ARBEY MUNOZ MENESES (45h)"
+          }
+        }
+      },
+      "FGA0080": {
+        "timeLoad": "60 h.",
+        "title": "CONTROLE DE SISTEMAS AEROESPACIAIS",
+        "prerequisites": "( ( FGA0044 ) )"
+      },
+      "FGA0082": {
+        "timeLoad": "60 h.",
+        "title": "ENGENHARIA DE SISTEMAS AEROESPACIAIS",
+        "prerequisites": "( ( FGA0049 ) )"
+      },
+      "FGA0083": {
+        "timeLoad": "60 h.",
+        "title": "APRENDIZADO DE MÁQUINA",
+        "prerequisites": "( ( MAT0031  E FGA0147  E FGA0157 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35M34",
+            "periodo": "2020.1",
+            "professor": "FABRICIO ATAIDES BRAZ (30h)"
+          }
+        }
+      },
+      "FGA0084": {
+        "timeLoad": "60 h.",
+        "title": "DESENVOLVIMENTO DE SOFTWARE",
+        "prerequisites": "( ( CIC0004 )  OU ( CIC0007 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T45 6T45",
+            "periodo": "2020.1",
+            "professor": "GIOVANNI ALMEIDA SANTOS (60h)"
+          }
+        }
+      },
+      "FGA0085": {
+        "timeLoad": "60 h.",
+        "title": "MATEMÁTICA DISCRETA 1",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "46T23",
+            "periodo": "2020.1",
+            "professor": "LUIZ AUGUSTO FONTES LARANJEIRA (60h)"
+          },
+          "B": {
+            "horario": "2T45 6T45",
+            "periodo": "2020.1",
+            "professor": "GLAUCO VITOR PEDROSA (60h)"
+          }
+        }
+      },
+      "FGA0086": {
+        "timeLoad": "60 h.",
+        "title": "TEORIA DE ELETRICIDADE APLICADA",
+        "prerequisites": "( ( FGA0187 )  OU ( FGA0067  E FGA0069 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M12 4M12",
+            "periodo": "2020.1",
+            "professor": "RUDI HENRI VAN ELS (60h)"
+          },
+          "B": {
+            "horario": "2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "JORGE ANDRES CORMANE ANGARITA (60h)"
+          }
+        }
+      },
+      "FGA0087": {
+        "timeLoad": "30 h.",
+        "title": "LABORATÓRIO DE ELETRICIDADE APLICADA",
+        "prerequisites": "( ( FGA0187 )  OU ( FGA0067  E FGA0069 ) )"
+      },
+      "FGA0088": {
+        "timeLoad": "60 h.",
+        "title": "TEORIA DE SISTEMAS DE CONVERSÃO DE ENERGIA",
+        "prerequisites": "( ( FGA0186 )  OU ( FGA0086  E FGA0087 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M12 6M12",
+            "periodo": "2020.1",
+            "professor": "FLAVIO HENRIQUE JUSTINIANO RIBEIRO DA SILVA (60h)"
+          }
+        }
+      },
+      "FGA0089": {
+        "timeLoad": "30 h.",
+        "title": "LABORATÓRIO DE SISTEMAS DE CONVERSÃO DE ENERGIA",
+        "prerequisites": "( ( FGA0186 )  OU ( FGA0086  E FGA0087 ) )"
+      },
+      "FGA0090": {
+        "timeLoad": "60 h.",
+        "title": "ONDULATÓRIA E FÍSICA TÉRMICA PARA ENGENHARIA",
+        "prerequisites": "( ( MAT0025  E IFD0171  E IFD0173 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35T23",
+            "periodo": "2020.1",
+            "professor": "EBERTH DE ALMEIDA CORREA (60h)"
+          }
+        }
+      },
+      "FGA0091": {
+        "timeLoad": "90 h.",
+        "title": "MÁQUINAS DE FLUIDO",
+        "prerequisites": "( ( ENM0071 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "24M12  3T2",
+            "periodo": "2020.1",
+            "professor": "PAOLO GESSINI (15h)"
+          },
+          "02A": {
+            "horario": "24M12  3T3",
+            "periodo": "2020.1",
+            "professor": "PAOLO GESSINI (30h)"
+          }
+        }
+      },
+      "FGA0092": {
+        "timeLoad": "75 h.",
+        "title": "PRINCÍPIOS DE COMUNICAÇÃO PARA ENGENHARIA",
+        "prerequisites": "( ( FGA0187 )  OU ( FGA0102  E FGA0067 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "3M1234 5M1",
+            "periodo": "2020.1",
+            "professor": "DANIEL COSTA ARAUJO (75h)"
+          }
+        }
+      },
+      "FGA0093": {
+        "timeLoad": "75 h.",
+        "title": "PRINCÍPIOS DE CONTROLE",
+        "prerequisites": "( ( FGA0187 )  OU ( FGA0102 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "3T23 5T234",
+            "periodo": "2020.1",
+            "professor": "ROBERTO DE SOUZA BAPTISTA (75h)"
+          },
+          "02A": {
+            "horario": "3M4 56M34",
+            "periodo": "2020.1",
+            "professor": "LUIS FILOMENO DE JESUS FERNANDES (60h)"
+          }
+        }
+      },
+      "FGA0094": {
+        "timeLoad": "60 h.",
+        "title": "ANTENAS IMPRESSAS",
+        "prerequisites": "( ( FGA0143 )  OU ( FGA0119  E FGA0120  E FGA0092 )  OU ( FGA0257 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M5 6M5 4T1 6T1",
+            "periodo": "2020.1",
+            "professor": "SEBASTIEN ROLAND MARIE JOSEPH RONDINEAU (60h)"
+          }
+        }
+      },
+      "FGA0095": {
+        "timeLoad": "60 h.",
+        "title": "CODIFICAÇÃO E COMPRESSÃO DE SINAIS, IMAGENS E VÍDEO",
+        "prerequisites": "( ( FGA0219  E FGA0157 )  OU ( FGA0015  E FGA0157 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "MARCUS VINICIUS CHAFFIM COSTA (60h)"
+          }
+        }
+      },
+      "FGA0096": {
+        "timeLoad": "90 h.",
+        "title": "ELETRÔNICA EMBARCADA",
+        "prerequisites": "( ( FGA0074  E FGA0072 )  OU ( ENE0278 )  OU ( FGA0142 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T45 4T45 6T45",
+            "periodo": "2020.1",
+            "professor": "GUILLERMO ALVAREZ BESTARD (90h)"
+          }
+        }
+      },
+      "FGA0097": {
+        "timeLoad": "60 h.",
+        "title": "ELETRÔNICA DE RÁDIO FREQUÊNCIA",
+        "prerequisites": "( ( FGA0068 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35T23",
+            "periodo": "2020.1",
+            "professor": "WELLINGTON AVELINO DO AMARAL (60h)"
+          }
+        }
+      },
+      "FGA0098": {
+        "timeLoad": "30 h.",
+        "title": "PRÁTICA DE CIRCUITOS ELETRÔNICOS 3",
+        "prerequisites": "( ( FGA0017 ) )"
+      },
+      "FGA0099": {
+        "timeLoad": "60 h.",
+        "title": "TEORIA DE CIRCUITOS ELETRÔNICOS 3",
+        "prerequisites": "( ( FGA0017 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T45 5T45",
+            "periodo": "2020.1",
+            "professor": "WELLINGTON AVELINO DO AMARAL (60h)"
+          }
+        }
+      },
+      "FGA0100": {
+        "timeLoad": "30 h.",
+        "title": "PRÁTICA DE FÍSICA DOS DISPOSITIVOS ELETRÔNICOS",
+        "prerequisites": "( ( FGA0143 )  OU ( FGA0119  E FGA0120 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "3T45",
+            "periodo": "2020.1",
+            "professor": "MARCUS VINICIUS BATISTUTA (30h)"
+          }
+        }
+      },
+      "FGA0101": {
+        "timeLoad": "60 h.",
+        "title": "TEORIA DE FÍSICA DOS DISPOSITIVOS ELETRÔNICOS",
+        "prerequisites": "( ( FGA0143 )  OU ( FGA0119  E FGA0120 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T45 5T45",
+            "periodo": "2020.1",
+            "professor": "MARCUS VINICIUS BATISTUTA (60h)"
+          }
+        }
+      },
+      "FGA0102": {
+        "timeLoad": "90 h.",
+        "title": "SINAIS E SISTEMAS PARA ENGENHARIA",
+        "prerequisites": "( ( MAT0027  E CIC0004 )  OU ( MAT0027  E CIC0088 )  OU ( MAT0027  E CIC0007 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "356M12",
+            "periodo": "2020.1",
+            "professor": "ROBERTO DE SOUZA BAPTISTA (45h)"
+          },
+          "B": {
+            "horario": "2M34 4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "LUCIANO EMIDIO NEVES DA FONSECA (90h)"
+          }
+        }
+      },
+      "FGA0103": {
+        "timeLoad": "90 h.",
+        "title": "SISTEMAS OPERACIONAIS EMBARCADOS",
+        "prerequisites": "( ( FGA0096 )  OU ( FGA0182 )  OU ( FGA0170 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T23 4T23 6T23",
+            "periodo": "2020.1",
+            "professor": "DIOGO CAETANO GARCIA (90h)"
+          }
+        }
+      },
+      "FGA0104": {
+        "timeLoad": "60 h.",
+        "title": "QUÍMICA ORGÂNICA APLICADA À ENGENHARIA",
+        "prerequisites": "( ( IQD0125  E IQD0126 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M34 4M34",
+            "periodo": "2020.1",
+            "professor": "MARCELO BENTO DA SILVA (60h)"
+          }
+        }
+      },
+      "FGA0105": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS 2 EM ENGENHARIA AEROESPACIAL",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "4M12 6M12",
+            "periodo": "2020.1",
+            "professor": "THIAGO FELIPPE KURUDEZ CORDEIRO (60h)"
+          }
+        }
+      },
+      "FGA0106": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS 3 EM ENGENHARIA AEROESPACIAL",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "2T23 2T45",
+            "periodo": "2020.1",
+            "professor": "ARTEM ANDRIANOV (60h)"
+          }
+        }
+      },
+      "FGA0107": {
+        "timeLoad": "30 h.",
+        "title": "LABORATÓRIO DE ONDULATÓRIA E FÍSICA TÉRMICA PARA A ENGENHARIA",
+        "prerequisites": "( ( IFD0171  E IFD0173 ) )"
+      },
+      "FGA0108": {
+        "timeLoad": "60 h.",
+        "title": "MATEMÁTICA DISCRETA 2",
+        "prerequisites": "( ( FGA0085 )  OU ( FGA0159 ) )",
+        "turmas": {
+          "A": {
+            "horario": "26T23",
+            "periodo": "2020.1",
+            "professor": "GLAUCO VITOR PEDROSA (60h)"
+          }
+        }
+      },
+      "FGA0109": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DE SISTEMAS EMBARCADOS",
+        "prerequisites": "( ( FGA0170 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35M34",
+            "periodo": "2020.1",
+            "professor": "RENATO CORAL SAMPAIO (60h)"
+          }
+        }
+      },
+      "FGA0110": {
+        "timeLoad": "60 h.",
+        "title": "COMPILADORES 2",
+        "prerequisites": "( ( FGA0003 ) )"
+      },
+      "FGA0111": {
+        "timeLoad": "60 h.",
+        "title": "INTRODUÇÃO À WEB SEMÂNTICA",
+        "prerequisites": "( ( FGA0137 ) )",
+        "turmas": {
+          "A": {
+            "horario": "24M34",
+            "periodo": "2020.1",
+            "professor": "FERNANDO WILLIAM CRUZ (60h)"
+          }
+        }
+      },
+      "FGA0112": {
+        "timeLoad": "60 h.",
+        "title": "QUALIDADE DE SOFTWARE 2",
+        "prerequisites": "( ( FGA0278 ) )"
+      },
+      "FGA0113": {
+        "timeLoad": "60 h.",
+        "title": "FÍSICA PARA JOGOS ELETRÔNICOS 1",
+        "prerequisites": "( ( MAT0031  E IFD0171  E MAT0025 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T45 6T45",
+            "periodo": "2020.1",
+            "professor": "FABIO MACEDO MENDES (60h)"
+          }
+        }
+      },
+      "FGA0114": {
+        "timeLoad": "60 h.",
+        "title": "FÍSICA PARA JOGOS ELETRÔNICOS 2",
+        "prerequisites": "( ( FGA0113  E FGA0264 )  OU ( FGA0113  E FGA0263 ) )"
+      },
+      "FGA0115": {
+        "timeLoad": "60 h.",
+        "title": "INFORMAÇÃO, COMUNICAÇÃO E A SOCIEDADE DO CONHECIMENTO",
+        "prerequisites": "( ( FGA0164 ) )"
+      },
+      "FGA0116": {
+        "timeLoad": "60 h.",
+        "title": "ELETRÔNICA DE ALTA FREQUÊNCIA",
+        "prerequisites": "( ( FGA0143  E FGA0217 )  OU ( FGA0068  E FGA0070 ) )"
+      },
+      "FGA0117": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DE ENERGIA NUCLEAR",
+        "prerequisites": ""
+      },
+      "FGA0118": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS DE INFORMAÇÃO GEOGRÁFICA PARA ENGENHARIA",
+        "prerequisites": ""
+      },
+      "FGA0119": {
+        "timeLoad": "60 h.",
+        "title": "TEORIA DE ELETROMAGNETISMO",
+        "prerequisites": "( ( IFD0171  E MAT0027 ) )",
+        "turmas": {
+          "A": {
+            "horario": "46M12",
+            "periodo": "2020.1",
+            "professor": "ANDRE LUIZ ALMEIDA PENNA (60h)"
+          },
+          "B": {
+            "horario": "24T23",
+            "periodo": "2020.1",
+            "professor": "ANDRE LUIZ ALMEIDA PENNA (60h)"
+          }
+        }
+      },
+      "FGA0120": {
+        "timeLoad": "30 h.",
+        "title": "PRÁTICA DE ELETROMAGNETISMO",
+        "prerequisites": "( ( IFD0171  E MAT0027 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T45",
+            "periodo": "2020.1",
+            "professor": "GERARDO ANTONIO IDROBO PIZO (30h)"
+          },
+          "B": {
+            "horario": "6T23",
+            "periodo": "2020.1",
+            "professor": "GERARDO ANTONIO IDROBO PIZO (30h)"
+          }
+        }
+      },
+      "FGA0121": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS 4 EM ENGENHARIA AEROESPACIAL",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "SEBASTIEN ROLAND MARIE JOSEPH RONDINEAU (60h)"
+          }
+        }
+      },
+      "FGA0122": {
+        "timeLoad": "60 h.",
+        "title": "EFICIÊNCIA ENERGÉTICA EM INSTALAÇÕES ELÉTRICAS INDUSTRIAIS",
+        "prerequisites": "( ( ENM0071  E FGA0262 ) )"
+      },
+      "FGA0123": {
+        "timeLoad": "60 h.",
+        "title": "CÁLCULO PARA ENGENHARIA 1",
+        "prerequisites": ""
+      },
+      "FGA0124": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE ALGORITMOS",
+        "prerequisites": "( ( FGA0147 ) )",
+        "turmas": {
+          "02": {
+            "horario": "26M34",
+            "periodo": "2020.1",
+            "professor": "MAURICIO SERRANO (60h)"
+          },
+          "A": {
+            "horario": "26M34",
+            "periodo": "2020.1",
+            "professor": "MAURICIO SERRANO (60h)"
+          }
+        }
+      },
+      "FGA0125": {
+        "timeLoad": "30 h.",
+        "title": "INTRODUÇÃO À GEOMETRIA ANALÍTICA",
+        "prerequisites": ""
+      },
+      "FGA0126": {
+        "timeLoad": "60 h.",
+        "title": "CÁLCULO PARA ENGENHARIA 2",
+        "prerequisites": "( ( FGA0123 )  OU ( MAT0025 ) )"
+      },
+      "FGA0127": {
+        "timeLoad": "60 h.",
+        "title": "EQUAÇÕES DIFERENCIAIS ORDINÁRIAS",
+        "prerequisites": "( ( FGA0126  E MAT0031 )  OU ( MAT0026  E MAT0031 ) )"
+      },
+      "FGA0128": {
+        "timeLoad": "60 h.",
+        "title": "CÁLCULO PARA ENGENHARIA 3",
+        "prerequisites": "( ( FGA0126  E FGA0125 )  OU ( FGA0126  E MAT0010 )  OU ( MAT0026  E FGA0125 )  OU ( MAT0026  E MAT0010 ) )"
+      },
+      "FGA0129": {
+        "timeLoad": "60 h.",
+        "title": "PROCESSAMENTO DIGITAL DE SINAIS FINANCEIROS",
+        "prerequisites": "( ( FGA0102 )  OU ( MAT0026  E FGA0157 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T45 5T45",
+            "periodo": "2020.1",
+            "professor": "MARCELINO MONTEIRO DE ANDRADE (60h)"
+          }
+        }
+      },
+      "FGA0130": {
+        "timeLoad": "60 h.",
+        "title": "REGULAÇÃO AMBIENTAL NO SETOR ENERGÉTICO",
+        "prerequisites": "( ( FGA0141 ) )"
+      },
+      "FGA0131": {
+        "timeLoad": "60 h.",
+        "title": "ENGENHARIA DE SOFTWARE AUTOMOTIVO",
+        "prerequisites": "( ( CIC0004 ) )"
+      },
+      "FGA0132": {
+        "timeLoad": "60 h.",
+        "title": "INSTRUMENTAÇÃO ELETRÔNICA PARA ENGENHARIA",
+        "prerequisites": "( ( FGA0068  E FGA0070 )  OU ( FGA0217 )  OU ( FGA0226 ) ) ( ( FGA0218 ) )"
+      },
+      "FGA0133": {
+        "timeLoad": "60 h.",
+        "title": "ENGENHARIA ECONÔMICA",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "46T45",
+            "periodo": "2020.1",
+            "professor": "GLAUCENY CIRNE DE MEDEIROS (60h)"
+          },
+          "B": {
+            "horario": "35M34",
+            "periodo": "2020.1",
+            "professor": "PAULA MEYER SOARES (60h)"
+          },
+          "C": {
+            "horario": "56M12",
+            "periodo": "2020.1",
+            "professor": "RICARDO MATOS CHAIM (60h)"
+          }
+        }
+      },
+      "FGA0134": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS DE ENGENHARIA DE SOFTWARE",
+        "turmas": {
+          "01A": {
+            "horario": "7M1234",
+            "periodo": "2020.1",
+            "professor": "FABRICIO ATAIDES BRAZ (60h)"
+          },
+          "02A": {
+            "horario": "35T23",
+            "periodo": "2020.1",
+            "professor": "WANDER CLEBER MARIA PEREIRA DA SILVA (60h)"
+          },
+          "03A": {
+            "horario": "35T45",
+            "periodo": "2020.1",
+            "professor": "MARCELINO MONTEIRO DE ANDRADE (60h)"
+          },
+          "04A": {
+            "horario": "7M1234",
+            "periodo": "2020.1",
+            "professor": "GIOVANNI ALMEIDA SANTOS (60h)"
+          }
+        }
+      },
+      "FGA0137": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS DE BANCO DE DADOS 1",
+        "prerequisites": "( ( FGA0159 )  OU ( FGA0108 ) ) ( FGA0135 )  OU ( FGA0136 )",
+        "turmas": {
+          "01A": {
+            "horario": "35T23",
+            "periodo": "2020.1",
+            "professor": "VANDOR ROBERTO VILARDI RISSOLI (60h)"
+          }
+        }
+      },
+      "FGA0138": {
+        "timeLoad": "60 h.",
+        "title": "MÉTODOS DE DESENVOLVIMENTO DE SOFTWARE",
+        "prerequisites": "( ( FGA0158 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35M34",
+            "periodo": "2020.1",
+            "professor": "GEORGE MARSICANO CORREA (60h)"
+          },
+          "02A": {
+            "horario": "35T45",
+            "periodo": "2020.1",
+            "professor": "HILMER RODRIGUES NERI (60h)"
+          },
+          "03A": {
+            "horario": "35M34",
+            "periodo": "2020.1",
+            "professor": "CARLA SILVA ROCHA AGUIAR (60h)"
+          }
+        }
+      },
+      "FGA0139": {
+        "timeLoad": "60 h.",
+        "title": "MATERIAIS DE CONSTRUÇÃO DE ENGENHARIA",
+        "prerequisites": "( ( IQD0051 ) )"
+      },
+      "FGA0141": {
+        "timeLoad": "60 h.",
+        "title": "GESTÃO AMBIENTAL NO SETOR ENERGÉTICO",
+        "prerequisites": "( ( FGA0161  E FGA0184 ) ) ( FGA0140 )",
+        "turmas": {
+          "A": {
+            "horario": "3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "FERNANDO PAIVA SCARDUA (60h)"
+          }
+        }
+      },
+      "FGA0142": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES",
+        "prerequisites": "( ( ENE0277 )  OU ( FGA0071  E FGA0073 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "24M34",
+            "periodo": "2020.1",
+            "professor": "TIAGO ALVES DA FONSECA (60h)"
+          },
+          "02A": {
+            "horario": "26M12",
+            "periodo": "2020.1",
+            "professor": "JOHN LENON CARDOSO GARDENGHI (60h)"
+          }
+        }
+      },
+      "FGA0143": {
+        "timeLoad": "90 h.",
+        "title": "FUNDAMENTOS DA TEORIA ELETROMAGNÉTICA",
+        "prerequisites": "( ( IFD0171  E MAT0027 ) ) ( ( IFD0074 )  OU ( ENE0177 ) )"
+      },
+      "FGA0144": {
+        "timeLoad": "90 h.",
+        "title": "FÍSICA MODERNA",
+        "prerequisites": "( ( MAT0027  E IFD0171 ) ) ( ( IFD0137  E IFD0183 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T45 5T45 6T45",
+            "periodo": "2020.1",
+            "professor": "WYTLER CORDEIRO DOS SANTOS (90h)"
+          }
+        }
+      },
+      "FGA0147": {
+        "timeLoad": "60 h.",
+        "title": "ESTRUTURA DE DADOS E ALGORITMOS",
+        "prerequisites": "( ( CIC0004 )  OU ( CIC0007 ) ) ( FGA0145 )  OU ( FGA0146 )",
+        "turmas": {
+          "01A": {
+            "horario": "35M34",
+            "periodo": "2020.1",
+            "professor": "FABRICIO ATAIDES BRAZ (30h)"
+          },
+          "02A": {
+            "horario": "35T23",
+            "periodo": "2020.1",
+            "professor": "JOHN LENON CARDOSO GARDENGHI (60h)"
+          }
+        }
+      },
+      "FGA0148": {
+        "timeLoad": "30 h.",
+        "title": "ENGENHARIA DE SEGURANÇA DO TRABALHO",
+        "prerequisites": "( ( EPR0059 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "2M12",
+            "periodo": "2020.1",
+            "professor": "MARIA ALZIRA DE ARAUJO NUNES (30h)"
+          },
+          "02A": {
+            "horario": "2M34",
+            "periodo": "2020.1",
+            "professor": "MARIA ALZIRA DE ARAUJO NUNES (30h)"
+          }
+        }
+      },
+      "FGA0150": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO INTEGRADOR DE ENGENHARIA 1",
+        "prerequisites": "( FGA0149 )",
+        "turmas": {
+          "A": {
+            "horario": "2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "EVANDRO LEONARDO SILVA TEIXEIRA (60h)"
+          },
+          "B": {
+            "horario": "2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "ARTUR ELIAS DE MORAIS BERTOLDI (60h)"
+          },
+          "C": {
+            "horario": "2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "JULIANA PETROCCHI RODRIGUES (60h)"
+          },
+          "D": {
+            "horario": "2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "DIOGO CAETANO GARCIA (60h)"
+          },
+          "E": {
+            "horario": "2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "RICARDO AJAX DIAS KOSLOSKI (60h)"
+          }
+        }
+      },
+      "FGA0152": {
+        "timeLoad": "60 h.",
+        "title": "ERGONOMIA DO PRODUTO",
+        "prerequisites": "( ( FGA0155 ) ) ( FGA0151 )",
+        "turmas": {
+          "A": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "MATEUS RODRIGUES MIRANDA (60h)"
+          }
+        }
+      },
+      "FGA0154": {
+        "timeLoad": "60 h.",
+        "title": "MECANICA DOS SÓLIDOS 1 PARA ENGENHARIA",
+        "prerequisites": "( ( IFD0171 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4T23 6T23",
+            "periodo": "2020.1",
+            "professor": "GLAUCENY CIRNE DE MEDEIROS (60h)"
+          },
+          "B": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "SUZANA MOREIRA AVILA (60h)"
+          },
+          "C": {
+            "horario": "3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "SERGIO HENRIQUE DA SILVA CARNEIRO (60h)"
+          }
+        }
+      },
+      "FGA0155": {
+        "timeLoad": "60 h.",
+        "title": "INTRODUÇÃO AO DESIGN E CONCEPÇÃO DE VEÍCULOS",
+        "prerequisites": "( ( FGA0168 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4T23 6T23",
+            "periodo": "2020.1",
+            "professor": "ENEIDA GONZALEZ VALDES (60h)"
+          }
+        }
+      },
+      "FGA0156": {
+        "timeLoad": "60 h.",
+        "title": "COMBUSTÍVEIS E BIOCOMBUSTÍVEIS",
+        "prerequisites": "( ( FGA0104 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "ROSEANY DE VASCONCELOS VIEIRA LOPES (60h)"
+          }
+        }
+      },
+      "FGA0157": {
+        "timeLoad": "60 h.",
+        "title": "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
+        "prerequisites": "( ( MAT0025 ) )",
+        "turmas": {
+          "A": {
+            "horario": "46T23",
+            "periodo": "2020.1",
+            "professor": "RODRIGO ANDRES MIRANDA CERDA (60h)"
+          },
+          "B": {
+            "horario": "46M34",
+            "periodo": "2020.1",
+            "professor": "RODRIGO ANDRES MIRANDA CERDA (60h)"
+          }
+        }
+      },
+      "FGA0158": {
+        "timeLoad": "60 h.",
+        "title": "ORIENTAÇÃO A OBJETOS",
+        "prerequisites": "( ( CIC0004 )  OU ( CIC0007 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "24M12",
+            "periodo": "2020.1",
+            "professor": "DANIEL DE PAULA PORTO (30h)"
+          },
+          "02A": {
+            "horario": "24T45",
+            "periodo": "2020.1",
+            "professor": "DANIEL DE PAULA PORTO (30h)"
+          },
+          "05A": {
+            "horario": "24T23",
+            "periodo": "2020.1",
+            "professor": "ANDRE LUIZ PERON MARTINS LANNA (60h)"
+          },
+          "06A": {
+            "horario": "35T45",
+            "periodo": "2020.1",
+            "professor": "VANDOR ROBERTO VILARDI RISSOLI (60h)"
+          }
+        }
+      },
+      "FGA0159": {
+        "timeLoad": "60 h.",
+        "title": "ESTRUTURAS MATEMÁTICAS PARA COMPUTAÇÃO",
+        "prerequisites": ""
+      },
+      "FGA0160": {
+        "timeLoad": "60 h.",
+        "title": "MÉTODOS NUMÉRICOS PARA ENGENHARIA",
+        "prerequisites": "( ( MAT0026 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35M5  35T1",
+            "periodo": "2020.1",
+            "professor": "LUCIANO EMIDIO NEVES DA FONSECA (60h)"
+          },
+          "02A": {
+            "horario": "24M12",
+            "periodo": "2020.1",
+            "professor": "LUCIANO EMIDIO NEVES DA FONSECA (60h)"
+          },
+          "03A": {
+            "horario": "24T45",
+            "periodo": "2020.1",
+            "professor": "RONNE TOLEDO (60h)"
+          },
+          "04A": {
+            "horario": "46T45",
+            "periodo": "2020.1",
+            "professor": "POLLIANA CANDIDA OLIVEIRA MARTINS (60h)"
+          }
+        }
+      },
+      "FGA0161": {
+        "timeLoad": "60 h.",
+        "title": "ENGENHARIA E AMBIENTE",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "FERNANDO PAIVA SCARDUA (60h)"
+          },
+          "B": {
+            "horario": "46M12",
+            "periodo": "2020.1",
+            "professor": "MARIA VITORIA DUARTE FERRARI (60h)"
+          },
+          "C": {
+            "horario": "2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "JOSIANE DO SOCORRO AGUIAR DE SOUZA DE OLIVEIRA CAMPOS (60h)"
+          }
+        }
+      },
+      "FGA0163": {
+        "timeLoad": "30 h.",
+        "title": "INTRODUÇÃO À ENGENHARIA",
+        "prerequisites": "( FGA0162 )",
+        "turmas": {
+          "A": {
+            "horario": "2T23",
+            "periodo": "2020.1",
+            "professor": "EULER DE VILHENA GARCIA (30h)"
+          },
+          "B": {
+            "horario": "4T23",
+            "periodo": "2020.1",
+            "professor": "RICARDO RAMOS FRAGELLI (30h)"
+          },
+          "C": {
+            "horario": "2M12",
+            "periodo": "2020.1",
+            "professor": "POLLIANA CANDIDA OLIVEIRA MARTINS (30h)"
+          }
+        }
+      },
+      "FGA0164": {
+        "timeLoad": "60 h.",
+        "title": "HUMANIDADES E CIDADANIA",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "VANESSA MARIA DE CASTRO (60h)"
+          },
+          "B": {
+            "horario": "4T23 6T23",
+            "periodo": "2020.1",
+            "professor": "SANDRA MARIA FALEIROS LIMA (60h)"
+          }
+        }
+      },
+      "FGA0165": {
+        "timeLoad": "60 h.",
+        "title": "PROCESSO DE DESENVOLVIMENTO DE SOFTWARE",
+        "prerequisites": ""
+      },
+      "FGA0166": {
+        "timeLoad": "60 h.",
+        "title": "ELEMENTOS E MÉTODOS EM ELETRÔNICA",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "FABIANO ARAUJO SOARES (60h)"
+          }
+        }
+      },
+      "FGA0167": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS AUTOMOTIVOS",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "SALEH BARBOSA KHALIL (60h)"
+          }
+        }
+      },
+      "FGA0168": {
+        "timeLoad": "90 h.",
+        "title": "DESENHO INDUSTRIAL ASSISTIDO POR COMPUTADOR",
+        "turmas": {
+          "01A": {
+            "horario": "246M12",
+            "periodo": "2020.1",
+            "professor": "HIMILSYS HERNANDEZ GONZALEZ (90h)"
+          },
+          "02A": {
+            "horario": "246M12",
+            "periodo": "2020.1",
+            "professor": "ENEIDA GONZALEZ VALDES (90h)"
+          },
+          "03A": {
+            "horario": "235M34",
+            "periodo": "2020.1",
+            "professor": "HIMILSYS HERNANDEZ GONZALEZ (90h)"
+          },
+          "04A": {
+            "horario": "356T45",
+            "periodo": "2020.1",
+            "professor": "MATEUS RODRIGUES MIRANDA (90h)"
+          },
+          "05A": {
+            "horario": "235M34",
+            "periodo": "2020.1",
+            "professor": "CRISTIAN VENDITTOZZI (90h)"
+          }
+        }
+      },
+      "FGA0169": {
+        "timeLoad": "60 h.",
+        "title": "FONTES DE ENERGIA E TECNOLOGIAS DE CONVERSÃO",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "46M12",
+            "periodo": "2020.1",
+            "professor": "ROSEANY DE VASCONCELOS VIEIRA LOPES (60h)"
+          }
+        }
+      },
+      "FGA0170": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DE SISTEMAS OPERACIONAIS",
+        "prerequisites": "( ( FGA0182 )  OU ( FGA0096 )  OU ( FGA0142 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T45 6T45",
+            "periodo": "2020.1",
+            "professor": "BRUNO CESAR RIBAS (60h)"
+          }
+        }
+      },
+      "FGA0171": {
+        "timeLoad": "60 h.",
+        "title": "TÉCNICAS DE PROGRAMAÇÃO",
+        "prerequisites": "( ( FGA0158 ) )"
+      },
+      "FGA0172": {
+        "timeLoad": "60 h.",
+        "title": "REQUISITOS DE SOFTWARE",
+        "prerequisites": "( ( FGA0138 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "ANDRE BARROS DE SALES (60h)"
+          },
+          "B": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "GEORGE MARSICANO CORREA (60h)"
+          }
+        }
+      },
+      "FGA0173": {
+        "timeLoad": "60 h.",
+        "title": "INTERAÇÃO HUMANO COMPUTADOR",
+        "prerequisites": "( ( FGA0138 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "ANDRE BARROS DE SALES (60h)"
+          },
+          "B": {
+            "horario": "2M34 4M34",
+            "periodo": "2020.1",
+            "professor": "ANDRE BARROS DE SALES (60h)"
+          }
+        }
+      },
+      "FGA0174": {
+        "timeLoad": "60 h.",
+        "title": "DESENVOLVIMENTO SUSTENTÁVEL",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "2M34 4M34",
+            "periodo": "2020.1",
+            "professor": "JOSIANE DO SOCORRO AGUIAR DE SOUZA DE OLIVEIRA CAMPOS (60h)"
+          }
+        }
+      },
+      "FGA0175": {
+        "timeLoad": "60 h.",
+        "title": "ENGENHARIA DE PETRÓLEO E GÁS",
+        "prerequisites": "( ( IQD0125  E IQD0126 )  OU ( FGA0104 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T45 5T45",
+            "periodo": "2020.1",
+            "professor": "FELIPE CHAGAS STORTI (60h)"
+          }
+        }
+      },
+      "FGA0177": {
+        "timeLoad": "60 h.",
+        "title": "ANÁLISE INSTRUMENTAL DE COMBUSTÍVEIS",
+        "prerequisites": "( ( FGA0156 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "PATRICIA REGINA SOBRAL BRAGA (60h)"
+          }
+        }
+      },
+      "FGA0179": {
+        "timeLoad": "60 h.",
+        "title": "MECANICA DOS SÓLIDOS 2 PARA ENGENHARIA",
+        "prerequisites": "( ( FGA0154 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "RITA DE CASSIA SILVA (60h)"
+          },
+          "B": {
+            "horario": "3T45 5T45",
+            "periodo": "2020.1",
+            "professor": "MAURA ANGELICA MILFONT SHZU (60h)"
+          }
+        }
+      },
+      "FGA0180": {
+        "timeLoad": "60 h.",
+        "title": "PROCESSOS DE FABRICAÇÃO",
+        "prerequisites": "( ( FGA0139 ) )"
+      },
+      "FGA0181": {
+        "timeLoad": "30 h.",
+        "title": "INOVAÇÃO",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "2M34",
+            "periodo": "2020.1",
+            "professor": "EULER DE VILHENA GARCIA (30h)"
+          }
+        }
+      },
+      "FGA0182": {
+        "timeLoad": "60 h.",
+        "title": "MICROPROCESSADORES E MICROCONTROLADORES",
+        "prerequisites": "( ( ENE0278 )  OU ( FGA0142 )  OU ( FGA0072  E FGA0074 ) ) ( ( FGA0096 ) )"
+      },
+      "FGA0183": {
+        "timeLoad": "60 h.",
+        "title": "MATERIAIS ELÉTRICOS E MAGNÉTICOS PARA ENGENHARIA",
+        "prerequisites": "( ( FGA0144 ) )"
+      },
+      "FGA0184": {
+        "timeLoad": "60 h.",
+        "title": "GESTÃO DA PRODUÇÃO E QUALIDADE",
+        "prerequisites": "( ( FGA0133 ) )",
+        "turmas": {
+          "A": {
+            "horario": "35T23",
+            "periodo": "2020.1",
+            "professor": "REJANE MARIA DA COSTA FIGUEIREDO (60h)"
+          },
+          "B": {
+            "horario": "3T45 5T45",
+            "periodo": "2020.1",
+            "professor": "MARIO DE OLIVEIRA ANDRADE (60h)"
+          }
+        }
+      },
+      "FGA0186": {
+        "timeLoad": "90 h.",
+        "title": "ELETRICIDADE APLICADA",
+        "prerequisites": "( ( ENE0243 )  OU ( FGA0185 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M12 4M12 4M34",
+            "periodo": "2020.1",
+            "professor": "RUDI HENRI VAN ELS (45h)"
+          },
+          "B": {
+            "horario": "2M12 4M12 6M34",
+            "periodo": "2020.1",
+            "professor": "RUDI HENRI VAN ELS (45h)"
+          },
+          "C": {
+            "horario": "2M12 4M12 5M12",
+            "periodo": "2020.1",
+            "professor": "FLAVIO HENRIQUE JUSTINIANO RIBEIRO DA SILVA (45h)"
+          },
+          "D": {
+            "horario": "6M34 2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "JORGE ANDRES CORMANE ANGARITA (45h)"
+          },
+          "E": {
+            "horario": "2M34 2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "RUDI HENRI VAN ELS (30h)"
+          }
+        }
+      },
+      "FGA0187": {
+        "timeLoad": "60 h.",
+        "title": "MÉTODOS MATEMÁTICOS PARA ENGENHARIA",
+        "prerequisites": "( ( MAT0027 ) )"
+      },
+      "FGA0188": {
+        "timeLoad": "60 h.",
+        "title": "MÉTODOS EXPERIMENTAIS PARA ENGENHARIA",
+        "prerequisites": "( ( IFD0173 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T45 5T45 6T45",
+            "periodo": "2020.1",
+            "professor": "RODRIGO ARBEY MUNOZ MENESES (60h)"
+          },
+          "B": {
+            "horario": "3T45 5T45 6T5",
+            "periodo": "2020.1",
+            "professor": "RODRIGO ARBEY MUNOZ MENESES (60h)"
+          },
+          "C": {
+            "horario": "3T45 5T45 5T5",
+            "periodo": "2020.1",
+            "professor": "RODRIGO ARBEY MUNOZ MENESES (60h)"
+          }
+        }
+      },
+      "FGA0190": {
+        "timeLoad": "90 h.",
+        "title": "PROJETO DE ELEMENTOS AUTOMOTIVOS",
+        "prerequisites": "( ( FGA0179 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M34 4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "ALESSANDRO BORGES DE SOUSA OLIVEIRA (90h)"
+          }
+        }
+      },
+      "FGA0191": {
+        "timeLoad": "60 h.",
+        "title": "MATERIAIS COMPOSTOS E PLÁSTICOS",
+        "prerequisites": "( ( IQD0125  E IQD0126 ) )",
+        "turmas": {
+          "A": {
+            "horario": "35T23",
+            "periodo": "2020.1",
+            "professor": "SANDRA MARIA DA LUZ (60h)"
+          }
+        }
+      },
+      "FGA0194": {
+        "timeLoad": "60 h.",
+        "title": "ARQUITETURA DE MOTORES DE COMBUSTÃO INTERNA",
+        "prerequisites": "( ( ENM0080 ) ) ( FGA0192 )  OU ( FGA0193 )",
+        "turmas": {
+          "A": {
+            "horario": "4T23 6T23",
+            "periodo": "2020.1",
+            "professor": "FABIO CORDEIRO DE LISBOA (60h)"
+          }
+        }
+      },
+      "FGA0195": {
+        "timeLoad": "60 h.",
+        "title": "GESTÃO DA PRODUÇÃO AUTOMOTIVA",
+        "prerequisites": "( ( FGA0184 ) )"
+      },
+      "FGA0196": {
+        "timeLoad": "90 h.",
+        "title": "CIRCUITOS ELETRÔNICOS 1",
+        "prerequisites": "( ( MAT0048 )  OU ( MAT0026 ) )"
+      },
+      "FGA0197": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS DE CONTROLE",
+        "prerequisites": "( ( FGA0187 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4T45 6T45",
+            "periodo": "2020.1",
+            "professor": "MARIANA COSTA BERNARDES MATIAS (60h)"
+          }
+        }
+      },
+      "FGA0198": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO COM CIRCUITOS RECONFIGURAVEIS",
+        "prerequisites": "( ( FGA0182 )  OU ( FGA0096 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "DANIEL MAURICIO MUNOZ ARBOLEDA (60h)"
+          }
+        }
+      },
+      "FGA0199": {
+        "timeLoad": "60 h.",
+        "title": "PRINCÍPIOS DE COMUNICAÇÃO",
+        "prerequisites": "( ( FGA0187 ) )"
+      },
+      "FGA0200": {
+        "timeLoad": "60 h.",
+        "title": "ENGENHARIA DE PRODUTO",
+        "prerequisites": ""
+      },
+      "FGA0201": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE CIRCUITOS INTEGRADOS DIGITAIS",
+        "prerequisites": "( ( ENE0278 )  OU ( FGA0074  E FGA0072 ) )"
+      },
+      "FGA0202": {
+        "timeLoad": "60 h.",
+        "title": "INFORMÁTICA EM SAÚDE",
+        "prerequisites": ""
+      },
+      "FGA0203": {
+        "timeLoad": "60 h.",
+        "title": "PLANEJAMENTO E GESTÃO DE ENERGIA",
+        "prerequisites": "( ( FGA0265 ) )"
+      },
+      "FGA0204": {
+        "timeLoad": "75 h.",
+        "title": "DINÂMICA DOS FLUÍDOS",
+        "prerequisites": "( ( ENM0080 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M34 4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "LUCIANO GONCALVES NOLETO (75h)"
+          },
+          "B": {
+            "horario": "2M34 4M4 6M34",
+            "periodo": "2020.1",
+            "professor": "LUCIANO GONCALVES NOLETO (75h)"
+          }
+        }
+      },
+      "FGA0206": {
+        "timeLoad": "60 h.",
+        "title": "ENGENHARIA DE PRODUTO DE SOFTWARE",
+        "prerequisites": "( ( FGA0242 )  OU ( FGA0171 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "HILMER RODRIGUES NERI (60h)"
+          }
+        }
+      },
+      "FGA0208": {
+        "timeLoad": "60 h.",
+        "title": "ARQUITETURA E DESENHO DE SOFTWARE",
+        "prerequisites": "( ( FGA0172 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "26M12",
+            "periodo": "2020.1",
+            "professor": "MILENE SERRANO (60h)"
+          }
+        }
+      },
+      "FGA0209": {
+        "timeLoad": "60 h.",
+        "title": "MEDIÇÃO E ANÁLISE",
+        "prerequisites": "( ( FGA0138 ) )"
+      },
+      "FGA0210": {
+        "timeLoad": "60 h.",
+        "title": "PARADIGMAS DE PROGRAMAÇÃO",
+        "prerequisites": "( ( FGA0158  E FGA0003 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "26M34",
+            "periodo": "2020.1",
+            "professor": "MILENE SERRANO (60h)"
+          },
+          "02A": {
+            "horario": "24T23",
+            "periodo": "2020.1",
+            "professor": "EDSON ALVES DA COSTA JUNIOR (60h)"
+          }
+        }
+      },
+      "FGA0211": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DE REDES DE COMPUTADORES",
+        "prerequisites": "( ( FGA0170 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T45 4T45",
+            "periodo": "2020.1",
+            "professor": "TIAGO ALVES DA FONSECA (60h)"
+          }
+        }
+      },
+      "FGA0212": {
+        "timeLoad": "60 h.",
+        "title": "MODELAGEM DE PROCESSOS",
+        "prerequisites": "( ( FGA0184 ) )"
+      },
+      "FGA0213": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS CRÍTICOS E TOLERÂNCIA A FALHAS",
+        "prerequisites": "( ( CIC0007  E ENE0277 ) )"
+      },
+      "FGA0214": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS EM ENGENHARIA AUTOMOTIVA",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "2M34 4M34",
+            "periodo": "2020.1",
+            "professor": "CARLA TATIANA MOTA ANFLOR (60h)"
+          }
+        }
+      },
+      "FGA0215": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE CIRCUITOS ELETRÔNICOS INTEGRADOS 1",
+        "prerequisites": "( ( FGA0196 )  OU ( ENE0181 )  OU ( FGA0067  E FGA0069 ) ) ( ( FGA0017 ) )"
+      },
+      "FGA0217": {
+        "timeLoad": "90 h.",
+        "title": "CIRCUITOS ELETRÔNICOS 2",
+        "prerequisites": "( ( FGA0196 ) )"
+      },
+      "FGA0218": {
+        "timeLoad": "60 h.",
+        "title": "INSTRUMENTAÇÃO ELETRÔNICA",
+        "prerequisites": "( ( FGA0196 )  OU ( FGA0226 )  OU ( FGA0067  E FGA0069 ) ) ( ( FGA0132 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "CLAUDIA PATRICIA OCHOA DIAZ (60h)"
+          }
+        }
+      },
+      "FGA0219": {
+        "timeLoad": "60 h.",
+        "title": "PROCESSAMENTO DE SINAIS",
+        "prerequisites": "( ( FGA0187 )  OU ( FGA0102 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M12 6M12",
+            "periodo": "2020.1",
+            "professor": "CRISTIANO JACQUES MIOSSO RODRIGUES MENDES (60h)"
+          }
+        }
+      },
+      "FGA0220": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS EMBARCADOS",
+        "prerequisites": "( ( FGA0182 )  OU ( FGA0170 ) )"
+      },
+      "FGA0221": {
+        "timeLoad": "60 h.",
+        "title": "INTELIGÊNCIA ARTIFICIAL",
+        "prerequisites": ""
+      },
+      "FGA0222": {
+        "timeLoad": "60 h.",
+        "title": "INSTRUMENTAÇÃO BIOMÉDICA 1",
+        "prerequisites": "( ( FGA0068  E FGA0070 ) )"
+      },
+      "FGA0223": {
+        "timeLoad": "30 h.",
+        "title": "GESTÃO DE PROJETOS EM ENGENHARIA BIOMÉDICA",
+        "prerequisites": "( ( FGA0184 ) )"
+      },
+      "FGA0224": {
+        "timeLoad": "60 h.",
+        "title": "COMUNICAÇÕES DIGITAIS PARA ENGENHARIA",
+        "prerequisites": "( ( FGA0199 )  OU ( FGA0092 ) )"
+      },
+      "FGA0226": {
+        "timeLoad": "60 h.",
+        "title": "ELETRÔNICA VEICULAR",
+        "prerequisites": "( ( FGA0196 )  OU ( FGA0186 ) )"
+      },
+      "FGA0228": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE SISTEMAS AUTOMOTIVOS",
+        "prerequisites": "( ( FGA0190 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M12 4M12",
+            "periodo": "2020.1",
+            "professor": "CARLA TATIANA MOTA ANFLOR (60h)"
+          }
+        }
+      },
+      "FGA0229": {
+        "timeLoad": "60 h.",
+        "title": "ANÁLISE ESTRUTURAL MÉTODO DOS ELEMENTOS FINITOS",
+        "prerequisites": "( ( FGA0179 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3T23 5T23",
+            "periodo": "2020.1",
+            "professor": "MAURA ANGELICA MILFONT SHZU (60h)"
+          }
+        }
+      },
+      "FGA0230": {
+        "timeLoad": "60 h.",
+        "title": "DINÂMICA DE VEÍCULOS",
+        "prerequisites": "( ( FGA0179 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "ANDRE MURILO DE ALMEIDA PINTO (60h)"
+          }
+        }
+      },
+      "FGA0232": {
+        "timeLoad": "60 h.",
+        "title": "INTEGRAÇÃO E TESTES",
+        "prerequisites": "( ( FGA0188 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M34 4M34",
+            "periodo": "2020.1",
+            "professor": "HENRIQUE GOMES DE MOURA (60h)"
+          }
+        }
+      },
+      "FGA0233": {
+        "timeLoad": "60 h.",
+        "title": "SENSORES E TRANSDUTORES",
+        "prerequisites": "( ( FGA0188 )  OU ( FGA0218 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "EVANDRO LEONARDO SILVA TEIXEIRA (60h)"
+          }
+        }
+      },
+      "FGA0235": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS 1 EM ENGENHARIA DE ENERGIA",
+        "prerequisites": "( FGA0234 )",
+        "turmas": {
+          "A": {
+            "horario": "4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "MARIA VITORIA DUARTE FERRARI (60h)"
+          }
+        }
+      },
+      "FGA0236": {
+        "timeLoad": "60 h.",
+        "title": "BIORREFINARIAS",
+        "prerequisites": "( ( ENM0068  E FGA0204  E FGA0156 ) )"
+      },
+      "FGA0238": {
+        "timeLoad": "60 h.",
+        "title": "TESTES DE SOFTWARE",
+        "prerequisites": "( ( FGA0138 ) )",
+        "turmas": {
+          "02A": {
+            "horario": "24T23",
+            "periodo": "2020.1",
+            "professor": "RICARDO AJAX DIAS KOSLOSKI (60h)"
+          }
+        }
+      },
+      "FGA0240": {
+        "timeLoad": "60 h.",
+        "title": "GERÊNCIA DE CONFIGURAÇÃO E EVOLUÇÃO DE SOFTWARE",
+        "prerequisites": "( ( FGA0238 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35T45",
+            "periodo": "2020.1",
+            "professor": "CARLA SILVA ROCHA AGUIAR (60h)"
+          },
+          "02A": {
+            "horario": "35T45",
+            "periodo": "2020.1",
+            "professor": "RENATO CORAL SAMPAIO (60h)"
+          }
+        }
+      },
+      "FGA0242": {
+        "timeLoad": "60 h.",
+        "title": "TÉCNICAS DE PROGRAMAÇÃO EM PLATAFORMAS EMERGENTES",
+        "prerequisites": "( ( FGA0208  E FGA0238 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "24T45",
+            "periodo": "2020.1",
+            "professor": "ANDRE LUIZ PERON MARTINS LANNA (60h)"
+          }
+        }
+      },
+      "FGA0244": {
+        "timeLoad": "60 h.",
+        "title": "PROGRAMAÇÃO PARA SISTEMAS PARALELOS E DISTRIBUÍDOS",
+        "prerequisites": "( ( FGA0158  E FGA0170 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "LUIZ AUGUSTO FONTES LARANJEIRA (60h)"
+          }
+        }
+      },
+      "FGA0245": {
+        "timeLoad": "30 h.",
+        "title": "GERÊNCIA DE CONFIGURAÇÃO DE SOFTWARE",
+        "prerequisites": "( ( FGA0138 ) )"
+      },
+      "FGA0246": {
+        "timeLoad": "60 h.",
+        "title": "MÉTODOS FORMAIS",
+        "prerequisites": "( ( FGA0159  E FGA0171  E FGA0138 ) )"
+      },
+      "FGA0247": {
+        "timeLoad": "75 h.",
+        "title": "MÁQUINAS DE FLUXO",
+        "prerequisites": "( ( FGA0204  E ENM0068 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M12 4M12",
+            "periodo": "2020.1",
+            "professor": "JHON NERO VAZ GOULART (60h)"
+          }
+        }
+      },
+      "FGA0248": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS DE PROPULSÃO HÍBRIDOS",
+        "prerequisites": "( ( ENM0080 ) )"
+      },
+      "FGA0249": {
+        "timeLoad": "60 h.",
+        "title": "DESENVOLVIMENTO AVANÇADO DE SOFTWARE",
+        "prerequisites": "( ( FGA0154  E FGA0157 )  OU ( FGA0160 )  OU ( FGA0159  E FGA0158  E ENE0277 ) )"
+      },
+      "FGA0250": {
+        "timeLoad": "90 h.",
+        "title": "PROJETO INTEGRADOR DE ENGENHARIA 2",
+        "prerequisites": "( ( FGA0150 )  OU ( ENM0071 )  OU ( ENE0130 )  OU ( FGA0230 )  OU ( FGA0228 )  OU ( FGA0226 )  OU ( FGA0217 )  OU ( FGA0218 )  OU ( FGA0220 )  OU ( FGA0206 )  OU ( FGA0088  E FGA0089 )  OU ( FGA0103 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4T45 6T23 6T45",
+            "periodo": "2020.1",
+            "professor": "RHANDER VIANA (90h)"
+          },
+          "B": {
+            "horario": "4T45 6T23 6T45",
+            "periodo": "2020.1",
+            "professor": "ALEX REIS (90h)"
+          },
+          "C": {
+            "horario": "4T45 6T23 6T45",
+            "periodo": "2020.1",
+            "professor": "PAOLO GESSINI (90h)"
+          },
+          "D": {
+            "horario": "4T45 6T23 6T45",
+            "periodo": "2020.1",
+            "professor": "JOSE FELICIO DA SILVA (90h)"
+          },
+          "E": {
+            "horario": "4T45 6T23 6T45",
+            "periodo": "2020.1",
+            "professor": "RICARDO MATOS CHAIM (90h)"
+          }
+        }
+      },
+      "FGA0251": {
+        "timeLoad": "75 h.",
+        "title": "CENTRAIS DE GERAÇÃO TERMOELÉTRICA",
+        "prerequisites": "( ( FGA0091 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M12 3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "FELIPE CHAGAS STORTI (38h)"
+          }
+        }
+      },
+      "FGA0252": {
+        "timeLoad": "75 h.",
+        "title": "SISTEMAS HIDROELÉTRICOS",
+        "prerequisites": "( ( FGA0091 ) )",
+        "turmas": {
+          "A": {
+            "horario": "4M12 6M12 2T5",
+            "periodo": "2020.1",
+            "professor": "LUCIANO GONCALVES NOLETO (60h)"
+          }
+        }
+      },
+      "FGA0253": {
+        "timeLoad": "75 h.",
+        "title": "INSTRUMENTAÇÃO E SISTEMAS DE CONTROLE",
+        "prerequisites": "( ( FGA0188  E FGA0196  E MAT0048 ) )"
+      },
+      "FGA0254": {
+        "timeLoad": "60 h.",
+        "title": "CIÊNCIAS AEROESPACIAIS",
+        "prerequisites": "",
+        "turmas": {
+          "01A": {
+            "horario": "46M12",
+            "periodo": "2020.1",
+            "professor": "GABRIELA CUNHA POSSA (60h)"
+          },
+          "02A": {
+            "horario": "46M34",
+            "periodo": "2020.1",
+            "professor": "GABRIELA CUNHA POSSA (60h)"
+          }
+        }
+      },
+      "FGA0255": {
+        "timeLoad": "60 h.",
+        "title": "CIRCUITOS ELETRÔNICOS 3",
+        "prerequisites": "( ( FGA0217 )  OU ( FGA0070  E FGA0068 ) ) ( ( FGA0098  E FGA0099 ) )"
+      },
+      "FGA0256": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE SENSORES",
+        "prerequisites": ""
+      },
+      "FGA0257": {
+        "timeLoad": "60 h.",
+        "title": "INTEGRIDADES DE SINAIS E DESIGN DE CIRCUITOS",
+        "prerequisites": "( ( FGA0196 )  OU ( FGA0067  E FGA0069 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M12 4M12",
+            "periodo": "2020.1",
+            "professor": "DANIEL COSTA ARAUJO (60h)"
+          }
+        }
+      },
+      "FGA0258": {
+        "timeLoad": "60 h.",
+        "title": "INSTRUMENTAÇÃO BIOMÉDICA 2",
+        "prerequisites": "( ( FGA0222 ) )"
+      },
+      "FGA0259": {
+        "timeLoad": "60 h.",
+        "title": "MODELAGEM DE SISTEMAS BIOLÓGICOS",
+        "prerequisites": ""
+      },
+      "FGA0260": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS AVANÇADOS EM ELETROMAGNETISMO APLICADO",
+        "prerequisites": "",
+        "turmas": {
+          "01": {
+            "horario": "3T23 6T45",
+            "periodo": "2020.1",
+            "professor": "GERARDO ANTONIO IDROBO PIZO (60h)"
+          }
+        }
+      },
+      "FGA0261": {
+        "timeLoad": "60 h.",
+        "title": "TÓPICOS ESPECIAIS EM ELETRONICA",
+        "prerequisites": "",
+        "turmas": {
+          "03": {
+            "horario": "35T45",
+            "periodo": "2020.1",
+            "professor": "LUIS FILOMENO DE JESUS FERNANDES (60h)"
+          },
+          "A": {
+            "horario": "4T23 6T23",
+            "periodo": "2020.1",
+            "professor": "CRISTIANO JACQUES MIOSSO RODRIGUES MENDES (60h)"
+          },
+          "B": {
+            "horario": "4M34 6M34",
+            "periodo": "2020.1",
+            "professor": "JOSE FELICIO DA SILVA (60h)"
+          }
+        }
+      },
+      "FGA0262": {
+        "timeLoad": "75 h.",
+        "title": "TRANSMISSÃO E DISTRIBUIÇÃO DE ENERGIA ELÉTRICA",
+        "prerequisites": "( ( FGA0086 E FGA0087 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "46M34  4T1",
+            "periodo": "2020.1",
+            "professor": "FLAVIO HENRIQUE JUSTINIANO RIBEIRO DA SILVA (45h)"
+          }
+        }
+      },
+      "FGA0263": {
+        "timeLoad": "60 h.",
+        "title": "INTRODUÇÃO AOS JOGOS ELETRÔNICOS",
+        "prerequisites": "( ( FGA0158  E FGA0147 ) )"
+      },
+      "FGA0264": {
+        "timeLoad": "60 h.",
+        "title": "INTRODUÇÃO A COMPUTAÇÃO GRÁFICA",
+        "prerequisites": "( ( FGA0147 ) )"
+      },
+      "FGA0265": {
+        "timeLoad": "60 h.",
+        "title": "ECONOMIA DE ENERGIA",
+        "prerequisites": "( ( FGA0133 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M12 5M12",
+            "periodo": "2020.1",
+            "professor": "PAULA MEYER SOARES (60h)"
+          }
+        }
+      },
+      "FGA0266": {
+        "timeLoad": "60 h.",
+        "title": "ACÚSTICA E VIBRAÇÕES VEICULARES",
+        "prerequisites": "( ( FGA0179 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35M12",
+            "periodo": "2020.1",
+            "professor": "MARIA ALZIRA DE ARAUJO NUNES (60h)"
+          }
+        }
+      },
+      "FGA0267": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE ESTRUTURAS DE VEICULOS",
+        "prerequisites": "( ( FGA0228 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T23 4T23",
+            "periodo": "2020.1",
+            "professor": "HENRIQUE GOMES DE MOURA (60h)"
+          }
+        }
+      },
+      "FGA0268": {
+        "timeLoad": "60 h.",
+        "title": "ANÁLISE DINÂMICA MÉTODOS DOS ELEMENTOS FINITOS",
+        "prerequisites": "( ( FGA0229 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2M34 4M34",
+            "periodo": "2020.1",
+            "professor": "SUZANA MOREIRA AVILA (60h)"
+          }
+        }
+      },
+      "FGA0270": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS HIDRÁULICOS E PNEUMÁTICOS",
+        "prerequisites": "( ( ENM0080 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "ANDRE MURILO DE ALMEIDA PINTO (60h)"
+          }
+        }
+      },
+      "FGA0271": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE VEÍCULOS",
+        "prerequisites": "( ( FGA0267 ) )"
+      },
+      "FGA0272": {
+        "timeLoad": "60 h.",
+        "title": "DINÂMICA MULTICORPOS VEICULAR",
+        "prerequisites": "( ( FGA0023 ) )"
+      },
+      "FGA0273": {
+        "timeLoad": "60 h.",
+        "title": "MELHORIA DE PROCESSOS DE SOFTWARE",
+        "prerequisites": "( FGA0238 )",
+        "turmas": {
+          "01A": {
+            "horario": "35T23",
+            "periodo": "2020.1",
+            "professor": "CRISTIANE SOARES RAMOS (60h)"
+          }
+        }
+      },
+      "FGA0274": {
+        "timeLoad": "60 h.",
+        "title": "PRODUTIVIDADE E PROFISSIONALISMO EM ENGENHARIA DE SOFTWARE",
+        "prerequisites": "( ( FGA0164  E FGA0206 ) )",
+        "turmas": {
+          "A": {
+            "horario": "2T23 4T23",
+            "periodo": "2020.1",
+            "professor": "WANDER CLEBER MARIA PEREIRA DA SILVA (60h)"
+          }
+        }
+      },
+      "FGA0275": {
+        "timeLoad": "60 h.",
+        "title": "ENGENHARIA DE SOFTWARE EXPERIMENTAL",
+        "prerequisites": "( ( FGA0138 ) )",
+        "turmas": {
+          "A": {
+            "horario": "3M34 5M34",
+            "periodo": "2020.1",
+            "professor": "REJANE MARIA DA COSTA FIGUEIREDO (60h)"
+          }
+        }
+      },
+      "FGA0276": {
+        "timeLoad": "60 h.",
+        "title": "COMPUTAÇÃO EM NUVEM",
+        "prerequisites": "( ( FGA0137 ) )"
+      },
+      "FGA0278": {
+        "timeLoad": "60 h.",
+        "title": "QUALIDADE DE SOFTWARE 1",
+        "prerequisites": "( ( FGA0184  E FGA0173 ) )",
+        "turmas": {
+          "01A": {
+            "horario": "35M34",
+            "periodo": "2020.1",
+            "professor": "CRISTIANE SOARES RAMOS (60h)"
+          }
+        }
+      },
+      "FGA0279": {
+        "timeLoad": "60 h.",
+        "title": "PROGRAMAÇÃO WEB",
+        "prerequisites": "( ( FGA0137  E FGA0171 ) )"
+      },
+      "FGA0280": {
+        "timeLoad": "60 h.",
+        "title": "PROJETO DE CIRCUITOS ELETRÔNICOS INTEGRADOS 2",
+        "prerequisites": "( ( FGA0215 )  OU ( FGA0017 ) )"
+      },
+      "FGA0281": {
+        "timeLoad": "60 h.",
+        "title": "SISTEMAS DE PROPULSÃO LIQUIDA",
+        "prerequisites": "( FGA0043 )"
+      },
+      "FGA0282": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DO PROJETO DE AERONAVES",
+        "prerequisites": "( FGA0039  E FGA0045 )",
+        "turmas": {
+          "01": {
+            "horario": "46M12",
+            "periodo": "2020.1",
+            "professor": "POLLIANA CANDIDA OLIVEIRA MARTINS (60h)"
+          }
+        }
+      },
+      "FGA0285": {
+        "timeLoad": "60 h.",
+        "title": "INTRODUÇÃO À MECÂNICA DA FRATURA",
+        "prerequisites": "( FGA0179 )"
+      },
+      "FGA0379": {
+        "timeLoad": "60 h.",
+        "title": "FUNDAMENTOS DE PROPULSÃO ELÉTRICA VEICULAR",
+        "prerequisites": "",
+        "turmas": {
+          "A": {
+            "horario": "4T45 6T45",
+            "periodo": "2020.1",
+            "professor": "RUDI HENRI VAN ELS (60h)"
+          }
+        }
+      },
+      "FGA0380": {
+        "timeLoad": "60 h.",
+        "title": "PROCESSOS ESTOCÁSTICOS",
+        "prerequisites": ""
+      }
+    }
+  }
+}
